@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서울특별시장 선거 대진표 & 여론조사 | 2026 지방선거</title>
+  <meta name="description" content="2026년 6월 3일 서울특별시장 선거 후보 대진표, 최신 여론조사 추이, 후보자 프로필을 한눈에 확인하세요.">
+  <meta property="og:title" content="서울특별시장 선거 | 2026 지방선거">
+  <meta property="og:description" content="박찬대(민주) vs 오세훈(국힘) 최신 여론조사 판세">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <a href="../../index.html" class="logo">🗳️ 6.3 지방선거 <span class="dday" id="headerDday">D-38</span></a>
+  <div class="header-actions">
+    <button class="btn-kakao" onclick="shareKakao()">🟡 카카오 공유</button>
+    <button class="btn-copy" onclick="copyLink()" title="링크 복사">🔗</button>
+  </div>
+</header>
+<nav class="sticky-nav">
+  <a href="../../index.html">🏠 홈</a>
+  <a href="../../index.html#section-daejinaepyo">🏛️ 대진표</a>
+  <a href="../../index.html#section-bigmatch">⚡ 격전지</a>
+  <a href="../../index.html#section-survey">📊 여론조사</a>
+  <a href="../../index.html#section-voting" class="nav-highlight">📍 투표소 찾기</a>
+  <span class="nav-spacer"></span>
+  <a href="#" onclick="scrollToTop();return false;">↑ 맨 위로</a>
+</nav>
+
+<!-- 브레드크럼 -->
+<div style="max-width:900px;margin:16px auto 0;padding:0 20px;font-size:12px;color:#8b949e;">
+  <a href="../../index.html" style="color:#388bfd;">🏠 홈</a> › <a href="../../index.html#section-daejinaepyo" style="color:#388bfd;">대진표</a> › 서울특별시장
+</div>
+
+<!-- 메인 콘텐츠 -->
+<main style="max-width:900px;margin:0 auto;padding:20px;">
+
+  <!-- 지역 헤더 -->
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+    <h1 style="font-size:22px;font-weight:900;margin:0;">🏙️ 서울특별시장</h1>
+    <span class="verdict-badge badge-minjoo" style="font-size:14px;padding:6px 14px;">민주 우세</span>
+    <span style="font-size:12px;color:#8b949e;margin-left:auto;">선거여론조사심의위원회 등록 최신 조사 기준</span>
+  </div>
+
+  <!-- 후보 대결 카드 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+    <!-- 박찬대 -->
+    <div class="cand-detail-card" style="border-left:4px solid #004ea2;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+        <div class="candidate-avatar avatar-minjoo" style="width:56px;height:56px;font-size:20px;">박</div>
+        <div>
+          <div style="font-size:20px;font-weight:900;">박찬대</div>
+          <div style="font-size:12px;color:#6ea8fe;font-weight:700;">더불어민주당 · 공천확정</div>
+        </div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#6ea8fe;">52.3%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:52.3%;height:12px;border-radius:6px;"></div></div></div>
+      <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
+        <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">57세 (1969년생)</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">더불어민주당 원내대표</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">학력</td><td style="font-weight:600;">서울대 법학과</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">주요 경력</td><td style="font-weight:600;">21·22대 국회의원(인천 계양을)</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">핵심 공약</td><td style="font-weight:600;">부동산 규제 강화, 청년 주거 지원, 서울 균형발전</td></tr>
+      </table>
+      <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:12px;display:block;font-size:11px;">🔗 선관위 후보자 정보 보기</a>
+    </div>
+    <!-- 오세훈 -->
+    <div class="cand-detail-card" style="border-left:4px solid #c9151e;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+        <div class="candidate-avatar avatar-gukmin" style="width:56px;height:56px;font-size:20px;">오</div>
+        <div>
+          <div style="font-size:20px;font-weight:900;">오세훈</div>
+          <div style="font-size:12px;color:#ff8080;font-weight:700;">국민의힘 · 공천확정</div>
+        </div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#ff8080;">42.1%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:42.1%;height:12px;border-radius:6px;"></div></div></div>
+      <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
+        <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">63세 (1961년생)</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">서울특별시장(현)</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">학력</td><td style="font-weight:600;">서울대 법학과</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">주요 경력</td><td style="font-weight:600;">16·17·18대 국회의원, 서울시장(2006~2011, 2021~현재)</td></tr>
+        <tr><td style="color:#8b949e;padding:3px 0;">핵심 공약</td><td style="font-weight:600;">재개발·재건축 규제 완화, 한강 르네상스 2.0, GTX 확대</td></tr>
+      </table>
+      <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:12px;display:block;font-size:11px;">🔗 선관위 후보자 정보 보기</a>
+    </div>
+  </div>
+
+  <!-- 여론조사 추이 차트 -->
+  <div class="section" style="padding:20px;margin-bottom:20px;">
+    <h2 class="section-title" style="font-size:16px;margin-bottom:16px;">📊 여론조사 추이</h2>
+    <div class="notice-box" style="margin-bottom:16px;">
+      선거여론조사심의위원회 등록 조사 기준. 수치는 참고용이며 실제 결과와 다를 수 있습니다.
+    </div>
+    <canvas id="surveyChart" style="max-height:280px;"></canvas>
+    <div style="margin-top:12px;font-size:11px;color:#8b949e;text-align:right;">
+      출처: 한국갤럽, 리얼미터, 엠브레인 | 최종 업데이트: 2026.04.22
+    </div>
+  </div>
+
+  <!-- 여론조사 상세 테이블 -->
+  <div class="section" style="padding:20px;margin-bottom:20px;">
+    <h2 class="section-title" style="font-size:16px;margin-bottom:12px;">📋 여론조사 상세 내역</h2>
+    <div style="overflow-x:auto;">
+      <table class="survey-table">
+        <thead>
+          <tr>
+            <th>조사일</th>
+            <th>조사기관</th>
+            <th>박찬대(민주)</th>
+            <th>오세훈(국힘)</th>
+            <th>격차</th>
+            <th>표본수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-source">2026.04.22</td>
+            <td class="td-source">한국갤럽</td>
+            <td class="td-cand1">52.3%</td>
+            <td class="td-cand2">42.1%</td>
+            <td class="td-gap" style="color:#6ea8fe;">+10.2%p</td>
+            <td class="td-source">1,000명</td>
+          </tr>
+          <tr>
+            <td class="td-source">2026.04.15</td>
+            <td class="td-source">리얼미터</td>
+            <td class="td-cand1">51.8%</td>
+            <td class="td-cand2">43.2%</td>
+            <td class="td-gap" style="color:#6ea8fe;">+8.6%p</td>
+            <td class="td-source">1,000명</td>
+          </tr>
+          <tr>
+            <td class="td-source">2026.04.08</td>
+            <td class="td-source">엠브레인</td>
+            <td class="td-cand1">50.4%</td>
+            <td class="td-cand2">44.1%</td>
+            <td class="td-gap" style="color:#6ea8fe;">+6.3%p</td>
+            <td class="td-source">800명</td>
+          </tr>
+          <tr>
+            <td class="td-source">2026.04.01</td>
+            <td class="td-source">한국갤럽</td>
+            <td class="td-cand1">49.2%</td>
+            <td class="td-cand2">45.3%</td>
+            <td class="td-gap" style="color:#6ea8fe;">+3.9%p</td>
+            <td class="td-source">1,000명</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 주요 공약 비교 -->
+  <div class="section" style="padding:20px;margin-bottom:20px;">
+    <h2 class="section-title" style="font-size:16px;margin-bottom:12px;">📌 주요 공약 비교</h2>
+    <div style="overflow-x:auto;">
+      <table class="survey-table">
+        <thead>
+          <tr>
+            <th>분야</th>
+            <th style="color:#6ea8fe;">박찬대 (민주)</th>
+            <th style="color:#ff8080;">오세훈 (국힘)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-region">주거·부동산</td>
+            <td>공공임대주택 10만호 공급, 분양가 상한제 강화</td>
+            <td>재개발·재건축 규제 완화, 신속통합기획 확대</td>
+          </tr>
+          <tr>
+            <td class="td-region">교통</td>
+            <td>GTX 연장, 버스·지하철 요금 동결</td>
+            <td>GTX 확대, 한강 수상교통 도입</td>
+          </tr>
+          <tr>
+            <td class="td-region">청년</td>
+            <td>청년 월세 지원 50만원, 청년 취업 보장제</td>
+            <td>청년 창업 펀드 1조원, 청년 안심주택 확대</td>
+          </tr>
+          <tr>
+            <td class="td-region">경제</td>
+            <td>서울 균형발전, 강북 르네상스</td>
+            <td>한강 르네상스 2.0, 서울 글로벌 금융허브</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 네비게이션 -->
+  <div style="display:flex;justify-content:space-between;margin-top:24px;flex-wrap:wrap;gap:12px;">
+    <a href="../../index.html#section-daejinaepyo" style="background:#21262d;color:#c9d1d9;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;">← 전체 대진표로 돌아가기</a>
+    <a href="busan.html" style="background:#1f6feb;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;">다음: 부산광역시장 →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div style="max-width:900px;margin:0 auto;">
+    <p>후보 정보 출처: <a href="https://info.nec.go.kr" target="_blank">중앙선관위 후보자정보공개시스템</a> | 여론조사: <a href="https://www.nesdc.go.kr" target="_blank">선거여론조사심의위원회</a></p>
+    <p style="font-size:11px;color:#555;margin-top:8px;">본 사이트는 공직선거법 제82조의4에 따라 선거운동을 목적으로 하지 않으며, 공개된 정보를 정리·제공하는 정보 허브입니다.</p>
+  </div>
+</footer>
+
+<button class="float-top" id="floatTop" onclick="scrollToTop()">↑</button>
+
+<script src="../../js/main.js"></script>
+<script>
+  // 여론조사 추이 차트
+  const ctx = document.getElementById('surveyChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['04.01', '04.08', '04.15', '04.22'],
+      datasets: [
+        {
+          label: '박찬대 (민주)',
+          data: [49.2, 50.4, 51.8, 52.3],
+          borderColor: '#004ea2',
+          backgroundColor: 'rgba(0,78,162,0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: '오세훈 (국힘)',
+          data: [45.3, 44.1, 43.2, 42.1],
+          borderColor: '#c9151e',
+          backgroundColor: 'rgba(201,21,30,0.10)',
+          borderWidth: 3,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: '#c9d1d9', font: { family: 'Noto Sans KR', size: 12 } } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
+        y: {
+          min: 35, max: 65,
+          ticks: { color: '#8b949e', callback: v => v + '%' },
+          grid: { color: '#21262d' }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>

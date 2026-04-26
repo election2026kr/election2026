@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>투표소 찾기 & 투표 안내 | 2026 지방선거</title>
+  <meta name="description" content="2026년 6월 3일 지방선거 내 투표소 찾기, 사전투표소 위치, 투표 준비물, 투표 방법 안내.">
+  <meta property="og:title" content="내 투표소 찾기 | 2026 지방선거">
+  <meta property="og:description" content="사전투표(5.29~30), 선거일(6.3) 내 투표소 위치와 준비물을 확인하세요.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <a href="../index.html" class="logo">🗳️ 6.3 지방선거 <span class="dday" id="headerDday">D-38</span></a>
+  <div class="header-actions">
+    <button class="btn-kakao" onclick="shareKakao()">🟡 카카오 공유</button>
+    <button class="btn-copy" onclick="copyLink()" title="링크 복사">🔗</button>
+  </div>
+</header>
+<nav class="sticky-nav">
+  <a href="../index.html">🏠 홈</a>
+  <a href="../index.html#section-daejinaepyo">🏛️ 대진표</a>
+  <a href="../index.html#section-bigmatch">⚡ 격전지</a>
+  <a href="../index.html#section-survey">📊 여론조사</a>
+  <a href="#" class="nav-highlight active">📍 투표소 찾기</a>
+  <span class="nav-spacer"></span>
+  <a href="#" onclick="scrollToTop();return false;">↑ 맨 위로</a>
+</nav>
+
+<div style="max-width:900px;margin:16px auto 0;padding:0 20px;font-size:12px;color:#8b949e;">
+  <a href="../index.html" style="color:#388bfd;">🏠 홈</a> › 📍 투표소 찾기
+</div>
+
+<main style="max-width:900px;margin:0 auto;padding:20px;">
+
+  <!-- 페이지 제목 -->
+  <div style="text-align:center;margin-bottom:32px;">
+    <h1 style="font-size:28px;font-weight:900;margin-bottom:8px;">📍 내 투표소 찾기</h1>
+    <p style="color:#8b949e;font-size:14px;">사전투표소 및 선거일 투표소 위치를 확인하세요</p>
+  </div>
+
+  <!-- 투표 일정 배너 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+    <div style="background:linear-gradient(135deg,#1f3a6e,#1f6feb);border-radius:12px;padding:20px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px;">🗓️</div>
+      <div style="font-size:13px;color:#8b9dc3;margin-bottom:4px;">사전투표</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;">5월 29일(목) ~ 30일(금)</div>
+      <div style="font-size:13px;color:#8b9dc3;margin-top:4px;">오전 6시 ~ 오후 6시</div>
+      <div style="margin-top:10px;background:rgba(255,255,255,0.15);border-radius:6px;padding:6px;font-size:12px;color:#e0e8ff;">
+        ✅ 전국 어디서나 투표 가능
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#3a1f1f,#c9151e);border-radius:12px;padding:20px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px;">🗳️</div>
+      <div style="font-size:13px;color:#c9a0a0;margin-bottom:4px;">선거일 투표</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;">6월 3일(수)</div>
+      <div style="font-size:13px;color:#c9a0a0;margin-top:4px;">오전 6시 ~ 오후 6시</div>
+      <div style="margin-top:10px;background:rgba(255,255,255,0.15);border-radius:6px;padding:6px;font-size:12px;color:#ffe0e0;">
+        ⚠️ 지정된 투표소에서만 투표 가능
+      </div>
+    </div>
+  </div>
+
+  <!-- 투표소 검색 -->
+  <div class="section" style="padding:24px;margin-bottom:24px;">
+    <h2 class="section-title" style="font-size:18px;margin-bottom:20px;">🔍 내 투표소 검색</h2>
+    <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+      <button onclick="setVoteType('pre')" id="btn-pre" class="vote-type-btn active-vote-btn" style="flex:1;min-width:140px;padding:12px;border-radius:8px;border:2px solid #1f6feb;background:#1f3a6e;color:#fff;font-size:14px;font-weight:700;cursor:pointer;">
+        🗓️ 사전투표소
+      </button>
+      <button onclick="setVoteType('main')" id="btn-main" class="vote-type-btn" style="flex:1;min-width:140px;padding:12px;border-radius:8px;border:2px solid #30363d;background:#21262d;color:#8b949e;font-size:14px;font-weight:700;cursor:pointer;">
+        🗳️ 선거일 투표소
+      </button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;">
+      <select id="sido-select" style="background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;">
+        <option value="">시·도 선택</option>
+        <option>서울특별시</option><option>부산광역시</option><option>대구광역시</option>
+        <option>인천광역시</option><option>광주광역시</option><option>대전광역시</option>
+        <option>울산광역시</option><option>세종특별자치시</option><option>경기도</option>
+        <option>강원특별자치도</option><option>충청북도</option><option>충청남도</option>
+        <option>전북특별자치도</option><option>전라남도</option><option>경상북도</option>
+        <option>경상남도</option><option>제주특별자치도</option>
+      </select>
+      <select id="sigungu-select" style="background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;">
+        <option value="">구·시·군 선택</option>
+      </select>
+      <select id="dong-select" style="background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;">
+        <option value="">읍·면·동 선택</option>
+      </select>
+    </div>
+    <button onclick="searchVoting()" style="width:100%;padding:14px;background:#1f6feb;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+      🔍 투표소 검색
+    </button>
+
+    <!-- 검색 결과 -->
+    <div id="search-result" style="margin-top:20px;display:none;">
+      <h3 style="font-size:14px;color:#8b949e;margin-bottom:12px;">검색 결과</h3>
+      <div id="result-cards"></div>
+    </div>
+
+    <!-- 선관위 바로가기 -->
+    <div style="margin-top:16px;padding:14px;background:#161b22;border-radius:8px;text-align:center;">
+      <p style="font-size:13px;color:#8b949e;margin-bottom:8px;">더 정확한 투표소 정보는 중앙선관위 공식 사이트에서 확인하세요.</p>
+      <a href="https://www.nec.go.kr" target="_blank" style="display:inline-block;background:#21262d;color:#388bfd;padding:8px 20px;border-radius:6px;font-size:13px;font-weight:700;border:1px solid #30363d;">
+        🔗 중앙선관위 공식 사이트 바로가기
+      </a>
+    </div>
+  </div>
+
+  <!-- 투표 준비물 -->
+  <div class="section" style="padding:24px;margin-bottom:24px;">
+    <h2 class="section-title" style="font-size:18px;margin-bottom:16px;">🪪 투표 준비물 (신분증)</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div style="background:#21262d;border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">🪪</div>
+        <div style="font-size:13px;font-weight:700;">주민등록증</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">🚗</div>
+        <div style="font-size:13px;font-weight:700;">운전면허증</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">✈️</div>
+        <div style="font-size:13px;font-weight:700;">여권 (유효기간 내)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">♿</div>
+        <div style="font-size:13px;font-weight:700;">장애인 복지카드</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:8px;">🎖️</div>
+        <div style="font-size:13px;font-weight:700;">국가보훈증</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#1a2a1a,#1f4a1f);border-radius:10px;padding:16px;text-align:center;border:1px solid #2ea043;">
+        <div style="font-size:28px;margin-bottom:8px;">📱</div>
+        <div style="font-size:13px;font-weight:700;color:#56d364;">모바일 신분증</div>
+        <div style="font-size:11px;color:#8b949e;margin-top:4px;">정부24 앱</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 투표 방법 -->
+  <div class="section" style="padding:24px;margin-bottom:24px;">
+    <h2 class="section-title" style="font-size:18px;margin-bottom:16px;">📝 이번 선거 투표 방법</h2>
+    <div class="notice-box" style="margin-bottom:16px;">
+      이번 2026 전국동시지방선거에서는 <strong>최대 8장</strong>의 투표용지를 받습니다.
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">1번 투표용지</div>
+        <div style="font-weight:700;">🏛️ 광역단체장 (시·도지사)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">2번 투표용지</div>
+        <div style="font-weight:700;">🏙️ 기초단체장 (구청장·시장·군수)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">3번 투표용지</div>
+        <div style="font-weight:700;">🗳️ 광역의원 (지역구)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">4번 투표용지</div>
+        <div style="font-weight:700;">🗳️ 광역의원 (비례대표)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">5번 투표용지</div>
+        <div style="font-weight:700;">🗳️ 기초의원 (지역구)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">6번 투표용지</div>
+        <div style="font-weight:700;">🗳️ 기초의원 (비례대표)</div>
+      </div>
+      <div style="background:#21262d;border-radius:10px;padding:16px;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">7번 투표용지</div>
+        <div style="font-weight:700;">🎓 교육감</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#1a2a1a,#1f4a1f);border-radius:10px;padding:16px;border:1px solid #2ea043;">
+        <div style="font-size:12px;color:#8b949e;margin-bottom:6px;">8번 투표용지 (해당 지역만)</div>
+        <div style="font-weight:700;color:#56d364;">📋 국회의원 보궐선거</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 주의사항 -->
+  <div class="section" style="padding:24px;margin-bottom:24px;border-left:4px solid #f85149;">
+    <h2 class="section-title" style="font-size:18px;margin-bottom:16px;">⚠️ 투표 시 주의사항</h2>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:#21262d;border-radius:8px;">
+        <span style="font-size:18px;">📵</span>
+        <div><strong>기표소 내 촬영 금지</strong><br><span style="font-size:12px;color:#8b949e;">기표소 안에서 투표용지를 촬영하면 공직선거법 위반으로 처벌받을 수 있습니다.</span></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:#21262d;border-radius:8px;">
+        <span style="font-size:18px;">📄</span>
+        <div><strong>투표용지 반출 금지</strong><br><span style="font-size:12px;color:#8b949e;">기표한 투표용지를 투표소 밖으로 가지고 나오면 안 됩니다.</span></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:#21262d;border-radius:8px;">
+        <span style="font-size:18px;">🤳</span>
+        <div><strong>인증샷은 기표소 밖에서만</strong><br><span style="font-size:12px;color:#8b949e;">투표 인증샷은 기표소 밖, 투표소 입구 등에서만 촬영 가능합니다.</span></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:#21262d;border-radius:8px;">
+        <span style="font-size:18px;">👥</span>
+        <div><strong>대리투표 불가</strong><br><span style="font-size:12px;color:#8b949e;">다른 사람을 대신해 투표하는 것은 법으로 금지되어 있습니다.</span></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:#21262d;border-radius:8px;">
+        <span style="font-size:18px;">✅</span>
+        <div><strong>기표 후 접어서 투표함에 투입</strong><br><span style="font-size:12px;color:#8b949e;">기표 후 투표용지를 반드시 접어서 투표함에 넣어야 합니다.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 돌아가기 -->
+  <div style="text-align:center;margin-top:24px;">
+    <a href="../index.html" style="background:#21262d;color:#c9d1d9;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;display:inline-block;">← 메인으로 돌아가기</a>
+  </div>
+
+</main>
+
+<footer>
+  <div style="max-width:900px;margin:0 auto;">
+    <p>투표소 정보 출처: <a href="https://www.nec.go.kr" target="_blank">중앙선거관리위원회</a></p>
+    <p style="font-size:11px;color:#555;margin-top:8px;">본 사이트는 공직선거법 제82조의4에 따라 선거운동을 목적으로 하지 않으며, 공개된 정보를 정리·제공하는 정보 허브입니다.</p>
+  </div>
+</footer>
+
+<button class="float-top" id="floatTop" onclick="scrollToTop()">↑</button>
+
+<script src="../js/main.js"></script>
+<script>
+  let voteType = 'pre';
+
+  function setVoteType(type) {
+    voteType = type;
+    document.getElementById('btn-pre').style.background = type === 'pre' ? '#1f3a6e' : '#21262d';
+    document.getElementById('btn-pre').style.borderColor = type === 'pre' ? '#1f6feb' : '#30363d';
+    document.getElementById('btn-pre').style.color = type === 'pre' ? '#fff' : '#8b949e';
+    document.getElementById('btn-main').style.background = type === 'main' ? '#3a1f1f' : '#21262d';
+    document.getElementById('btn-main').style.borderColor = type === 'main' ? '#c9151e' : '#30363d';
+    document.getElementById('btn-main').style.color = type === 'main' ? '#fff' : '#8b949e';
+  }
+
+  // 시도 변경 시 구시군 목록 업데이트
+  const sigunguData = {
+    '서울특별시': ['종로구','중구','용산구','성동구','광진구','동대문구','중랑구','성북구','강북구','도봉구','노원구','은평구','서대문구','마포구','양천구','강서구','구로구','금천구','영등포구','동작구','관악구','서초구','강남구','송파구','강동구'],
+    '부산광역시': ['중구','서구','동구','영도구','부산진구','동래구','남구','북구','해운대구','사하구','금정구','강서구','연제구','수영구','사상구','기장군'],
+    '경기도': ['수원시','성남시','의정부시','안양시','부천시','광명시','평택시','동두천시','안산시','고양시','과천시','구리시','남양주시','오산시','시흥시','군포시','의왕시','하남시','용인시','파주시','이천시','안성시','김포시','화성시','광주시','양주시','포천시','여주시','연천군','가평군','양평군'],
+  };
+
+  document.getElementById('sido-select').addEventListener('change', function() {
+    const sigungu = document.getElementById('sigungu-select');
+    sigungu.innerHTML = '<option value="">구·시·군 선택</option>';
+    const list = sigunguData[this.value] || [];
+    list.forEach(s => {
+      const opt = document.createElement('option');
+      opt.textContent = s;
+      sigungu.appendChild(opt);
+    });
+  });
+
+  function searchVoting() {
+    const sido = document.getElementById('sido-select').value;
+    const sigungu = document.getElementById('sigungu-select').value;
+    const dong = document.getElementById('dong-select').value;
+
+    if (!sido) { alert('시·도를 선택해 주세요.'); return; }
+
+    const resultDiv = document.getElementById('search-result');
+    const cardsDiv = document.getElementById('result-cards');
+    const typeLabel = voteType === 'pre' ? '사전투표소' : '선거일 투표소';
+    const dateLabel = voteType === 'pre' ? '5월 29일(목) ~ 30일(금)' : '6월 3일(수)';
+
+    // 실제 배포 시 선관위 API 연동 — 현재는 안내 메시지 표시
+    cardsDiv.innerHTML = `
+      <div style="background:#21262d;border-radius:10px;padding:20px;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">🗺️</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:8px;">${sido} ${sigungu || ''} ${typeLabel}</div>
+        <div style="font-size:13px;color:#8b949e;margin-bottom:16px;">투표 일정: ${dateLabel}</div>
+        <div style="background:#161b22;border-radius:8px;padding:12px;font-size:12px;color:#8b949e;margin-bottom:16px;">
+          ℹ️ 정확한 투표소 위치는 선관위 공식 사이트에서 확인하세요.<br>
+          (정식 오픈 시 선관위 OpenAPI와 실시간 연동됩니다.)
+        </div>
+        <a href="https://www.nec.go.kr" target="_blank" style="display:inline-block;background:#1f6feb;color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;">
+          🔗 중앙선관위에서 투표소 찾기
+        </a>
+      </div>
+    `;
+    resultDiv.style.display = 'block';
+  }
+</script>
+</body>
+</html>

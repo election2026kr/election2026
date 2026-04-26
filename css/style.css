@@ -1,0 +1,806 @@
+/* =============================================
+   2026 지방선거 정보 허브 — 공통 스타일시트
+   정당 색상 체계 v1.0
+   ============================================= */
+
+:root {
+  /* 기본 색상 */
+  --bg: #0d1117;
+  --card: #161b22;
+  --card2: #1c2128;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --blue: #1f6feb;
+  --blue-light: #388bfd;
+  --purple: #7c3aed;
+  --yellow: #d29922;
+  --yellow-light: #f0c040;
+  --green: #238636;
+  --radius: 10px;
+
+  /* 정당 상징색 */
+  --minjoo: #004ea2;        /* 더불어민주당 — 파랑 */
+  --minjoo-light: #1a6fd4;
+  --minjoo-text: #6ea8fe;
+
+  --gukmin: #c9151e;        /* 국민의힘 — 빨강 */
+  --gukmin-light: #e83a42;
+  --gukmin-text: #ff8080;
+
+  --joguk: #003087;         /* 조국혁신당 — 짙은 파랑 */
+  --joguk-light: #1a4fa8;
+  --joguk-text: #7eb3ff;
+
+  --gaehyeok: #e85d00;      /* 개혁신당 — 주황 */
+  --gaehyeok-light: #f97316;
+  --gaehyeok-text: #fb923c;
+
+  --indep: #64748b;         /* 무소속 — 회색 */
+  --indep-light: #94a3b8;
+  --indep-text: #cbd5e1;
+}
+
+/* ===== RESET & BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(13,17,23,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: 800;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+.logo .dday {
+  background: var(--gukmin);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.btn-kakao {
+  background: #FEE500;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.btn-copy {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* ===== STICKY NAV BAR ===== */
+.sticky-nav {
+  position: sticky;
+  top: 52px;
+  z-index: 199;
+  background: rgba(22,27,34,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 12px;
+}
+.sticky-nav::-webkit-scrollbar { display: none; }
+.sticky-nav a {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.sticky-nav a:hover { color: var(--text); border-bottom-color: var(--blue-light); }
+.sticky-nav a.nav-active { color: var(--text); border-bottom-color: var(--blue-light); }
+.sticky-nav a.nav-highlight {
+  color: #000;
+  background: var(--yellow);
+  border-radius: 6px;
+  margin: 6px 4px;
+  padding: 6px 12px;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
+}
+.sticky-nav a.nav-highlight:hover { background: var(--yellow-light); }
+.sticky-nav .nav-spacer { flex: 1; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 28px 20px 20px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(31,111,235,0.15);
+  border: 1px solid var(--blue);
+  color: var(--blue-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: #f85149;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+h1 span { color: var(--yellow-light); }
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.hero-date {
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 14px;
+}
+.hero-btns { display: flex; gap: 8px; }
+.btn-kakao-lg {
+  background: #FEE500;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.btn-copy-lg {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+
+/* ===== 판세 현황판 (Dashboard) ===== */
+.dashboard { display: flex; flex-direction: column; gap: 10px; }
+.dashboard-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+.live-dot2 {
+  width: 6px;
+  height: 6px;
+  background: #f85149;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+.cat-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--card2);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cat-header:hover { background: #252c36; }
+.cat-header-left { display: flex; align-items: center; gap: 8px; }
+.cat-icon { font-size: 16px; }
+.cat-name { font-size: 14px; font-weight: 800; }
+.cat-count { font-size: 11px; color: var(--text2); }
+.cat-summary { display: flex; gap: 6px; align-items: center; }
+.sum-chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.chip-minjoo { background: rgba(0,78,162,0.35); color: var(--minjoo-text); border: 1px solid var(--minjoo); }
+.chip-gukmin { background: rgba(201,21,30,0.35); color: var(--gukmin-text); border: 1px solid var(--gukmin); }
+.chip-close { background: rgba(124,58,237,0.35); color: #c4b5fd; border: 1px solid var(--purple); }
+.chip-joguk { background: rgba(0,48,135,0.35); color: var(--joguk-text); border: 1px solid var(--joguk); }
+.cat-toggle { color: var(--text2); font-size: 12px; transition: transform 0.3s; }
+.cat-toggle.open { transform: rotate(180deg); }
+.cat-list { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.cat-list.open { max-height: 600px; overflow-y: auto; }
+.cat-item {
+  display: flex;
+  align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.cat-item:last-child { border-bottom: none; }
+.cat-item:hover { background: var(--card2); }
+.item-left { flex: 1; }
+.item-region { font-size: 12px; font-weight: 700; }
+.item-cands { font-size: 11px; color: var(--text2); margin-top: 1px; }
+.item-bar-wrap { width: 120px; }
+.item-bar-row { display: flex; align-items: center; gap: 4px; margin-bottom: 3px; }
+.item-bar-label { font-size: 10px; font-weight: 700; min-width: 16px; }
+.item-bar-bg { flex: 1; background: var(--card2); border-radius: 3px; height: 5px; overflow: hidden; }
+.item-bar-fill { height: 100%; border-radius: 3px; }
+.item-bar-minjoo { background: var(--minjoo-light); }
+.item-bar-gukmin { background: var(--gukmin-light); }
+.item-bar-joguk { background: var(--joguk-light); }
+.item-bar-gaehyeok { background: var(--gaehyeok-light); }
+.item-bar-indep { background: var(--indep-light); }
+.item-pct { font-size: 10px; font-weight: 700; min-width: 34px; text-align: right; }
+.item-badge {
+  margin-left: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.badge-m { background: rgba(0,78,162,0.3); color: var(--minjoo-text); border: 1px solid var(--minjoo); }
+.badge-g { background: rgba(201,21,30,0.3); color: var(--gukmin-text); border: 1px solid var(--gukmin); }
+.badge-c { background: rgba(124,58,237,0.3); color: #c4b5fd; border: 1px solid var(--purple); }
+.badge-p { background: rgba(100,100,100,0.3); color: #aaa; border: 1px solid #555; }
+.badge-j { background: rgba(0,48,135,0.35); color: var(--joguk-text); border: 1px solid var(--joguk); }
+.badge-r { background: rgba(232,93,0,0.3); color: var(--gaehyeok-text); border: 1px solid var(--gaehyeok); }
+.badge-i { background: rgba(100,116,139,0.3); color: var(--indep-text); border: 1px solid var(--indep); }
+.item-arrow { color: var(--text2); font-size: 11px; margin-left: 6px; }
+
+/* ===== AD BANNER ===== */
+.ad-banner {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  color: var(--text2);
+  font-size: 12px;
+  margin: 16px auto;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.ad-banner ins { display: block; }
+
+/* ===== SECTION ===== */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.back-top-btn {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+/* ===== NOTICE BOX ===== */
+.notice-box {
+  background: rgba(210,153,34,0.1);
+  border: 1px solid var(--yellow);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+/* ===== TABS ===== */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--text); border-bottom-color: var(--blue-light); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ===== 전국 판세 지도 (광역) ===== */
+.korea-map-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 6px;
+  max-width: 480px;
+}
+.region-block {
+  border-radius: 8px;
+  padding: 8px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  position: relative;
+}
+.region-block:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+.region-block .r-name { font-size: 11px; font-weight: 800; }
+.region-block .r-cand { font-size: 9px; margin-top: 2px; opacity: 0.85; }
+.region-block .r-pct { font-size: 10px; font-weight: 700; margin-top: 1px; }
+.minjoo-win { background: rgba(0,78,162,0.55); border-color: var(--minjoo); color: #c8e0ff; }
+.gukmin-win { background: rgba(201,21,30,0.55); border-color: var(--gukmin); color: #ffd0d0; }
+.close-race { background: rgba(124,58,237,0.45); border-color: var(--purple); color: #e0d4ff; }
+.pending { background: rgba(50,50,60,0.6); border-color: #555; color: #aaa; }
+.joguk-win { background: rgba(0,48,135,0.55); border-color: var(--joguk); color: #b0ccff; }
+
+/* ===== 서울 구청장 지도 ===== */
+.seoul-map-wrap { overflow-x: auto; }
+.seoul-map-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(7, 60px);
+  gap: 5px;
+  min-width: 420px;
+}
+.gu-block {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+.gu-block:hover { transform: scale(1.06); border-color: rgba(255,255,255,0.3); }
+.g-name { font-size: 11px; font-weight: 800; text-align: center; }
+
+/* ===== 빅매치 카드 ===== */
+.bigmatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+.match-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.region-tag {
+  font-size: 11px;
+  color: var(--text2);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.region-name { font-size: 15px; font-weight: 800; margin-bottom: 10px; }
+.candidate-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.candidate-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.avatar-minjoo { background: var(--minjoo); color: #fff; }
+.avatar-gukmin { background: var(--gukmin); color: #fff; }
+.avatar-joguk { background: var(--joguk); color: #fff; }
+.avatar-gaehyeok { background: var(--gaehyeok); color: #fff; }
+.avatar-indep { background: var(--indep); color: #fff; }
+.candidate-info { flex: 1; }
+.candidate-name { font-size: 13px; font-weight: 700; cursor: pointer; transition: color 0.2s; }
+.candidate-name:hover { color: var(--blue-light); }
+.candidate-party { font-size: 10px; color: var(--text2); }
+.candidate-pct { font-size: 14px; font-weight: 800; min-width: 42px; text-align: right; }
+.bar-wrap { margin-top: 4px; }
+.bar-bg { background: var(--card2); border-radius: 4px; height: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; }
+.bar-minjoo { background: var(--minjoo-light); }
+.bar-gukmin { background: var(--gukmin-light); }
+.bar-joguk { background: var(--joguk-light); }
+.bar-gaehyeok { background: var(--gaehyeok-light); }
+.bar-indep { background: var(--indep-light); }
+.match-footer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.verdict-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+.badge-minjoo { background: rgba(0,78,162,0.3); color: var(--minjoo-text); border: 1px solid var(--minjoo); }
+.badge-gukmin { background: rgba(201,21,30,0.3); color: var(--gukmin-text); border: 1px solid var(--gukmin); }
+.badge-close { background: rgba(124,58,237,0.3); color: #c4b5fd; border: 1px solid var(--purple); }
+.survey-date { font-size: 10px; color: var(--text2); }
+
+/* ===== 여론조사 테이블 ===== */
+.survey-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.survey-table th {
+  background: var(--card2);
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 11px;
+  color: var(--text2);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.survey-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.survey-table tr:hover td { background: var(--card2); }
+.survey-table tr:last-child td { border-bottom: none; }
+.td-region { font-weight: 700; }
+.td-cand1 { color: var(--minjoo-text); font-weight: 700; }
+.td-cand2 { color: var(--gukmin-text); font-weight: 700; }
+.td-cand3 { color: var(--joguk-text); font-weight: 700; }
+.td-gap { font-weight: 700; }
+.td-source { font-size: 11px; color: var(--text2); }
+
+/* ===== 보궐선거 카드 ===== */
+.byeol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.byeol-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+.byeol-region { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+.byeol-reason {
+  font-size: 10px;
+  color: var(--text2);
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  background: var(--card2);
+  border-radius: 4px;
+  display: inline-block;
+}
+.byeol-cand-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.byeol-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.byeol-name { font-size: 12px; font-weight: 700; cursor: pointer; }
+.byeol-name:hover { color: var(--blue-light); }
+.byeol-party { font-size: 10px; color: var(--text2); }
+.tbd { color: var(--text2); font-size: 11px; font-style: italic; }
+.byeol-bars { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.byeol-bar-row { display: flex; align-items: center; gap: 6px; }
+.byeol-bar-label { font-size: 10px; font-weight: 700; min-width: 14px; }
+.byeol-bar-bg { flex: 1; background: var(--card2); border-radius: 3px; height: 5px; overflow: hidden; }
+.byeol-bar-fill { height: 100%; border-radius: 3px; }
+.byeol-bar-pct { font-size: 10px; font-weight: 700; min-width: 34px; text-align: right; }
+.byeol-rank1 {
+  font-size: 9px;
+  background: var(--yellow);
+  color: #000;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-weight: 700;
+}
+
+/* ===== 투표소 찾기 ===== */
+.voting-search {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.voting-search h3 { font-size: 15px; font-weight: 800; margin-bottom: 14px; }
+.voting-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.vtab-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--card2);
+  color: var(--text2);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.vtab-btn.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.select-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.addr-select {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 12px;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 13px;
+}
+.btn-search-voting {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 4px;
+}
+.voting-result { margin-top: 16px; }
+.voting-card {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.voting-card .v-name { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.voting-card .v-addr { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
+.btn-map {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ===== 투표 안내 ===== */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.guide-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.guide-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 10px; }
+.guide-card ul { padding-left: 16px; }
+.guide-card li { font-size: 13px; color: var(--text2); margin-bottom: 4px; }
+.guide-card li strong { color: var(--text); }
+
+/* ===== 후보자 프로필 모달 ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.show { display: flex; }
+.modal-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 18px;
+  cursor: pointer;
+}
+.modal-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.modal-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.modal-name { font-size: 18px; font-weight: 900; }
+.modal-party { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.modal-section { margin-bottom: 12px; }
+.modal-section h4 { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.modal-section p { font-size: 13px; }
+.modal-link {
+  display: block;
+  margin-top: 16px;
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* ===== FLOAT BUTTON ===== */
+.float-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(31,111,235,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.float-top.show { display: flex; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 24px 20px;
+  text-align: center;
+  color: var(--text2);
+  font-size: 12px;
+  line-height: 2;
+}
+footer a { color: var(--blue-light); }
+
+/* ===== 정당 색상 범례 ===== */
+.party-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  h1 { font-size: 22px; }
+  .sticky-nav a { font-size: 12px; padding: 9px 10px; }
+  .korea-map-grid { grid-template-columns: repeat(5, 1fr); }
+}
+@media (max-width: 600px) {
+  .bigmatch-grid { grid-template-columns: 1fr; }
+  .byeol-grid { grid-template-columns: 1fr; }
+  .guide-grid { grid-template-columns: 1fr; }
+}
