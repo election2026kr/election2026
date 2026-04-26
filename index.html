@@ -175,8 +175,10 @@
 
 <script src="js/main.js"></script>
 <script>
-  // Kakao SDK 초기화 (실제 배포 시 앱 키 입력)
-  // Kakao.init('YOUR_KAKAO_APP_KEY');
+  // Kakao SDK 초기화
+  if (window.Kakao && !window.Kakao.isInitialized()) {
+    window.Kakao.init('73d821e57b593140fbd807a993463884');
+  }
 </script>
 </body>
 </html>
