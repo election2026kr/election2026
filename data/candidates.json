@@ -687,10 +687,10 @@
           "pct": 55.0
         },
         {
-          "name": "미확정",
+          "name": "김영환",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "경선 진행 중",
+          "status": "공천확정",
           "age": "—",
           "current": "—",
           "education": "—",
@@ -699,7 +699,7 @@
           "pct": 18.0
         }
       ],
-      "surveyDate": "2026.04.25",
+      "surveyDate": "2026.04.27",
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
