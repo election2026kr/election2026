@@ -140,23 +140,17 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ===== 카카오톡 공유 =====
+// ===== 카카오톡 공유 (카카오링크 URL 방식 - 도메인 등록 불필요) =====
 function shareKakao() {
   const url = window.location.href;
-  const title = '2026 지방선거 대진표 & 판세 총정리';
-  const desc = '6월 3일 전국동시지방선거 광역단체장·서울 구청장·보궐선거 최신 여론조사 한눈에!';
-  if (window.Kakao && window.Kakao.isInitialized()) {
-    window.Kakao.Share.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: title,
-        description: desc,
-        imageUrl: 'https://election2026.aphrocaptain.com/og-image.png',
-        link: { mobileWebUrl: url, webUrl: url }
-      },
-      buttons: [{ title: '판세 확인하기', link: { mobileWebUrl: url, webUrl: url } }]
-    });
-  } else {
+  // 카카오링크 URL 방식: SDK 초기화/도메인 등록 없이 작동
+  const kakaoShareUrl = 'https://sharer.kakao.com/talk/friends/picker/easylink'
+    + '?app_key=73d821e57b593140fbd807a993463884'
+    + '&lang=ko'
+    + '&url=' + encodeURIComponent(url);
+  const popup = window.open(kakaoShareUrl, 'kakaoShare', 'width=500,height=600,scrollbars=yes,resizable=yes');
+  if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+    // 팝업 차단된 경우 링크 복사로 대체
     copyLink();
   }
 }
