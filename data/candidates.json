@@ -672,7 +672,7 @@
       "region": "충청북도",
       "title": "충북도지사",
       "emoji": "🌻",
-      "verdict": "minjoo",
+      "verdict": "close",
       "candidates": [
         {
           "name": "신용한",
@@ -684,33 +684,33 @@
           "education": "충북대 행정학과",
           "career": "청와대 청년비서관, 충북연구원장",
           "pledge": "충북 반도체 산업 육성, 청주 메가시티 추진",
-          "pct": 55.0
+          "pct": 46.5
         },
         {
           "name": "김영환",
           "party": "gukmin",
           "partyName": "국민의힘",
           "status": "공천확정",
-          "age": "—",
-          "current": "—",
-          "education": "—",
-          "career": "김영환 현 지사 vs 윤갑근 전 검사장 본경선",
-          "pledge": "—",
-          "pct": 18.0
+          "age": "61세 (1964년생)",
+          "current": "충청북도지사 (현)",
+          "education": "충북대 법학과",
+          "career": "충북도지사 (재선 도전), 전 국회의원, 전 민주당 원내대표",
+          "pledge": "충북 반도체 클러스터 완성, 청주 국제공항 확장",
+          "pct": 45.2
         }
       ],
-      "surveyDate": "2026.04.27",
-      "surveyOrg": "연합뉴스",
+      "surveyDate": "2026.04.19",
+      "surveyOrg": "리얼미터",
       "sampleSize": "1,000명",
       "history": [
         {
-          "date": "2026.04.25",
-          "org": "연합뉴스",
+          "date": "2026.04.19",
+          "org": "리얼미터",
           "pcts": [
-            55.0,
-            18.0
+            46.5,
+            45.2
           ],
-          "gap": "+37.0%p",
+          "gap": "+1.3%p",
           "sample": "1,000명"
         }
       ]
