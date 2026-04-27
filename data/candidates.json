@@ -1047,6 +1047,31 @@
       "lastUpdated": "2026.04.27"
     },
     {
+      "id": "gyeonggi-hanam-gap",
+      "region": "경기 하남갑",
+      "reason": "이용선 의원 당선무효형 확정",
+      "verdict": "pending",
+      "candidates": [
+        {
+          "name": "이광재",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "전략공천 확정",
+          "background": "전 강원지사, 전 국회의원",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 미확정",
+          "background": "공천 미확정",
+          "pct": null
+        }
+      ],
+      "surveyDate": "공천 확정 후 여론조사 예정"
+    },
+    {
       "id": "gyeonggi-pyeongtaek-eul",
       "region": "경기 평택을",
       "reason": "이병진 의원 당선무효형 확정",
@@ -1061,12 +1086,12 @@
           "pct": 48
         },
         {
-          "name": "공천 진행 중",
+          "name": "김용남",
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
-          "background": "김용남 등 거론",
-          "pct": 31
+          "status": "전략공천 확정",
+          "background": "전 검사, 전 새누리당 의원 (초선), 합리적 개혁보수 인사",
+          "pct": 21
         },
         {
           "name": "조국",
@@ -1094,11 +1119,11 @@
       "verdict": "pending",
       "candidates": [
         {
-          "name": "공천 진행 중",
+          "name": "김남국",
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
-          "background": "김남국·김용 경쟁",
+          "status": "전략공천 확정",
+          "background": "전 민주당 의원, 전 당 대변인",
           "pct": null
         },
         {
