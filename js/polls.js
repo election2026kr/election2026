@@ -110,12 +110,16 @@
       const vl = data.verdict_labels[r.verdict] || { label: r.verdict, badgeClass: 'badge-close' };
       const gapCol = gapColor(gap);
 
+      const p0short = (c0.partyName||'').replace('더불어민주당','민주').replace('국민의힘','국힘').replace('조국혁신당','조국').replace('개혁신당','개혁');
+      const p1short = (c1.partyName||'').replace('더불어민주당','민주').replace('국민의힘','국힘').replace('조국혁신당','조국').replace('개혁신당','개혁');
+      const textColor0 = partyTextClass(c0.party);
+      const textColor1 = partyTextClass(c1.party);
       return `<tr>
         <td class="td-region">${r.region}</td>
-        <td class="td-cand1">${c0.name}</td>
-        <td class="td-cand1">${pctStr(c0.pct)}</td>
-        <td class="td-cand2">${c1.name}</td>
-        <td class="td-cand2">${pctStr(c1.pct)}</td>
+        <td class="td-cand1" style="color:${textColor0};">${c0.name}<span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p0short})</span></td>
+        <td class="td-cand1" style="color:${textColor0};">${pctStr(c0.pct)}</td>
+        <td class="td-cand2" style="color:${textColor1};">${c1.name}<span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p1short})</span></td>
+        <td class="td-cand2" style="color:${textColor1};">${pctStr(c1.pct)}</td>
         <td class="td-gap" style="color:${gapCol};">${gap}</td>
         <td><span class="verdict-badge ${vl.badgeClass}" style="font-size:11px;padding:3px 8px;">${vl.label}</span></td>
         <td class="td-source">${r.surveyDate}</td>
