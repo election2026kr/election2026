@@ -151,7 +151,7 @@ function shareKakao() {
       content: {
         title: title,
         description: desc,
-        imageUrl: 'https://election2026.pages.dev/og-image.png',
+        imageUrl: 'https://election2026.aphrocaptain.com/og-image.png',
         link: { mobileWebUrl: url, webUrl: url }
       },
       buttons: [{ title: '판세 확인하기', link: { mobileWebUrl: url, webUrl: url } }]
