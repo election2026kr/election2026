@@ -22,12 +22,21 @@ setInterval(updateDday, 60000);
 
 // ===== 탭 전환 =====
 function switchTab(tabId, groupId) {
-  const group = document.getElementById(groupId) || document;
-  group.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  group.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-  const activeBtn = group.querySelector(`[data-tab="${tabId}"]`);
+  // 탭 버튼은 tabGroup div 안에서 탐색
+  const tabBar = document.getElementById(groupId);
+  if (tabBar) {
+    tabBar.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = tabBar.querySelector(`[data-tab="${tabId}"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+  // 탭 콘텐츠는 같은 data-group을 가진 모든 탭 버튼의 대상 콘텐츠를 document 전체에서 탐색
+  if (tabBar) {
+    tabBar.querySelectorAll('.tab-btn[data-group="' + groupId + '"]').forEach(btn => {
+      const content = document.getElementById(btn.dataset.tab);
+      if (content) content.classList.remove('active');
+    });
+  }
   const activeContent = document.getElementById(tabId);
-  if (activeBtn) activeBtn.classList.add('active');
   if (activeContent) activeContent.classList.add('active');
 }
 
