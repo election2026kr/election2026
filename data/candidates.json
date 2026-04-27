@@ -2,7 +2,8 @@
   "meta": {
     "updated": "2026-04-26",
     "source": "연합뉴스·뉴시스·경향신문·동아일보 2026.04.26 보도 기준",
-    "note": "공천 확정 보도 후보만 실명 표기. 미확정은 '공천 진행 중' 표기. 여론조사 수치는 선거여론조사심의위원회 등록 최신 조사 기준. 개표 후 실제 득표율로 자동 전환."
+    "note": "2026-04-27 언론 보도 기준 자동 업데이트",
+    "lastUpdated": "2026-04-27"
   },
   "gwangyeok": [
     {
@@ -12,9 +13,30 @@
       "emoji": "🏙️",
       "verdict": "close",
       "candidates": [
-        {"name": "정원오", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 성동구청장", "pct": 44},
-        {"name": "오세훈", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 서울시장", "pct": 48},
-        {"name": "김정철", "party": "gaehyeok", "partyName": "개혁신당", "status": "공천확정", "background": "당 최고위원", "pct": 4}
+        {
+          "name": "정원오",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 성동구청장",
+          "pct": 44
+        },
+        {
+          "name": "오세훈",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 서울시장",
+          "pct": 48
+        },
+        {
+          "name": "김정철",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "당 최고위원",
+          "pct": 4
+        }
       ],
       "surveyDate": "2026.04.22",
       "surveyOrg": "한국갤럽"
@@ -26,9 +48,30 @@
       "emoji": "🌊",
       "verdict": "close",
       "candidates": [
-        {"name": "전재수", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 해양수산부 장관", "pct": 48},
-        {"name": "박형준", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 부산시장", "pct": 46},
-        {"name": "정이한", "party": "gaehyeok", "partyName": "개혁신당", "status": "공천확정", "background": "당 대변인", "pct": 4}
+        {
+          "name": "전재수",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 해양수산부 장관",
+          "pct": 48
+        },
+        {
+          "name": "박형준",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 부산시장",
+          "pct": 46
+        },
+        {
+          "name": "정이한",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "당 대변인",
+          "pct": 4
+        }
       ],
       "surveyDate": "2026.04.21",
       "surveyOrg": "리얼미터"
@@ -40,9 +83,30 @@
       "emoji": "🍎",
       "verdict": "close",
       "candidates": [
-        {"name": "김부겸", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 국무총리", "pct": 45},
-        {"name": "추경호", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "전 경제부총리·3선 의원", "pct": 46},
-        {"name": "이진숙", "party": "musosok", "partyName": "무소속", "status": "출마 예정", "background": "전 방송통신위원장", "pct": 5}
+        {
+          "name": "김부겸",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 국무총리",
+          "pct": 45
+        },
+        {
+          "name": "추경호",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "전 경제부총리·3선 의원",
+          "pct": 46
+        },
+        {
+          "name": "이진숙",
+          "party": "musosok",
+          "partyName": "무소속",
+          "status": "출마 예정",
+          "background": "전 방송통신위원장",
+          "pct": 5
+        }
       ],
       "surveyDate": "2026.04.20",
       "surveyOrg": "엠브레인"
@@ -54,9 +118,30 @@
       "emoji": "✈️",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "박찬대", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 원내대표·4선 의원", "pct": 52},
-        {"name": "유정복", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 인천시장", "pct": 40},
-        {"name": "이기붕", "party": "gaehyeok", "partyName": "개혁신당", "status": "공천확정", "background": "당 인천광역시당 위원", "pct": 4}
+        {
+          "name": "박찬대",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 원내대표·4선 의원",
+          "pct": 52
+        },
+        {
+          "name": "유정복",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 인천시장",
+          "pct": 40
+        },
+        {
+          "name": "이기붕",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "당 인천광역시당 위원",
+          "pct": 4
+        }
       ],
       "surveyDate": "2026.04.22",
       "surveyOrg": "한국갤럽",
@@ -70,9 +155,30 @@
       "verdict": "minjoo",
       "note": "전남·광주 통합특별시 초대 시장 선거",
       "candidates": [
-        {"name": "민형배", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "국회의원(광산을 재선)", "pct": 58},
-        {"name": "이정현", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "전 국회의원·전 새누리당 대표", "pct": 28},
-        {"name": "강은미", "party": "jeongeui", "partyName": "정의당", "status": "공천확정", "background": "전 국회의원", "pct": 6}
+        {
+          "name": "민형배",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "국회의원(광산을 재선)",
+          "pct": 58
+        },
+        {
+          "name": "이정현",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "전 국회의원·전 새누리당 대표",
+          "pct": 28
+        },
+        {
+          "name": "강은미",
+          "party": "jeongeui",
+          "partyName": "정의당",
+          "status": "공천확정",
+          "background": "전 국회의원",
+          "pct": 6
+        }
       ],
       "surveyDate": "2026.04.19",
       "surveyOrg": "리얼미터"
@@ -84,9 +190,30 @@
       "emoji": "🔬",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "허태정", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 대전시장", "pct": 51},
-        {"name": "이장우", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 대전시장", "pct": 42},
-        {"name": "강희린", "party": "gaehyeok", "partyName": "개혁신당", "status": "공천확정", "background": "대전광역시당 위원장", "pct": 4}
+        {
+          "name": "허태정",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 대전시장",
+          "pct": 51
+        },
+        {
+          "name": "이장우",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 대전시장",
+          "pct": 42
+        },
+        {
+          "name": "강희린",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "대전광역시당 위원장",
+          "pct": 4
+        }
       ],
       "surveyDate": "2026.04.20",
       "surveyOrg": "엠브레인"
@@ -98,10 +225,38 @@
       "emoji": "🏭",
       "verdict": "close",
       "candidates": [
-        {"name": "김상욱", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "국회의원(남구갑)", "pct": 38},
-        {"name": "김두겸", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 울산시장", "pct": 42},
-        {"name": "황명필", "party": "joguk", "partyName": "조국혁신당", "status": "공천확정", "background": "전 최고위원", "pct": 8},
-        {"name": "박맹우", "party": "musosok", "partyName": "무소속", "status": "출마 예정", "background": "전 울산시장", "pct": 6}
+        {
+          "name": "김상욱",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "국회의원(남구갑)",
+          "pct": 38
+        },
+        {
+          "name": "김두겸",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 울산시장",
+          "pct": 42
+        },
+        {
+          "name": "황명필",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천확정",
+          "background": "전 최고위원",
+          "pct": 8
+        },
+        {
+          "name": "박맹우",
+          "party": "musosok",
+          "partyName": "무소속",
+          "status": "출마 예정",
+          "background": "전 울산시장",
+          "pct": 6
+        }
       ],
       "surveyDate": "2026.04.21",
       "surveyOrg": "한국갤럽"
@@ -113,9 +268,30 @@
       "emoji": "🏛️",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "조상호", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 세종시 경제부시장", "pct": 50},
-        {"name": "최민호", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 세종시장", "pct": 38},
-        {"name": "황운하", "party": "joguk", "partyName": "조국혁신당", "status": "공천확정", "background": "국회의원(비례)", "pct": 8}
+        {
+          "name": "조상호",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 세종시 경제부시장",
+          "pct": 50
+        },
+        {
+          "name": "최민호",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 세종시장",
+          "pct": 38
+        },
+        {
+          "name": "황운하",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천확정",
+          "background": "국회의원(비례)",
+          "pct": 8
+        }
       ],
       "surveyDate": "2026.04.18",
       "surveyOrg": "리얼미터"
@@ -127,8 +303,22 @@
       "emoji": "🌾",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "추미애", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "국회의원(하남갑)", "pct": 52},
-        {"name": "경선 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "경선 진행 중 (4.30~5.1 본경선)", "background": "양향자·함진규·이성배 경선", "pct": 38}
+        {
+          "name": "추미애",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "국회의원(하남갑)",
+          "pct": 52
+        },
+        {
+          "name": "경선 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "경선 진행 중 (양향자·이성배·조광한·함진규 4인, 5월2일 발표)",
+          "background": "4인 원샷 경선 (4.30~5.1 투표, 5.2 발표)",
+          "pct": 38
+        }
       ],
       "surveyDate": "2026.04.23",
       "surveyOrg": "한국갤럽"
@@ -140,8 +330,22 @@
       "emoji": "⛰️",
       "verdict": "gukmin",
       "candidates": [
-        {"name": "우상호", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 청와대 정무수석", "pct": 40},
-        {"name": "김진태", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 강원도지사", "pct": 52}
+        {
+          "name": "우상호",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 청와대 정무수석",
+          "pct": 40
+        },
+        {
+          "name": "김진태",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 강원도지사",
+          "pct": 52
+        }
       ],
       "surveyDate": "2026.04.20",
       "surveyOrg": "엠브레인"
@@ -153,8 +357,22 @@
       "emoji": "🌻",
       "verdict": "close",
       "candidates": [
-        {"name": "신용한", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "대통령 직속 지방시대위원회 부위원장", "pct": 46},
-        {"name": "경선 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "경선 진행 중 (김영환·윤갑근)", "background": "4.25~26 본경선 진행 중", "pct": 45}
+        {
+          "name": "신용한",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "대통령 직속 지방시대위원회 부위원장",
+          "pct": 46
+        },
+        {
+          "name": "경선 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "경선 진행 중 (김영환·윤갑근 본경선)",
+          "background": "김영환 현 지사 vs 윤갑근 전 검사장 본경선",
+          "pct": 45
+        }
       ],
       "surveyDate": "2026.04.19",
       "surveyOrg": "리얼미터"
@@ -166,9 +384,30 @@
       "emoji": "🌊",
       "verdict": "close",
       "candidates": [
-        {"name": "박수현", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "국회의원(공주·부여·청양)", "pct": 47},
-        {"name": "김태흠", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 충남도지사", "pct": 46},
-        {"name": "이은창", "party": "gaehyeok", "partyName": "개혁신당", "status": "공천확정", "background": "공주·부여·청양 당협위원장", "pct": 4}
+        {
+          "name": "박수현",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "국회의원(공주·부여·청양)",
+          "pct": 47
+        },
+        {
+          "name": "김태흠",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 충남도지사",
+          "pct": 46
+        },
+        {
+          "name": "이은창",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "공주·부여·청양 당협위원장",
+          "pct": 4
+        }
       ],
       "surveyDate": "2026.04.17",
       "surveyOrg": "한국갤럽",
@@ -181,9 +420,30 @@
       "emoji": "🌾",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "이원택", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "국회의원(군산·김제·부안을 재선)", "pct": 51},
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "조국혁신당 강세 지역", "pct": 22},
-        {"name": "양정무", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "전 전주갑 당협위원장", "pct": 18}
+        {
+          "name": "이원택",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "국회의원(군산·김제·부안을 재선)",
+          "pct": 51
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "조국혁신당 전북 강세 지역",
+          "pct": 22
+        },
+        {
+          "name": "양정무",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "전 전주갑 당협위원장",
+          "pct": 18
+        }
       ],
       "surveyDate": "2026.04.18",
       "surveyOrg": "리얼미터",
@@ -196,8 +456,22 @@
       "emoji": "🍎",
       "verdict": "gukmin",
       "candidates": [
-        {"name": "오중기", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "포항북구 지역위원장", "pct": 30},
-        {"name": "이철우", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 경북도지사", "pct": 60}
+        {
+          "name": "오중기",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "포항북구 지역위원장",
+          "pct": 30
+        },
+        {
+          "name": "이철우",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 경북도지사",
+          "pct": 60
+        }
       ],
       "surveyDate": "2026.04.19",
       "surveyOrg": "한국갤럽"
@@ -209,8 +483,22 @@
       "emoji": "🌊",
       "verdict": "close",
       "candidates": [
-        {"name": "김경수", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "전 경남도지사", "pct": 48},
-        {"name": "박완수", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "현 경남도지사", "pct": 45}
+        {
+          "name": "김경수",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "전 경남도지사",
+          "pct": 48
+        },
+        {
+          "name": "박완수",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "현 경남도지사",
+          "pct": 45
+        }
       ],
       "surveyDate": "2026.04.21",
       "surveyOrg": "리얼미터"
@@ -222,8 +510,22 @@
       "emoji": "🌺",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "위성곤", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정", "background": "국회의원(서귀포 3선)", "pct": 52},
-        {"name": "문성유", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "전 한국자산관리공사 사장", "pct": 40}
+        {
+          "name": "위성곤",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "background": "국회의원(서귀포 3선)",
+          "pct": 52
+        },
+        {
+          "name": "문성유",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "전 한국자산관리공사 사장",
+          "pct": 40
+        }
       ],
       "surveyDate": "2026.04.20",
       "surveyOrg": "엠브레인"
@@ -236,9 +538,30 @@
       "reason": "박찬대 의원 인천시장 출마 사직",
       "verdict": "minjoo",
       "candidates": [
-        {"name": "김남준", "party": "minjoo", "partyName": "더불어민주당", "status": "전략공천 확정", "background": "전 청와대 대변인", "pct": 44},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": 28},
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "공천 미확정", "pct": 18}
+        {
+          "name": "김남준",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "전략공천 확정",
+          "background": "전 청와대 대변인",
+          "pct": 44
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": 28
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": 18
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -246,11 +569,40 @@
       "id": "gyeonggi-pyeongtaek-eul",
       "region": "경기 평택을",
       "reason": "이병진 의원 당선무효형 확정",
-      "verdict": "gukmin",
+      "verdict": "pending",
       "candidates": [
-        {"name": "유의동", "party": "gukmin", "partyName": "국민의힘", "status": "단수공천 확정", "background": "전 의원 3선", "pct": 48},
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": 31},
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "공천 미확정", "pct": 12}
+        {
+          "name": "유의동",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "단수공천 확정",
+          "background": "전 의원 3선",
+          "pct": 48
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중 (김용남 등 검토)",
+          "background": "민주당 후보 미확정, 김용남 등 거론",
+          "pct": 31
+        },
+        {
+          "name": "조국",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "출마 선언",
+          "background": "조국혁신당 대표, 출마 선언",
+          "pct": 12
+        },
+        {
+          "name": "김재연",
+          "party": "jinbo",
+          "partyName": "진보당",
+          "status": "출마 선언",
+          "background": "진보당 상임대표, 출마 선언",
+          "pct": null
+        }
       ],
       "surveyDate": "2026.04.22"
     },
@@ -260,9 +612,30 @@
       "reason": "양문석 의원 유죄 확정",
       "verdict": "pending",
       "candidates": [
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null}
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중 (김남국·김용 경쟁)",
+          "background": "김남국 대변인 vs 김용 전 부원장 경쟁",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -272,8 +645,22 @@
       "reason": "강훈식 의원 대통령실 입성 사직",
       "verdict": "pending",
       "candidates": [
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null}
+        {
+          "name": "전은수",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "출마 가닥 (이번 주 사퇴 예정)",
+          "background": "청와대 대변인, 부산 북갑 하정우와 함께 이번 주 사퇴 예정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -283,8 +670,22 @@
       "reason": "박수현 의원 충남도지사 출마 사직",
       "verdict": "pending",
       "candidates": [
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null}
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -294,9 +695,30 @@
       "reason": "신영대 의원 당선무효형 확정",
       "verdict": "joguk",
       "candidates": [
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "조국혁신당 강세 지역", "pct": 38},
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": 32},
-        {"name": "오지성", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정", "background": "전 군산·김제·부안갑 당협위원장", "pct": 18}
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중 (조국혁신당 강세)",
+          "background": "조국혁신당 강세 지역, 신영대 당선무효형으로 재선거",
+          "pct": 38
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중 (전략공천 검토)",
+          "background": "민주당 전략공천 기류",
+          "pct": 32
+        },
+        {
+          "name": "오지성",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "background": "전 군산·김제·부안갑 당협위원장",
+          "pct": 18
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -306,9 +728,30 @@
       "reason": "이원택 의원 전북도지사 출마 사직",
       "verdict": "joguk",
       "candidates": [
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "조국혁신당 강세 지역", "pct": null},
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null}
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "조국혁신당 강세 지역",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -318,11 +761,32 @@
       "reason": "전재수 의원 부산시장 출마 사직",
       "verdict": "pending",
       "candidates": [
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null}
+        {
+          "name": "하정우",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "출마 가닥 (이번 주 사퇴 예정)",
+          "background": "청와대 AI미래기획수석, 민주당 출마 요청 수락 가닥",
+          "pct": 31
+        },
+        {
+          "name": "박민식",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "출마 선언 (국민의힘 공천 신청)",
+          "background": "전 국가보훈부 장관, 국민의힘 공천 신청",
+          "pct": 20
+        },
+        {
+          "name": "한동훈",
+          "party": "musosok",
+          "partyName": "무소속",
+          "status": "무소속 출마 선언",
+          "background": "전 국민의힘 대표, 무소속 출마 공식화",
+          "pct": 26
+        }
       ],
-      "surveyDate": "공천 확정 후 여론조사 예정"
+      "surveyDate": "2026-04-23 프레시안 여론조사"
     },
     {
       "id": "daegu-dalseong",
@@ -331,46 +795,338 @@
       "verdict": "gukmin",
       "note": "추경호 의원 대구시장 후보 확정으로 달성군 보궐선거 예정",
       "candidates": [
-        {"name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null},
-        {"name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null}
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
+      ],
+      "surveyDate": "공천 확정 후 여론조사 예정"
+    },
+    {
+      "id": "gyeonggi-hanam-gap",
+      "region": "경기 하남갑",
+      "reason": "추미애 의원 경기도지사 출마 사직",
+      "verdict": "minjoo",
+      "candidates": [
+        {
+          "name": "이광재",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "전략공천 유력",
+          "background": "전 강원지사·국회 사무총장, 하남갑 전략공천 유력",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
+      ],
+      "surveyDate": "공천 확정 후 여론조사 예정"
+    },
+    {
+      "id": "incheon-yeonsu-gap",
+      "region": "인천 연수갑",
+      "reason": "박찬대 의원 인천시장 출마 사직",
+      "verdict": "minjoo",
+      "candidates": [
+        {
+          "name": "송영길",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "전략공천 확정",
+          "background": "전 민주당 대표, 6선 도전",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
+      ],
+      "surveyDate": "공천 확정 후 여론조사 예정"
+    },
+    {
+      "id": "ulsan-nam-gap",
+      "region": "울산 남갑",
+      "reason": "김상욱 의원 울산시장 출마 사직",
+      "verdict": "pending",
+      "candidates": [
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
+      ],
+      "surveyDate": "공천 확정 후 여론조사 예정"
+    },
+    {
+      "id": "jeju-seogwipo",
+      "region": "제주 서귀포",
+      "reason": "위성곤 의원 제주도지사 출마 사직",
+      "verdict": "minjoo",
+      "candidates": [
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     }
   ],
   "seoul_gu": [
-    {"id": "jongno", "gu": "종로구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "junggu", "gu": "중구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "yongsan", "gu": "용산구", "trend": "close", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "seongdong", "gu": "성동구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "gwangjin", "gu": "광진구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "dongdaemun", "gu": "동대문구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "jungnang", "gu": "중랑구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "seongbuk", "gu": "성북구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "gangbuk", "gu": "강북구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "dobong", "gu": "도봉구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "nowon", "gu": "노원구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "eunpyeong", "gu": "은평구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "seodaemun", "gu": "서대문구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "mapo", "gu": "마포구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "yangcheon", "gu": "양천구", "trend": "close", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "gangseo", "gu": "강서구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "guro", "gu": "구로구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "geumcheon", "gu": "금천구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "yeongdeungpo", "gu": "영등포구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "dongjak", "gu": "동작구", "trend": "close", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "gwanak", "gu": "관악구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "seocho", "gu": "서초구", "trend": "gukmin", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "gangnam", "gu": "강남구", "trend": "gukmin", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "songpa", "gu": "송파구", "trend": "gukmin", "dem": "공천 진행 중", "ppu": "공천 진행 중"},
-    {"id": "gangdong", "gu": "강동구", "trend": "minjoo", "dem": "공천 진행 중", "ppu": "공천 진행 중"}
+    {
+      "id": "jongno",
+      "gu": "종로구",
+      "trend": "minjoo",
+      "dem": "유찬종",
+      "ppu": "정문헌"
+    },
+    {
+      "id": "junggu",
+      "gu": "중구",
+      "trend": "minjoo",
+      "dem": "이동현",
+      "ppu": "미정"
+    },
+    {
+      "id": "yongsan",
+      "gu": "용산구",
+      "trend": "close",
+      "dem": "강태웅",
+      "ppu": "김경대"
+    },
+    {
+      "id": "seongdong",
+      "gu": "성동구",
+      "trend": "minjoo",
+      "dem": "유보화",
+      "ppu": "고재현"
+    },
+    {
+      "id": "gwangjin",
+      "gu": "광진구",
+      "trend": "minjoo",
+      "dem": "문종철",
+      "ppu": "김경호"
+    },
+    {
+      "id": "dongdaemun",
+      "gu": "동대문구",
+      "trend": "minjoo",
+      "dem": "최동민",
+      "ppu": "이필형"
+    },
+    {
+      "id": "jungnang",
+      "gu": "중랑구",
+      "trend": "minjoo",
+      "dem": "류경기",
+      "ppu": "황종석"
+    },
+    {
+      "id": "seongbuk",
+      "gu": "성북구",
+      "trend": "minjoo",
+      "dem": "이승로",
+      "ppu": "민병웅"
+    },
+    {
+      "id": "gangbuk",
+      "gu": "강북구",
+      "trend": "minjoo",
+      "dem": "이승훈",
+      "ppu": "장지호"
+    },
+    {
+      "id": "dobong",
+      "gu": "도봉구",
+      "trend": "minjoo",
+      "dem": "김동욱",
+      "ppu": "오언석"
+    },
+    {
+      "id": "nowon",
+      "gu": "노원구",
+      "trend": "minjoo",
+      "dem": "서준오",
+      "ppu": "미정"
+    },
+    {
+      "id": "eunpyeong",
+      "gu": "은평구",
+      "trend": "minjoo",
+      "dem": "김미경",
+      "ppu": "남기정"
+    },
+    {
+      "id": "seodaemun",
+      "gu": "서대문구",
+      "trend": "minjoo",
+      "dem": "박운기",
+      "ppu": "이성헌"
+    },
+    {
+      "id": "mapo",
+      "gu": "마포구",
+      "trend": "minjoo",
+      "dem": "유동균",
+      "ppu": "박강수"
+    },
+    {
+      "id": "yangcheon",
+      "gu": "양천구",
+      "trend": "close",
+      "dem": "우형찬",
+      "ppu": "이기재"
+    },
+    {
+      "id": "gangseo",
+      "gu": "강서구",
+      "trend": "minjoo",
+      "dem": "진교훈",
+      "ppu": "김진선"
+    },
+    {
+      "id": "guro",
+      "gu": "구로구",
+      "trend": "minjoo",
+      "dem": "장인홍",
+      "ppu": "홍덕희"
+    },
+    {
+      "id": "geumcheon",
+      "gu": "금천구",
+      "trend": "minjoo",
+      "dem": "최기찬",
+      "ppu": "이희권"
+    },
+    {
+      "id": "yeongdeungpo",
+      "gu": "영등포구",
+      "trend": "minjoo",
+      "dem": "경선 중",
+      "ppu": "최웅식"
+    },
+    {
+      "id": "dongjak",
+      "gu": "동작구",
+      "trend": "close",
+      "dem": "류삼영",
+      "ppu": "경선 중"
+    },
+    {
+      "id": "gwanak",
+      "gu": "관악구",
+      "trend": "minjoo",
+      "dem": "박준희",
+      "ppu": "이남형"
+    },
+    {
+      "id": "seocho",
+      "gu": "서초구",
+      "trend": "gukmin",
+      "dem": "황인식",
+      "ppu": "전성수"
+    },
+    {
+      "id": "gangnam",
+      "gu": "강남구",
+      "trend": "gukmin",
+      "dem": "김형곤",
+      "ppu": "김현기"
+    },
+    {
+      "id": "songpa",
+      "gu": "송파구",
+      "trend": "gukmin",
+      "dem": "경선 중",
+      "ppu": "서강석"
+    },
+    {
+      "id": "gangdong",
+      "gu": "강동구",
+      "trend": "minjoo",
+      "dem": "경선 중",
+      "ppu": "이수희"
+    }
   ],
   "party_colors": {
-    "minjoo":   {"bg": "#004ea2", "text": "#ffffff", "label": "더불어민주당"},
-    "gukmin":   {"bg": "#c9151e", "text": "#ffffff", "label": "국민의힘"},
-    "joguk":    {"bg": "#003087", "text": "#ffffff", "label": "조국혁신당"},
-    "gaehyeok": {"bg": "#e85d00", "text": "#ffffff", "label": "개혁신당"},
-    "jeongeui": {"bg": "#ffcc00", "text": "#333333", "label": "정의당"},
-    "jinbo":    {"bg": "#e60012", "text": "#ffffff", "label": "진보당"},
-    "musosok":  {"bg": "#64748b", "text": "#ffffff", "label": "무소속"}
+    "minjoo": {
+      "bg": "#004ea2",
+      "text": "#ffffff",
+      "label": "더불어민주당"
+    },
+    "gukmin": {
+      "bg": "#c9151e",
+      "text": "#ffffff",
+      "label": "국민의힘"
+    },
+    "joguk": {
+      "bg": "#003087",
+      "text": "#ffffff",
+      "label": "조국혁신당"
+    },
+    "gaehyeok": {
+      "bg": "#e85d00",
+      "text": "#ffffff",
+      "label": "개혁신당"
+    },
+    "jeongeui": {
+      "bg": "#ffcc00",
+      "text": "#333333",
+      "label": "정의당"
+    },
+    "jinbo": {
+      "bg": "#e60012",
+      "text": "#ffffff",
+      "label": "진보당"
+    },
+    "musosok": {
+      "bg": "#64748b",
+      "text": "#ffffff",
+      "label": "무소속"
+    }
   }
 }
