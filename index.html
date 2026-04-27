@@ -398,9 +398,7 @@
         <!-- Row 4 -->
         <div class="region-block minjoo-win" style="grid-column:1;grid-row:4;cursor:pointer;" onclick="location.href='pages/gwangyeok/jeonbuk.html'">          <div class="r-name">전북도지사</div><div class="r-cand">이원택(민주)</div>
         </div>
-        <div class="region-block minjoo-win" style="grid-column:2;grid-row:4;cursor:pointer;" onclick="location.href='pages/gwangyeok/jeonnam.html'">          <div class="r-name">전남광주통합특별시장</div><div class="r-cand">민형배(민주)</div>
-        </div>
-        <div <!-- 광주시장 카드 삭제: 전남광주통합특별시장으로 통합됨 -->
+        <div class="region-block minjoo-win" style="grid-column:2;grid-row:4;cursor:pointer;" onclick="location.href='pages/gwangyeok/jeonnam-gwangju.html'">          <div class="r-name">전남광주통합특별시장</div><div class="r-cand">민형배(민주)</div>
         </div>
         <!-- Row 5 -->
         <div class="region-block minjoo-win" style="grid-column:5;grid-row:5;cursor:pointer;" onclick="location.href='pages/gwangyeok/jeju.html'">          <div class="r-name">제주도지사</div><div class="r-cand">위성곤(민주)</div>
@@ -522,6 +520,33 @@
         </div>
       </div>
 
+      <!-- 전남광주통합특별시 -->
+      <div class="match-card">
+        <div class="region-tag"><span>🌸 전남광주통합특별시</span><span class="verdict-badge badge-minjoo">민주 압승</span></div>
+        <div class="region-name">전남광주통합특별시장</div>
+        <div class="candidate-row">
+          <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('민형배','minjoo','57세','국회의원(광주 광산을)','전남광주통합특별시','전남대 정치외교학과','21·22대 국회의원, 광산구청장','AI 클러스터 완성, 광주형 일자리 확대')">민</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('민형배','minjoo','57세','국회의원(광주 광산을)','전남광주통합특별시','전남대 정치외교학과','21·22대 국회의원, 광산구청장','AI 클러스터 완성, 광주형 일자리 확대')">민형배</div>
+            <div class="candidate-party">더불어민주당 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#6ea8fe">70.0%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:70.0%"></div></div></div>
+        <div class="candidate-row" style="margin-top:8px;">
+          <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('이정현','gukmin','60세','전 국회의원','전남광주통합특별시','조선대 정치외교학과','19·20대 국회의원, 국민의힘 대표','지역 경제 활성화, 기업 유치')">이</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('이정현','gukmin','60세','전 국회의원','전남광주통합특별시','조선대 정치외교학과','19·20대 국회의원, 국민의힘 대표','지역 경제 활성화, 기업 유치')">이정현</div>
+            <div class="candidate-party">국민의힘 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#ff8080">5.0%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:5.0%"></div></div></div>
+        <div class="match-footer">
+          <span class="survey-date">📅 2026.04.25 · 연합뉴스</span>
+          <a href="pages/gwangyeok/jeonnam-gwangju.html" style="font-size:12px;color:#388bfd;font-weight:700;">상세 보기 →</a>
+        </div>
+      </div>
     </div><!-- /bigmatch-grid -->
     <div style="text-align:center;margin-top:16px;">
       <a href="pages/gwangyeok/" style="background:#1f6feb;color:#fff;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:700;display:inline-block;">전체 16개 광역단체장 보기 →</a>
@@ -904,6 +929,15 @@
           <td class="td-source">04.25 연합뉴스</td>
         </tr>
         <tr>
+          <td class="td-region">전남광주</td>
+          <td class="td-cand1">민형배(민주) 70.0%</td>
+          <td class="td-cand2">이정현(국힘) 5.0%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#6ea8fe">+65.0%p</td>
+          <td><span class="verdict-badge badge-minjoo">민주 압승</span></td>
+          <td class="td-source">04.25 연합뉴스</td>
+        </tr>
+        <tr>
           <td class="td-region">경북</td>
           <td class="td-cand2">이철우(국힘) 49.2%</td>
           <td class="td-cand1">오중기(민주) 26.5%</td>
@@ -948,7 +982,7 @@
       <select class="addr-select" id="sido-select" onchange="updateSigungu()">
         <option value="">시·도 선택</option>
         <option>서울특별시</option><option>부산광역시</option><option>대구광역시</option>
-        <option>인천광역시</option><option>광주광역시</option><option>대전광역시</option>
+        <option>인천광역시</option><option>전남광주통합특별시</option><option>대전광역시</option>
         <option>울산광역시</option><option>세종특별자치시</option><option>경기도</option>
         <option>강원특별자치도</option><option>충청북도</option><option>충청남도</option>
         <option>전북특별자치도</option><option>전라남도</option><option>경상북도</option>

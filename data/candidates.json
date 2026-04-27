@@ -327,9 +327,9 @@
       ]
     },
     {
-      "id": "gwangju",
-      "region": "광주광역시",
-      "title": "광주시장",
+      "id": "jeonnam-gwangju",
+      "region": "전남광주통합특별시",
+      "title": "전남광주통합특별시장",
       "emoji": "🌸",
       "verdict": "minjoo_strong",
       "candidates": [
@@ -342,7 +342,7 @@
           "current": "국회의원(광주 광산을)",
           "education": "전남대 정치외교학과",
           "career": "21·22대 국회의원, 광산구청장",
-          "pledge": "광주 AI 클러스터 완성, 광주형 일자리 확대",
+          "pledge": "AI 클러스터 완성, 광주형 일자리 확대, 해상풍력 선도",
           "pct": 70.0
         },
         {
@@ -354,8 +354,20 @@
           "current": "전 국회의원",
           "education": "조선대 정치외교학과",
           "career": "19·20대 국회의원, 국민의힘 대표",
-          "pledge": "광주 경제 활성화, 기업 유치",
+          "pledge": "지역 경제 활성화, 기업 유치",
           "pct": 5.0
+        },
+        {
+          "name": "강은미",
+          "party": "jeongui",
+          "partyName": "정의당",
+          "status": "공천확정",
+          "age": "—",
+          "current": "전 국회의원",
+          "education": "—",
+          "career": "21대 국회의원",
+          "pledge": "노동·복지 중심 통합특별시 건설",
+          "pct": null
         }
       ],
       "surveyDate": "2026.04.25",
@@ -367,7 +379,8 @@
           "org": "연합뉴스",
           "pcts": [
             70.0,
-            5.0
+            5.0,
+            null
           ],
           "gap": "+65.0%p",
           "sample": "1,000명"
@@ -779,54 +792,6 @@
           "education": "전북대 법학과",
           "career": "21·22대 국회의원",
           "pledge": "전북 새만금 개발 가속화, 농업 혁신",
-          "pct": 70.0
-        },
-        {
-          "name": "미확정",
-          "party": "gukmin",
-          "partyName": "국민의힘",
-          "status": "공천 진행 중",
-          "age": "—",
-          "current": "—",
-          "education": "—",
-          "career": "—",
-          "pledge": "—",
-          "pct": 5.0
-        }
-      ],
-      "surveyDate": "2026.04.25",
-      "surveyOrg": "연합뉴스",
-      "sampleSize": "1,000명",
-      "history": [
-        {
-          "date": "2026.04.25",
-          "org": "연합뉴스",
-          "pcts": [
-            70.0,
-            5.0
-          ],
-          "gap": "+65.0%p",
-          "sample": "1,000명"
-        }
-      ]
-    },
-    {
-      "id": "jeonnam",
-      "region": "전라남도",
-      "title": "전남도지사",
-      "emoji": "🌾",
-      "verdict": "minjoo_strong",
-      "candidates": [
-        {
-          "name": "민형배",
-          "party": "minjoo",
-          "partyName": "더불어민주당",
-          "status": "공천확정",
-          "age": "57세 (1969년생)",
-          "current": "국회의원(광주 광산을)",
-          "education": "전남대 정치외교학과",
-          "career": "21·22대 국회의원, 광산구청장",
-          "pledge": "전남 에너지 산업 육성, 해상풍력 선도",
           "pct": 70.0
         },
         {
