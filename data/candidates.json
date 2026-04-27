@@ -6,21 +6,81 @@
     "lastUpdated": "2026-04-27"
   },
   "party_colors": {
-    "minjoo":   { "bg": "#004ea2", "text": "#6ea8fe", "label": "더불어민주당", "barClass": "bar-minjoo", "avatarClass": "avatar-minjoo" },
-    "gukmin":   { "bg": "#c9151e", "text": "#ff8080", "label": "국민의힘",     "barClass": "bar-gukmin", "avatarClass": "avatar-gukmin" },
-    "joguk":    { "bg": "#003087", "text": "#7eb3ff", "label": "조국혁신당",   "barClass": "bar-joguk",  "avatarClass": "avatar-joguk" },
-    "gaehyeok": { "bg": "#e85d00", "text": "#fb923c", "label": "개혁신당",     "barClass": "bar-gaehyeok", "avatarClass": "avatar-gaehyeok" },
-    "jeongeui": { "bg": "#6d28d9", "text": "#c4b5fd", "label": "정의당",       "barClass": "bar-jeongeui", "avatarClass": "avatar-jeongeui" },
-    "jinbo":    { "bg": "#e11d48", "text": "#fda4af", "label": "진보당",       "barClass": "bar-jinbo",    "avatarClass": "avatar-jinbo" },
-    "musosok":  { "bg": "#64748b", "text": "#cbd5e1", "label": "무소속",       "barClass": "bar-musosok",  "avatarClass": "avatar-musosok" }
+    "minjoo": {
+      "bg": "#004ea2",
+      "text": "#6ea8fe",
+      "label": "더불어민주당",
+      "barClass": "bar-minjoo",
+      "avatarClass": "avatar-minjoo"
+    },
+    "gukmin": {
+      "bg": "#c9151e",
+      "text": "#ff8080",
+      "label": "국민의힘",
+      "barClass": "bar-gukmin",
+      "avatarClass": "avatar-gukmin"
+    },
+    "joguk": {
+      "bg": "#003087",
+      "text": "#7eb3ff",
+      "label": "조국혁신당",
+      "barClass": "bar-joguk",
+      "avatarClass": "avatar-joguk"
+    },
+    "gaehyeok": {
+      "bg": "#e85d00",
+      "text": "#fb923c",
+      "label": "개혁신당",
+      "barClass": "bar-gaehyeok",
+      "avatarClass": "avatar-gaehyeok"
+    },
+    "jeongeui": {
+      "bg": "#6d28d9",
+      "text": "#c4b5fd",
+      "label": "정의당",
+      "barClass": "bar-jeongeui",
+      "avatarClass": "avatar-jeongeui"
+    },
+    "jinbo": {
+      "bg": "#e11d48",
+      "text": "#fda4af",
+      "label": "진보당",
+      "barClass": "bar-jinbo",
+      "avatarClass": "avatar-jinbo"
+    },
+    "musosok": {
+      "bg": "#64748b",
+      "text": "#cbd5e1",
+      "label": "무소속",
+      "barClass": "bar-musosok",
+      "avatarClass": "avatar-musosok"
+    }
   },
   "verdict_labels": {
-    "minjoo":        { "label": "민주 우세",        "badgeClass": "badge-minjoo" },
-    "gukmin":        { "label": "국힘 우세",        "badgeClass": "badge-gukmin" },
-    "close":         { "label": "오차범위 내 접전", "badgeClass": "badge-close" },
-    "minjoo_strong": { "label": "민주 압승",        "badgeClass": "badge-minjoo" },
-    "joguk":         { "label": "조국 우세",        "badgeClass": "badge-joguk" },
-    "pending":       { "label": "조사 예정",        "badgeClass": "badge-close" }
+    "minjoo": {
+      "label": "민주 우세",
+      "badgeClass": "badge-minjoo"
+    },
+    "gukmin": {
+      "label": "국힘 우세",
+      "badgeClass": "badge-gukmin"
+    },
+    "close": {
+      "label": "오차범위 내 접전",
+      "badgeClass": "badge-close"
+    },
+    "minjoo_strong": {
+      "label": "민주 압승",
+      "badgeClass": "badge-minjoo"
+    },
+    "joguk": {
+      "label": "조국 우세",
+      "badgeClass": "badge-joguk"
+    },
+    "pending": {
+      "label": "조사 예정",
+      "badgeClass": "badge-close"
+    }
   },
   "gwangyeok": [
     {
@@ -31,15 +91,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "정원오", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "성동구청장", "education": "서울대 법학과",
-          "career": "21·22대 국회의원(인천 계양을)", "pledge": "부동산 규제 강화, 청년 주거 지원, 서울 균형발전",
+          "name": "정원오",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "성동구청장",
+          "education": "서울대 법학과",
+          "career": "21·22대 국회의원(인천 계양을)",
+          "pledge": "부동산 규제 강화, 청년 주거 지원, 서울 균형발전",
           "pct": 45.6
         },
         {
-          "name": "오세훈", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "63세 (1961년생)", "current": "서울특별시장(현)", "education": "서울대 법학과",
-          "career": "16·17·18대 국회의원, 서울시장(2006~2011, 2021~현재)", "pledge": "재개발·재건축 규제 완화, 한강 르네상스 2.0, GTX 확대",
+          "name": "오세훈",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "63세 (1961년생)",
+          "current": "서울특별시장(현)",
+          "education": "서울대 법학과",
+          "career": "16·17·18대 국회의원, 서울시장(2006~2011, 2021~현재)",
+          "pledge": "재개발·재건축 규제 완화, 한강 르네상스 2.0, GTX 확대",
           "pct": 35.4
         }
       ],
@@ -47,9 +119,36 @@
       "surveyOrg": "KSOI(CBS 의뢰)",
       "sampleSize": "1,001명",
       "history": [
-        { "date": "2026.04.22~23", "org": "KSOI(CBS 의뢰)",    "pcts": [45.6, 35.4], "gap": "+10.2%p", "sample": "1,001명" },
-        { "date": "2026.04.10~11", "org": "한국갤럽(세계일보)", "pcts": [44.0, 30.0], "gap": "+14.0%p", "sample": "1,000명" },
-        { "date": "2026.04.01",    "org": "스카이데일리",        "pcts": [42.6, 28.0], "gap": "+14.6%p", "sample": "800명" }
+        {
+          "date": "2026.04.22~23",
+          "org": "KSOI(CBS 의뢰)",
+          "pcts": [
+            45.6,
+            35.4
+          ],
+          "gap": "+10.2%p",
+          "sample": "1,001명"
+        },
+        {
+          "date": "2026.04.10~11",
+          "org": "한국갤럽(세계일보)",
+          "pcts": [
+            44.0,
+            30.0
+          ],
+          "gap": "+14.0%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.01",
+          "org": "스카이데일리",
+          "pcts": [
+            42.6,
+            28.0
+          ],
+          "gap": "+14.6%p",
+          "sample": "800명"
+        }
       ]
     },
     {
@@ -60,15 +159,27 @@
       "verdict": "close",
       "candidates": [
         {
-          "name": "전재수", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "58세 (1968년생)", "current": "국회의원(부산 북구갑)", "education": "부산대 경제학과",
-          "career": "20·21·22대 국회의원", "pledge": "부산 경제 혁신, 북항 재개발, 청년 일자리",
+          "name": "전재수",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "58세 (1968년생)",
+          "current": "국회의원(부산 북구갑)",
+          "education": "부산대 경제학과",
+          "career": "20·21·22대 국회의원",
+          "pledge": "부산 경제 혁신, 북항 재개발, 청년 일자리",
           "pct": 40.0
         },
         {
-          "name": "박형준", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "60세 (1966년생)", "current": "부산광역시장(현)", "education": "서울대 정치학과",
-          "career": "18·19대 국회의원, 부산시장(2021~현재)", "pledge": "가덕도 신공항 조기 완공, 2030 엑스포 유산 활용",
+          "name": "박형준",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "60세 (1966년생)",
+          "current": "부산광역시장(현)",
+          "education": "서울대 정치학과",
+          "career": "18·19대 국회의원, 부산시장(2021~현재)",
+          "pledge": "가덕도 신공항 조기 완공, 2030 엑스포 유산 활용",
           "pct": 34.0
         }
       ],
@@ -76,8 +187,26 @@
       "surveyOrg": "한국리서치",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.17~19", "org": "한국리서치", "pcts": [40.0, 34.0], "gap": "+6.0%p (오차범위 내)", "sample": "1,000명" },
-        { "date": "2026.04.01",    "org": "스카이데일리", "pcts": [43.7, 30.0], "gap": "+13.7%p", "sample": "800명" }
+        {
+          "date": "2026.04.17~19",
+          "org": "한국리서치",
+          "pcts": [
+            40.0,
+            34.0
+          ],
+          "gap": "+6.0%p (오차범위 내)",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.01",
+          "org": "스카이데일리",
+          "pcts": [
+            43.7,
+            30.0
+          ],
+          "gap": "+13.7%p",
+          "sample": "800명"
+        }
       ]
     },
     {
@@ -88,15 +217,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "김부겸", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "65세 (1961년생)", "current": "전 국무총리", "education": "서울대 정치학과",
-          "career": "15·16·19·20대 국회의원, 국무총리(2021~2022)", "pledge": "대구 경제 부흥, 달빛내륙철도 조기 완공",
+          "name": "김부겸",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "65세 (1961년생)",
+          "current": "전 국무총리",
+          "education": "서울대 정치학과",
+          "career": "15·16·19·20대 국회의원, 국무총리(2021~2022)",
+          "pledge": "대구 경제 부흥, 달빛내륙철도 조기 완공",
           "pct": 36.0
         },
         {
-          "name": "추경호", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "60세 (1966년생)", "current": "국민의힘 원내대표", "education": "서울대 경제학과",
-          "career": "20·21·22대 국회의원, 경제부총리(2022~2023)", "pledge": "대구 산업 혁신, 반도체 클러스터 유치",
+          "name": "추경호",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "60세 (1966년생)",
+          "current": "국민의힘 원내대표",
+          "education": "서울대 경제학과",
+          "career": "20·21·22대 국회의원, 경제부총리(2022~2023)",
+          "pledge": "대구 산업 혁신, 반도체 클러스터 유치",
           "pct": 15.0
         }
       ],
@@ -104,8 +245,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [36.0, 15.0], "gap": "+21.0%p", "sample": "1,000명" },
-        { "date": "2026.04.20", "org": "엠브레인",  "pcts": [33.0, 13.0], "gap": "+20.0%p", "sample": "800명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            36.0,
+            15.0
+          ],
+          "gap": "+21.0%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.20",
+          "org": "엠브레인",
+          "pcts": [
+            33.0,
+            13.0
+          ],
+          "gap": "+20.0%p",
+          "sample": "800명"
+        }
       ]
     },
     {
@@ -117,15 +276,27 @@
       "note": "박찬대 의원 출마로 인천 계양을 보궐선거 동시 실시",
       "candidates": [
         {
-          "name": "박찬대", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "국회의원(인천 연수을)", "education": "연세대 법학과",
-          "career": "20·21·22대 국회의원, 민주당 원내대표", "pledge": "인천 경제자유구역 확대, 청라·송도 발전",
+          "name": "박찬대",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "국회의원(인천 연수을)",
+          "education": "연세대 법학과",
+          "career": "20·21·22대 국회의원, 민주당 원내대표",
+          "pledge": "인천 경제자유구역 확대, 청라·송도 발전",
           "pct": 49.0
         },
         {
-          "name": "유정복", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "65세 (1961년생)", "current": "인천광역시장(현)", "education": "고려대 행정학과",
-          "career": "17·18·19대 국회의원, 인천시장(2014~2018, 2022~현재)", "pledge": "인천 글로벌 허브 도시 완성",
+          "name": "유정복",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "65세 (1961년생)",
+          "current": "인천광역시장(현)",
+          "education": "고려대 행정학과",
+          "career": "17·18·19대 국회의원, 인천시장(2014~2018, 2022~현재)",
+          "pledge": "인천 글로벌 허브 도시 완성",
           "pct": 33.0
         }
       ],
@@ -133,8 +304,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [49.0, 33.0], "gap": "+16.0%p", "sample": "1,000명" },
-        { "date": "2026.04.07", "org": "한국갤럽", "pcts": [49.0, 33.0], "gap": "+16.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            49.0,
+            33.0
+          ],
+          "gap": "+16.0%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.07",
+          "org": "한국갤럽",
+          "pcts": [
+            49.0,
+            33.0
+          ],
+          "gap": "+16.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -145,15 +334,27 @@
       "verdict": "minjoo_strong",
       "candidates": [
         {
-          "name": "민형배", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "국회의원(광주 광산을)", "education": "전남대 정치외교학과",
-          "career": "21·22대 국회의원, 광산구청장", "pledge": "광주 AI 클러스터 완성, 광주형 일자리 확대",
+          "name": "민형배",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "국회의원(광주 광산을)",
+          "education": "전남대 정치외교학과",
+          "career": "21·22대 국회의원, 광산구청장",
+          "pledge": "광주 AI 클러스터 완성, 광주형 일자리 확대",
           "pct": 70.0
         },
         {
-          "name": "이정현", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "60세 (1966년생)", "current": "전 국회의원", "education": "조선대 정치외교학과",
-          "career": "19·20대 국회의원, 국민의힘 대표", "pledge": "광주 경제 활성화, 기업 유치",
+          "name": "이정현",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "60세 (1966년생)",
+          "current": "전 국회의원",
+          "education": "조선대 정치외교학과",
+          "career": "19·20대 국회의원, 국민의힘 대표",
+          "pledge": "광주 경제 활성화, 기업 유치",
           "pct": 5.0
         }
       ],
@@ -161,7 +362,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [70.0, 5.0], "gap": "+65.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            70.0,
+            5.0
+          ],
+          "gap": "+65.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -172,15 +382,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "허태정", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "전 대전시장", "education": "충남대 경제학과",
-          "career": "대전시장(2018~2022)", "pledge": "대전 과학기술 허브 완성, 대덕특구 혁신",
+          "name": "허태정",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "전 대전시장",
+          "education": "충남대 경제학과",
+          "career": "대전시장(2018~2022)",
+          "pledge": "대전 과학기술 허브 완성, 대덕특구 혁신",
           "pct": 46.3
         },
         {
-          "name": "이장우", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "61세 (1965년생)", "current": "대전광역시장(현)", "education": "충남대 행정학과",
-          "career": "19·20·21대 국회의원, 대전시장(2022~현재)", "pledge": "대전 스마트시티 구축, 교통 인프라 확충",
+          "name": "이장우",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "61세 (1965년생)",
+          "current": "대전광역시장(현)",
+          "education": "충남대 행정학과",
+          "career": "19·20·21대 국회의원, 대전시장(2022~현재)",
+          "pledge": "대전 스마트시티 구축, 교통 인프라 확충",
           "pct": 22.0
         }
       ],
@@ -188,8 +410,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [46.3, 22.0], "gap": "+24.3%p", "sample": "1,000명" },
-        { "date": "2026.04.18", "org": "엠브레인",  "pcts": [46.3, 22.0], "gap": "+24.3%p", "sample": "800명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            46.3,
+            22.0
+          ],
+          "gap": "+24.3%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.18",
+          "org": "엠브레인",
+          "pcts": [
+            46.3,
+            22.0
+          ],
+          "gap": "+24.3%p",
+          "sample": "800명"
+        }
       ]
     },
     {
@@ -200,15 +440,27 @@
       "verdict": "close",
       "candidates": [
         {
-          "name": "김상욱", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "55세 (1971년생)", "current": "국회의원(울산 남구갑)", "education": "울산대 경영학과",
-          "career": "22대 국회의원", "pledge": "울산 산업 전환, 수소경제 선도",
+          "name": "김상욱",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "55세 (1971년생)",
+          "current": "국회의원(울산 남구갑)",
+          "education": "울산대 경영학과",
+          "career": "22대 국회의원",
+          "pledge": "울산 산업 전환, 수소경제 선도",
           "pct": 33.5
         },
         {
-          "name": "김두겸", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "62세 (1964년생)", "current": "울산광역시장(현)", "education": "울산대 행정학과",
-          "career": "울산시장(2022~현재)", "pledge": "울산 산업 경쟁력 강화, 현대차·조선 지원",
+          "name": "김두겸",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "62세 (1964년생)",
+          "current": "울산광역시장(현)",
+          "education": "울산대 행정학과",
+          "career": "울산시장(2022~현재)",
+          "pledge": "울산 산업 경쟁력 강화, 현대차·조선 지원",
           "pct": 31.0
         }
       ],
@@ -216,8 +468,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [33.5, 31.0], "gap": "+2.5%p (오차범위 내)", "sample": "1,000명" },
-        { "date": "2026.04.17", "org": "한국갤럽", "pcts": [33.5, 31.0], "gap": "+2.5%p (오차범위 내)", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            33.5,
+            31.0
+          ],
+          "gap": "+2.5%p (오차범위 내)",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.17",
+          "org": "한국갤럽",
+          "pcts": [
+            33.5,
+            31.0
+          ],
+          "gap": "+2.5%p (오차범위 내)",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -228,15 +498,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "조상호", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "52세 (1974년생)", "current": "국회의원(세종갑)", "education": "고려대 법학과",
-          "career": "22대 국회의원", "pledge": "행정수도 완성, 세종 자족기능 강화",
+          "name": "조상호",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "52세 (1974년생)",
+          "current": "국회의원(세종갑)",
+          "education": "고려대 법학과",
+          "career": "22대 국회의원",
+          "pledge": "행정수도 완성, 세종 자족기능 강화",
           "pct": 44.9
         },
         {
-          "name": "최민호", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "65세 (1961년생)", "current": "세종특별자치시장(현)", "education": "서울대 행정학과",
-          "career": "세종시장(2022~현재)", "pledge": "세종 스마트시티 완성, 교통 인프라 확충",
+          "name": "최민호",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "65세 (1961년생)",
+          "current": "세종특별자치시장(현)",
+          "education": "서울대 행정학과",
+          "career": "세종시장(2022~현재)",
+          "pledge": "세종 스마트시티 완성, 교통 인프라 확충",
           "pct": 20.0
         }
       ],
@@ -244,8 +526,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [44.9, 20.0], "gap": "+24.9%p", "sample": "1,000명" },
-        { "date": "2026.04.18", "org": "리얼미터",  "pcts": [44.9, 20.0], "gap": "+24.9%p", "sample": "800명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            44.9,
+            20.0
+          ],
+          "gap": "+24.9%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.18",
+          "org": "리얼미터",
+          "pcts": [
+            44.9,
+            20.0
+          ],
+          "gap": "+24.9%p",
+          "sample": "800명"
+        }
       ]
     },
     {
@@ -256,14 +556,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "추미애", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "62세 (1964년생)", "current": "국회의원(하남갑)", "education": "이화여대 법학과",
-          "career": "15·16·17·21·22대 국회의원, 법무부장관(2020~2021)", "pledge": "경기 균형발전, 반도체 클러스터 지원, 청년 주거",
+          "name": "추미애",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "62세 (1964년생)",
+          "current": "국회의원(하남갑)",
+          "education": "이화여대 법학과",
+          "career": "15·16·17·21·22대 국회의원, 법무부장관(2020~2021)",
+          "pledge": "경기 균형발전, 반도체 클러스터 지원, 청년 주거",
           "pct": 55.0
         },
         {
-          "name": "미확정", "party": "gukmin", "partyName": "국민의힘", "status": "경선 진행 중",
-          "age": "—", "current": "—", "education": "—", "career": "4인 원샷 경선 (양향자·이성배·조광한·함진규, 5.2 발표)", "pledge": "—",
+          "name": "미확정",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "경선 진행 중",
+          "age": "—",
+          "current": "—",
+          "education": "—",
+          "career": "4인 원샷 경선 (양향자·이성배·조광한·함진규, 5.2 발표)",
+          "pledge": "—",
           "pct": 20.0
         }
       ],
@@ -271,8 +584,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [55.0, 20.0], "gap": "+35.0%p", "sample": "1,000명" },
-        { "date": "2026.04.23", "org": "한국갤럽", "pcts": [55.0, 20.0], "gap": "+35.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            55.0,
+            20.0
+          ],
+          "gap": "+35.0%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.23",
+          "org": "한국갤럽",
+          "pcts": [
+            55.0,
+            20.0
+          ],
+          "gap": "+35.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -283,15 +614,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "우상호", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "61세 (1965년생)", "current": "국회의원(서울 서대문갑)", "education": "연세대 경제학과",
-          "career": "17·18·19·20·21·22대 국회의원, 민주당 원내대표", "pledge": "강원 관광 혁신, 동계스포츠 인프라 활용",
+          "name": "우상호",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "61세 (1965년생)",
+          "current": "국회의원(서울 서대문갑)",
+          "education": "연세대 경제학과",
+          "career": "17·18·19·20·21·22대 국회의원, 민주당 원내대표",
+          "pledge": "강원 관광 혁신, 동계스포츠 인프라 활용",
           "pct": 48.0
         },
         {
-          "name": "김진태", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "59세 (1967년생)", "current": "강원특별자치도지사(현)", "education": "서울대 법학과",
-          "career": "19·20대 국회의원, 강원도지사(2022~현재)", "pledge": "강원 경제 활성화, 기업 유치",
+          "name": "김진태",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "59세 (1967년생)",
+          "current": "강원특별자치도지사(현)",
+          "education": "서울대 법학과",
+          "career": "19·20대 국회의원, 강원도지사(2022~현재)",
+          "pledge": "강원 경제 활성화, 기업 유치",
           "pct": 37.0
         }
       ],
@@ -299,7 +642,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [48.0, 37.0], "gap": "+11.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            48.0,
+            37.0
+          ],
+          "gap": "+11.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -310,14 +662,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "신용한", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "54세 (1972년생)", "current": "전 청와대 청년비서관", "education": "충북대 행정학과",
-          "career": "청와대 청년비서관, 충북연구원장", "pledge": "충북 반도체 산업 육성, 청주 메가시티 추진",
+          "name": "신용한",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "54세 (1972년생)",
+          "current": "전 청와대 청년비서관",
+          "education": "충북대 행정학과",
+          "career": "청와대 청년비서관, 충북연구원장",
+          "pledge": "충북 반도체 산업 육성, 청주 메가시티 추진",
           "pct": 55.0
         },
         {
-          "name": "미확정", "party": "gukmin", "partyName": "국민의힘", "status": "경선 진행 중",
-          "age": "—", "current": "—", "education": "—", "career": "김영환 현 지사 vs 윤갑근 전 검사장 본경선", "pledge": "—",
+          "name": "미확정",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "경선 진행 중",
+          "age": "—",
+          "current": "—",
+          "education": "—",
+          "career": "김영환 현 지사 vs 윤갑근 전 검사장 본경선",
+          "pledge": "—",
           "pct": 18.0
         }
       ],
@@ -325,7 +690,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [55.0, 18.0], "gap": "+37.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            55.0,
+            18.0
+          ],
+          "gap": "+37.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -337,15 +711,27 @@
       "note": "박수현 의원 출마로 충남 공주·부여·청양 보궐선거 동시 실시",
       "candidates": [
         {
-          "name": "박수현", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "58세 (1968년생)", "current": "국회의원(충남 공주·부여·청양)", "education": "충남대 행정학과",
-          "career": "20·21·22대 국회의원, 청와대 대변인", "pledge": "충남 산업 혁신, 내포신도시 발전",
+          "name": "박수현",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "58세 (1968년생)",
+          "current": "국회의원(충남 공주·부여·청양)",
+          "education": "충남대 행정학과",
+          "career": "20·21·22대 국회의원, 청와대 대변인",
+          "pledge": "충남 산업 혁신, 내포신도시 발전",
           "pct": 42.2
         },
         {
-          "name": "김태흠", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "충청남도지사(현)", "education": "충남대 법학과",
-          "career": "20·21대 국회의원, 충남도지사(2022~현재)", "pledge": "충남 기업 유치, 서해안 경제벨트 완성",
+          "name": "김태흠",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "충청남도지사(현)",
+          "education": "충남대 법학과",
+          "career": "20·21대 국회의원, 충남도지사(2022~현재)",
+          "pledge": "충남 기업 유치, 서해안 경제벨트 완성",
           "pct": 22.0
         }
       ],
@@ -353,8 +739,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [42.2, 22.0], "gap": "+20.2%p", "sample": "1,000명" },
-        { "date": "2026.04.17", "org": "한국갤럽", "pcts": [42.2, 22.0], "gap": "+20.2%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            42.2,
+            22.0
+          ],
+          "gap": "+20.2%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.17",
+          "org": "한국갤럽",
+          "pcts": [
+            42.2,
+            22.0
+          ],
+          "gap": "+20.2%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -366,14 +770,27 @@
       "note": "이원택 의원 출마로 전북 군산·김제·부안을 보궐선거 동시 실시",
       "candidates": [
         {
-          "name": "이원택", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "55세 (1971년생)", "current": "국회의원(전북 김제·부안)", "education": "전북대 법학과",
-          "career": "21·22대 국회의원", "pledge": "전북 새만금 개발 가속화, 농업 혁신",
+          "name": "이원택",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "55세 (1971년생)",
+          "current": "국회의원(전북 김제·부안)",
+          "education": "전북대 법학과",
+          "career": "21·22대 국회의원",
+          "pledge": "전북 새만금 개발 가속화, 농업 혁신",
           "pct": 70.0
         },
         {
-          "name": "미확정", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중",
-          "age": "—", "current": "—", "education": "—", "career": "—", "pledge": "—",
+          "name": "미확정",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "age": "—",
+          "current": "—",
+          "education": "—",
+          "career": "—",
+          "pledge": "—",
           "pct": 5.0
         }
       ],
@@ -381,7 +798,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [70.0, 5.0], "gap": "+65.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            70.0,
+            5.0
+          ],
+          "gap": "+65.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -392,14 +818,27 @@
       "verdict": "minjoo_strong",
       "candidates": [
         {
-          "name": "민형배", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "국회의원(광주 광산을)", "education": "전남대 정치외교학과",
-          "career": "21·22대 국회의원, 광산구청장", "pledge": "전남 에너지 산업 육성, 해상풍력 선도",
+          "name": "민형배",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "국회의원(광주 광산을)",
+          "education": "전남대 정치외교학과",
+          "career": "21·22대 국회의원, 광산구청장",
+          "pledge": "전남 에너지 산업 육성, 해상풍력 선도",
           "pct": 70.0
         },
         {
-          "name": "미확정", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중",
-          "age": "—", "current": "—", "education": "—", "career": "—", "pledge": "—",
+          "name": "미확정",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "age": "—",
+          "current": "—",
+          "education": "—",
+          "career": "—",
+          "pledge": "—",
           "pct": 5.0
         }
       ],
@@ -407,7 +846,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [70.0, 5.0], "gap": "+65.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            70.0,
+            5.0
+          ],
+          "gap": "+65.0%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -418,15 +866,27 @@
       "verdict": "gukmin",
       "candidates": [
         {
-          "name": "오중기", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "58세 (1968년생)", "current": "전 경북도의원", "education": "경북대 행정학과",
-          "career": "경북도의원", "pledge": "경북 산업 다각화, 포항 철강 혁신",
+          "name": "오중기",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "58세 (1968년생)",
+          "current": "전 경북도의원",
+          "education": "경북대 행정학과",
+          "career": "경북도의원",
+          "pledge": "경북 산업 다각화, 포항 철강 혁신",
           "pct": 26.5
         },
         {
-          "name": "이철우", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "65세 (1961년생)", "current": "경상북도지사(현)", "education": "경북대 법학과",
-          "career": "18·19·20대 국회의원, 경북도지사(2018~현재)", "pledge": "경북 첨단산업 유치, 안동 문화관광 활성화",
+          "name": "이철우",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "65세 (1961년생)",
+          "current": "경상북도지사(현)",
+          "education": "경북대 법학과",
+          "career": "18·19·20대 국회의원, 경북도지사(2018~현재)",
+          "pledge": "경북 첨단산업 유치, 안동 문화관광 활성화",
           "pct": 49.2
         }
       ],
@@ -434,7 +894,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [26.5, 49.2], "gap": "-22.7%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            26.5,
+            49.2
+          ],
+          "gap": "-22.7%p",
+          "sample": "1,000명"
+        }
       ]
     },
     {
@@ -445,15 +914,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "김경수", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "57세 (1969년생)", "current": "전 경남도지사", "education": "서울대 경제학과",
-          "career": "20대 국회의원, 경남도지사(2018~2021)", "pledge": "경남 산업 혁신, 방산 클러스터 육성",
+          "name": "김경수",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "57세 (1969년생)",
+          "current": "전 경남도지사",
+          "education": "서울대 경제학과",
+          "career": "20대 국회의원, 경남도지사(2018~2021)",
+          "pledge": "경남 산업 혁신, 방산 클러스터 육성",
           "pct": 46.9
         },
         {
-          "name": "박완수", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "63세 (1963년생)", "current": "경상남도지사(현)", "education": "경남대 행정학과",
-          "career": "20·21대 국회의원, 경남도지사(2022~현재)", "pledge": "경남 기업 유치, 창원 국가산단 혁신",
+          "name": "박완수",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "63세 (1963년생)",
+          "current": "경상남도지사(현)",
+          "education": "경남대 행정학과",
+          "career": "20·21대 국회의원, 경남도지사(2022~현재)",
+          "pledge": "경남 기업 유치, 창원 국가산단 혁신",
           "pct": 35.7
         }
       ],
@@ -461,8 +942,26 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [46.9, 35.7], "gap": "+11.2%p", "sample": "1,000명" },
-        { "date": "2026.04.20", "org": "리얼미터",  "pcts": [46.9, 35.7], "gap": "+11.2%p", "sample": "800명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            46.9,
+            35.7
+          ],
+          "gap": "+11.2%p",
+          "sample": "1,000명"
+        },
+        {
+          "date": "2026.04.20",
+          "org": "리얼미터",
+          "pcts": [
+            46.9,
+            35.7
+          ],
+          "gap": "+11.2%p",
+          "sample": "800명"
+        }
       ]
     },
     {
@@ -473,15 +972,27 @@
       "verdict": "minjoo",
       "candidates": [
         {
-          "name": "위성곤", "party": "minjoo", "partyName": "더불어민주당", "status": "공천확정",
-          "age": "56세 (1970년생)", "current": "국회의원(제주 서귀포)", "education": "제주대 법학과",
-          "career": "20·21·22대 국회의원", "pledge": "제주 관광 혁신, 탄소중립 선도 도시",
+          "name": "위성곤",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천확정",
+          "age": "56세 (1970년생)",
+          "current": "국회의원(제주 서귀포)",
+          "education": "제주대 법학과",
+          "career": "20·21·22대 국회의원",
+          "pledge": "제주 관광 혁신, 탄소중립 선도 도시",
           "pct": 47.0
         },
         {
-          "name": "문성유", "party": "gukmin", "partyName": "국민의힘", "status": "공천확정",
-          "age": "62세 (1964년생)", "current": "전 한국자산관리공사 사장", "education": "서울대 경제학과",
-          "career": "한국자산관리공사 사장(2019~2022)", "pledge": "제주 경제 활성화, 기업 유치",
+          "name": "문성유",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천확정",
+          "age": "62세 (1964년생)",
+          "current": "전 한국자산관리공사 사장",
+          "education": "서울대 경제학과",
+          "career": "한국자산관리공사 사장(2019~2022)",
+          "pledge": "제주 경제 활성화, 기업 유치",
           "pct": 6.0
         }
       ],
@@ -489,7 +1000,16 @@
       "surveyOrg": "연합뉴스",
       "sampleSize": "1,000명",
       "history": [
-        { "date": "2026.04.25", "org": "연합뉴스", "pcts": [47.0, 6.0], "gap": "+41.0%p", "sample": "1,000명" }
+        {
+          "date": "2026.04.25",
+          "org": "연합뉴스",
+          "pcts": [
+            47.0,
+            6.0
+          ],
+          "gap": "+41.0%p",
+          "sample": "1,000명"
+        }
       ]
     }
   ],
@@ -500,9 +1020,30 @@
       "reason": "박찬대 의원 인천시장 출마 사직",
       "verdict": "minjoo",
       "candidates": [
-        { "name": "김남준", "party": "minjoo", "partyName": "더불어민주당", "status": "전략공천 확정", "background": "전 청와대 대변인", "pct": 44 },
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": 28 },
-        { "name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "공천 미확정", "pct": 18 }
+        {
+          "name": "김남준",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "전략공천 확정",
+          "background": "전 청와대 대변인",
+          "pct": 44
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": 28
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": 18
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -512,10 +1053,38 @@
       "reason": "이병진 의원 당선무효형 확정",
       "verdict": "pending",
       "candidates": [
-        { "name": "유의동", "party": "gukmin", "partyName": "국민의힘", "status": "단수공천 확정", "background": "전 의원 3선", "pct": 48 },
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "김용남 등 거론", "pct": 31 },
-        { "name": "조국", "party": "joguk", "partyName": "조국혁신당", "status": "출마 선언", "background": "조국혁신당 대표", "pct": 12 },
-        { "name": "김재연", "party": "jinbo", "partyName": "진보당", "status": "출마 선언", "background": "진보당 상임대표", "pct": null }
+        {
+          "name": "유의동",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "단수공천 확정",
+          "background": "전 의원 3선",
+          "pct": 48
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "김용남 등 거론",
+          "pct": 31
+        },
+        {
+          "name": "조국",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천확정",
+          "background": "조국혁신당 대표",
+          "pct": 12
+        },
+        {
+          "name": "김재연",
+          "party": "jinbo",
+          "partyName": "진보당",
+          "status": "출마 선언",
+          "background": "진보당 상임대표",
+          "pct": null
+        }
       ],
       "surveyDate": "2026.04.22"
     },
@@ -525,9 +1094,30 @@
       "reason": "양문석 의원 유죄 확정",
       "verdict": "pending",
       "candidates": [
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "김남국·김용 경쟁", "pct": null },
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null },
-        { "name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "김남국·김용 경쟁",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -537,8 +1127,22 @@
       "reason": "강훈식 의원 대통령실 입성 사직",
       "verdict": "pending",
       "candidates": [
-        { "name": "전은수", "party": "minjoo", "partyName": "더불어민주당", "status": "출마 가닥", "background": "청와대 대변인", "pct": null },
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "전은수",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "출마 가닥",
+          "background": "청와대 대변인",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -548,8 +1152,22 @@
       "reason": "박수현 의원 충남도지사 출마 사직",
       "verdict": "pending",
       "candidates": [
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null },
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -559,8 +1177,22 @@
       "reason": "신영대 의원 당선무효형 확정",
       "verdict": "joguk",
       "candidates": [
-        { "name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "조국 강세 지역", "pct": null },
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "조국 강세 지역",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -570,8 +1202,22 @@
       "reason": "이원택 의원 전북도지사 출마 사직",
       "verdict": "joguk",
       "candidates": [
-        { "name": "공천 진행 중", "party": "joguk", "partyName": "조국혁신당", "status": "공천 진행 중", "background": "조국 강세 지역", "pct": null },
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "joguk",
+          "partyName": "조국혁신당",
+          "status": "공천 진행 중",
+          "background": "조국 강세 지역",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -581,8 +1227,22 @@
       "reason": "전재수 의원 부산시장 출마 사직",
       "verdict": "pending",
       "candidates": [
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null },
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -592,8 +1252,22 @@
       "reason": "홍준표 의원 당선무효형 확정",
       "verdict": "gukmin",
       "candidates": [
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null },
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
@@ -603,37 +1277,201 @@
       "reason": "문정복 의원 당선무효형 확정",
       "verdict": "pending",
       "candidates": [
-        { "name": "공천 진행 중", "party": "minjoo", "partyName": "더불어민주당", "status": "공천 진행 중", "background": "공천 미확정", "pct": null },
-        { "name": "공천 진행 중", "party": "gukmin", "partyName": "국민의힘", "status": "공천 진행 중", "background": "공천 미확정", "pct": null }
+        {
+          "name": "공천 진행 중",
+          "party": "minjoo",
+          "partyName": "더불어민주당",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        },
+        {
+          "name": "공천 진행 중",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "공천 진행 중",
+          "background": "공천 미확정",
+          "pct": null
+        }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정"
     }
   ],
   "seoul_gu": [
-    { "id": "jongno",      "gu": "종로구",   "trend": "minjoo", "dem": "유찬종", "ppu": "정문헌" },
-    { "id": "junggu",      "gu": "중구",     "trend": "minjoo", "dem": "김길성", "ppu": "이진수" },
-    { "id": "yongsan",     "gu": "용산구",   "trend": "close",  "dem": "강태웅", "ppu": "박희영" },
-    { "id": "seongdong",   "gu": "성동구",   "trend": "minjoo", "dem": "정원오 후임", "ppu": "미확정" },
-    { "id": "gwangjin",    "gu": "광진구",   "trend": "minjoo", "dem": "김경호", "ppu": "미확정" },
-    { "id": "dongdaemun",  "gu": "동대문구", "trend": "minjoo", "dem": "이필형", "ppu": "미확정" },
-    { "id": "jungnang",    "gu": "중랑구",   "trend": "minjoo", "dem": "류경기", "ppu": "미확정" },
-    { "id": "seongbuk",    "gu": "성북구",   "trend": "minjoo", "dem": "이승로", "ppu": "미확정" },
-    { "id": "gangbuk",     "gu": "강북구",   "trend": "minjoo", "dem": "이순희", "ppu": "미확정" },
-    { "id": "dobong",      "gu": "도봉구",   "trend": "minjoo", "dem": "오언석", "ppu": "미확정" },
-    { "id": "nowon",       "gu": "노원구",   "trend": "minjoo", "dem": "오승록", "ppu": "미확정" },
-    { "id": "eunpyeong",   "gu": "은평구",   "trend": "minjoo", "dem": "김미경", "ppu": "미확정" },
-    { "id": "seodaemun",   "gu": "서대문구", "trend": "minjoo", "dem": "이성헌", "ppu": "미확정" },
-    { "id": "mapo",        "gu": "마포구",   "trend": "minjoo", "dem": "박강수", "ppu": "미확정" },
-    { "id": "yangcheon",   "gu": "양천구",   "trend": "close",  "dem": "이기재", "ppu": "미확정" },
-    { "id": "gangseo",     "gu": "강서구",   "trend": "minjoo", "dem": "진교훈", "ppu": "미확정" },
-    { "id": "guro",        "gu": "구로구",   "trend": "minjoo", "dem": "문헌일", "ppu": "미확정" },
-    { "id": "geumcheon",   "gu": "금천구",   "trend": "minjoo", "dem": "유성훈", "ppu": "미확정" },
-    { "id": "yeongdeungpo","gu": "영등포구", "trend": "minjoo", "dem": "최호권", "ppu": "미확정" },
-    { "id": "dongjak",     "gu": "동작구",   "trend": "close",  "dem": "박일하", "ppu": "미확정" },
-    { "id": "gwanak",      "gu": "관악구",   "trend": "minjoo", "dem": "박준희", "ppu": "미확정" },
-    { "id": "seocho",      "gu": "서초구",   "trend": "gukmin", "dem": "미확정", "ppu": "전성수" },
-    { "id": "gangnam",     "gu": "강남구",   "trend": "gukmin", "dem": "미확정", "ppu": "조성명" },
-    { "id": "songpa",      "gu": "송파구",   "trend": "close",  "dem": "서강석", "ppu": "미확정" },
-    { "id": "gangdong",    "gu": "강동구",   "trend": "minjoo", "dem": "이수희", "ppu": "미확정" }
+    {
+      "id": "jongno",
+      "gu": "종로구",
+      "trend": "minjoo",
+      "dem": "유찬종",
+      "ppu": "정문헌"
+    },
+    {
+      "id": "junggu",
+      "gu": "중구",
+      "trend": "minjoo",
+      "dem": "김길성",
+      "ppu": "이진수"
+    },
+    {
+      "id": "yongsan",
+      "gu": "용산구",
+      "trend": "close",
+      "dem": "강태웅",
+      "ppu": "박희영"
+    },
+    {
+      "id": "seongdong",
+      "gu": "성동구",
+      "trend": "minjoo",
+      "dem": "정원오 후임",
+      "ppu": "미확정"
+    },
+    {
+      "id": "gwangjin",
+      "gu": "광진구",
+      "trend": "minjoo",
+      "dem": "김경호",
+      "ppu": "미확정"
+    },
+    {
+      "id": "dongdaemun",
+      "gu": "동대문구",
+      "trend": "minjoo",
+      "dem": "이필형",
+      "ppu": "미확정"
+    },
+    {
+      "id": "jungnang",
+      "gu": "중랑구",
+      "trend": "minjoo",
+      "dem": "류경기",
+      "ppu": "미확정"
+    },
+    {
+      "id": "seongbuk",
+      "gu": "성북구",
+      "trend": "minjoo",
+      "dem": "이승로",
+      "ppu": "미확정"
+    },
+    {
+      "id": "gangbuk",
+      "gu": "강북구",
+      "trend": "minjoo",
+      "dem": "이순희",
+      "ppu": "미확정"
+    },
+    {
+      "id": "dobong",
+      "gu": "도봉구",
+      "trend": "minjoo",
+      "dem": "오언석",
+      "ppu": "미확정"
+    },
+    {
+      "id": "nowon",
+      "gu": "노원구",
+      "trend": "minjoo",
+      "dem": "오승록",
+      "ppu": "미확정"
+    },
+    {
+      "id": "eunpyeong",
+      "gu": "은평구",
+      "trend": "minjoo",
+      "dem": "김미경",
+      "ppu": "미확정"
+    },
+    {
+      "id": "seodaemun",
+      "gu": "서대문구",
+      "trend": "minjoo",
+      "dem": "이성헌",
+      "ppu": "미확정"
+    },
+    {
+      "id": "mapo",
+      "gu": "마포구",
+      "trend": "minjoo",
+      "dem": "박강수",
+      "ppu": "미확정"
+    },
+    {
+      "id": "yangcheon",
+      "gu": "양천구",
+      "trend": "close",
+      "dem": "이기재",
+      "ppu": "미확정"
+    },
+    {
+      "id": "gangseo",
+      "gu": "강서구",
+      "trend": "minjoo",
+      "dem": "진교훈",
+      "ppu": "미확정"
+    },
+    {
+      "id": "guro",
+      "gu": "구로구",
+      "trend": "minjoo",
+      "dem": "문헌일",
+      "ppu": "미확정"
+    },
+    {
+      "id": "geumcheon",
+      "gu": "금천구",
+      "trend": "minjoo",
+      "dem": "유성훈",
+      "ppu": "미확정"
+    },
+    {
+      "id": "yeongdeungpo",
+      "gu": "영등포구",
+      "trend": "minjoo",
+      "dem": "최호권",
+      "ppu": "미확정"
+    },
+    {
+      "id": "dongjak",
+      "gu": "동작구",
+      "trend": "close",
+      "dem": "박일하",
+      "ppu": "미확정"
+    },
+    {
+      "id": "gwanak",
+      "gu": "관악구",
+      "trend": "minjoo",
+      "dem": "박준희",
+      "ppu": "미확정"
+    },
+    {
+      "id": "seocho",
+      "gu": "서초구",
+      "trend": "gukmin",
+      "dem": "미확정",
+      "ppu": "전성수"
+    },
+    {
+      "id": "gangnam",
+      "gu": "강남구",
+      "trend": "gukmin",
+      "dem": "미확정",
+      "ppu": "조성명"
+    },
+    {
+      "id": "songpa",
+      "gu": "송파구",
+      "trend": "close",
+      "dem": "서강석",
+      "ppu": "미확정"
+    },
+    {
+      "id": "gangdong",
+      "gu": "강동구",
+      "trend": "minjoo",
+      "dem": "이수희",
+      "ppu": "미확정"
+    }
   ]
 }
