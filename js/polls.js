@@ -116,9 +116,9 @@
       const textColor1 = partyTextClass(c1.party);
       return `<tr>
         <td class="td-region">${r.region}</td>
-        <td class="td-cand1" style="color:${textColor0};">${c0.name}<span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p0short})</span></td>
+        <td class="td-cand1" style="color:${textColor0};cursor:pointer;" onclick="openPollsCandModal('${r.id}',0)"><span style="text-decoration:underline dotted;">${c0.name}</span><span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p0short})</span></td>
         <td class="td-cand1" style="color:${textColor0};">${pctStr(c0.pct)}</td>
-        <td class="td-cand2" style="color:${textColor1};">${c1.name}<span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p1short})</span></td>
+        <td class="td-cand2" style="color:${textColor1};cursor:pointer;" onclick="openPollsCandModal('${r.id}',1)"><span style="text-decoration:underline dotted;">${c1.name}</span><span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p1short})</span></td>
         <td class="td-cand2" style="color:${textColor1};">${pctStr(c1.pct)}</td>
         <td class="td-gap" style="color:${gapCol};">${gap}</td>
         <td><span class="verdict-badge ${vl.badgeClass}" style="font-size:11px;padding:3px 8px;">${vl.label}</span></td>
@@ -154,19 +154,19 @@
       return `<div class="match-card">
         <div class="region-tag"><span>${r.emoji} ${r.region}</span><span class="verdict-badge ${vl.badgeClass}">${vl.label}</span></div>
         <div class="region-name">${r.title}</div>
-        <div class="candidate-row">
+        <div class="candidate-row" style="cursor:pointer;" onclick="openPollsCandModal('${r.id}',0)">
           <div class="candidate-avatar ${avatarClass0}">${initial0}</div>
           <div class="candidate-info">
-            <div class="candidate-name">${c0.name}</div>
+            <div class="candidate-name" style="text-decoration:underline dotted;">${c0.name}</div>
             <div class="candidate-party">${c0.partyName} · ${c0.status}</div>
           </div>
           <div class="candidate-pct" style="color:${textColor0}">${pctStr(c0.pct)}</div>
         </div>
         <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill ${barClass0}" style="width:${pct0}%"></div></div></div>
-        <div class="candidate-row" style="margin-top:8px;">
+        <div class="candidate-row" style="margin-top:8px;cursor:pointer;" onclick="openPollsCandModal('${r.id}',1)">
           <div class="candidate-avatar ${avatarClass1}">${initial1}</div>
           <div class="candidate-info">
-            <div class="candidate-name">${c1.name}</div>
+            <div class="candidate-name" style="text-decoration:underline dotted;">${c1.name}</div>
             <div class="candidate-party">${c1.partyName} · ${c1.status}</div>
           </div>
           <div class="candidate-pct" style="color:${textColor1}">${pctStr(c1.pct)}</div>
@@ -274,11 +274,12 @@
       const pctVal = c.pct !== null ? c.pct : 0;
       const initial = c.name ? c.name[0] : '?';
 
+      const candIdx = region.candidates.indexOf(c);
       return `<div class="cand-detail-card" style="border-left:4px solid ${borderColor};">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;cursor:pointer;" onclick="openPollsCandModal('${region.id}',${candIdx})">
           <div class="candidate-avatar ${avatarClass}" style="width:56px;height:56px;font-size:20px;">${initial}</div>
           <div>
-            <div style="font-size:20px;font-weight:900;">${c.name}</div>
+            <div style="font-size:20px;font-weight:900;text-decoration:underline dotted;">${c.name}</div>
             <div style="font-size:12px;color:${textColor};font-weight:700;">${c.partyName} · ${c.status}</div>
           </div>
           <div style="margin-left:auto;font-size:28px;font-weight:900;color:${textColor};">${pctStr(c.pct)}</div>
@@ -396,12 +397,92 @@
   // ════════════════════════════════════════════════════════════════════════
   // 진입점
   // ════════════════════════════════════════════════════════════════════════
+  // ════════════════════════════════════════════════════════════════════════
+  // 후보 프로필 모달
+  // ════════════════════════════════════════════════════════════════════════
+  // 모달 HTML이 없으면 자동 삽입 (상세 페이지 등)
+  function ensureModal() {
+    if (document.getElementById('polls-modal')) return;
+    const html = `
+    <div class="modal-overlay" id="polls-modal" onclick="if(event.target===this)closePollsModal()">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closePollsModal()">✕</button>
+        <div class="modal-header">
+          <div class="modal-avatar" id="pm-avatar">?</div>
+          <div>
+            <div class="modal-name" id="pm-name">후보자</div>
+            <div class="modal-party" id="pm-party"></div>
+            <div style="font-size:11px;color:#8b949e;margin-top:2px;" id="pm-region"></div>
+          </div>
+        </div>
+        <div class="modal-section"><h4>나이</h4><p id="pm-age">확인 중</p></div>
+        <div class="modal-section"><h4>현직</h4><p id="pm-current">—</p></div>
+        <div class="modal-section"><h4>학력</h4><p id="pm-education">—</p></div>
+        <div class="modal-section"><h4>주요 경력</h4><p id="pm-career">—</p></div>
+        <div class="modal-section"><h4>핵심 공약</h4><p id="pm-pledge">—</p></div>
+        <a class="modal-link" id="pm-detail-link" href="#" style="display:none;">📄 상세 페이지 보기 →</a>
+        <a class="modal-link" href="https://info.nec.go.kr" target="_blank">🔗 중앙선관위 후보자 정보</a>
+      </div>
+    </div>`;
+    document.body.insertAdjacentHTML('beforeend', html);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePollsModal(); });
+  }
+  window.closePollsModal = function() {
+    const m = document.getElementById('polls-modal');
+    if (m) m.classList.remove('show');
+  };
+  function openPollsModal(c, regionTitle, detailUrl) {
+    ensureModal();
+    const partyColors = {
+      minjoo: { bg: '#004ea2', text: '#6ea8fe', label: '더불어민주당' },
+      gukmin: { bg: '#c9151e', text: '#ff8080', label: '국민의힘' },
+      joguk:  { bg: '#003087', text: '#7eb3ff', label: '조국혁신당' },
+      gaehyeok: { bg: '#e85d00', text: '#fb923c', label: '개혁신당' },
+      musosok: { bg: '#475569', text: '#cbd5e1', label: '무소속' }
+    };
+    const pc = partyColors[c.party] || { bg: '#475569', text: '#cbd5e1', label: c.partyName || '' };
+    const av = document.getElementById('pm-avatar');
+    av.style.background = pc.bg;
+    av.textContent = c.name ? c.name[0] : '?';
+    document.getElementById('pm-name').textContent = c.name || '후보자';
+    const partyEl = document.getElementById('pm-party');
+    partyEl.textContent = pc.label + (c.status ? ' · ' + c.status : '');
+    partyEl.style.color = pc.text;
+    document.getElementById('pm-region').textContent = regionTitle || '';
+    document.getElementById('pm-age').textContent = c.age || '확인 중';
+    document.getElementById('pm-current').textContent = c.current || '—';
+    document.getElementById('pm-education').textContent = c.education || '—';
+    document.getElementById('pm-career').textContent = c.career || '—';
+    document.getElementById('pm-pledge').textContent = c.pledge || '—';
+    const detailLink = document.getElementById('pm-detail-link');
+    if (detailUrl) {
+      detailLink.href = detailUrl;
+      detailLink.style.display = 'block';
+    } else {
+      detailLink.style.display = 'none';
+    }
+    document.getElementById('polls-modal').classList.add('show');
+  }
+  // 전역 노출 (index.html의 기존 onclick에서도 호출 가능)
+  window._pollsData = null;
+  window.openPollsCandModal = function(regionId, candIdx) {
+    if (!window._pollsData) return;
+    const region = window._pollsData.gwangyeok.find(r => r.id === regionId);
+    if (!region) return;
+    const c = region.candidates[candIdx];
+    if (!c) return;
+    const isDetail = document.body.hasAttribute('data-region');
+    const detailUrl = isDetail ? null : `pages/gwangyeok/${regionId}.html`;
+    openPollsModal(c, region.title, detailUrl);
+  };
+
   fetch(JSON_PATH)
     .then(r => {
       if (!r.ok) throw new Error('candidates.json 로드 실패: ' + r.status);
       return r.json();
     })
     .then(data => {
+      window._pollsData = data;
       if (isDetail) {
         const regionId = document.body.getAttribute('data-region');
         renderDetail(data, regionId);
