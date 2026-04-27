@@ -1,0 +1,258 @@
+#!/usr/bin/env python3
+"""
+선거 데이터 자동 업데이트 스크립트
+- 연합뉴스·뉴시스 RSS에서 선거 관련 뉴스 수집
+- Gemini API로 공천 확정 및 여론조사 수치 추출
+- candidates.json 자동 업데이트
+"""
+
+import json
+import os
+import re
+import sys
+import time
+import requests
+from datetime import datetime
+from bs4 import BeautifulSoup
+from google import genai
+
+# ── 설정 ──────────────────────────────────────────────────────────────────────
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CANDIDATES_PATH = os.path.join(BASE_DIR, "data", "candidates.json")
+
+RSS_FEEDS = [
+    "https://www.yna.co.kr/rss/politics.xml",       # 연합뉴스 정치
+    "https://www.newsis.com/RSS/politics.xml",       # 뉴시스 정치
+    "https://www.yna.co.kr/rss/local.xml",           # 연합뉴스 지역
+]
+
+KEYWORDS = [
+    "지방선거", "공천", "후보", "여론조사", "광역단체장",
+    "시장", "도지사", "구청장", "보궐선거", "2026"
+]
+
+# Gemini API 설정
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
+
+# ── 뉴스 수집 ─────────────────────────────────────────────────────────────────
+def fetch_news() -> list[dict]:
+    """RSS 피드에서 선거 관련 뉴스 수집"""
+    articles = []
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; election-bot/1.0)"}
+
+    for feed_url in RSS_FEEDS:
+        try:
+            resp = requests.get(feed_url, headers=headers, timeout=10)
+            resp.encoding = "utf-8"
+            soup = BeautifulSoup(resp.text, "xml")
+            items = soup.find_all("item")[:30]
+
+            for item in items:
+                title = item.find("title")
+                desc = item.find("description")
+                pub_date = item.find("pubDate")
+
+                title_text = title.get_text(strip=True) if title else ""
+                desc_text = desc.get_text(strip=True) if desc else ""
+                combined = title_text + " " + desc_text
+
+                if any(kw in combined for kw in KEYWORDS):
+                    articles.append({
+                        "title": title_text,
+                        "desc": desc_text[:300],
+                        "date": pub_date.get_text(strip=True) if pub_date else ""
+                    })
+        except Exception as e:
+            print(f"RSS 수집 실패 ({feed_url}): {e}")
+
+    print(f"수집된 선거 관련 기사: {len(articles)}건")
+    return articles
+
+
+# ── Gemini 분석 ───────────────────────────────────────────────────────────────
+def analyze_with_gemini(articles: list[dict], candidates_data: dict) -> dict:
+    """Gemini로 뉴스에서 데이터 변경사항 추출"""
+
+    if not articles:
+        print("분석할 기사 없음")
+        return {}
+
+    current_summary = []
+    for section in ["gwangyeok", "byeol"]:
+        for region in candidates_data.get(section, []):
+            for cand in region.get("candidates", []):
+                current_summary.append({
+                    "region": region["region"],
+                    "name": cand["name"],
+                    "party": cand["partyName"],
+                    "status": cand.get("status", ""),
+                    "pct": cand.get("pct")
+                })
+
+    news_text = "\n".join([
+        f"[{a['date']}] {a['title']}\n{a['desc']}"
+        for a in articles[:20]
+    ])
+
+    prompt = f"""당신은 2026년 한국 지방선거 데이터 분석 전문가입니다.
+아래 뉴스 기사들을 분석하여 현재 후보 데이터에서 업데이트가 필요한 항목을 찾아주세요.
+
+## 현재 후보 데이터 (요약)
+{json.dumps(current_summary, ensure_ascii=False, indent=2)}
+
+## 최신 뉴스 기사
+{news_text}
+
+## 지시사항
+1. 뉴스에서 **공식 공천 확정** 또는 **공식 여론조사 수치**만 추출하세요.
+2. 반드시 아래 조건을 모두 충족해야 업데이트 항목에 포함하세요:
+   - '공천확정', '단수공천', '전략공천' 등 확정 표현이 명시된 경우만 status 업데이트
+   - 구체적인 퍼센트 수치가 기사에 명시된 경우만 pct 업데이트
+   - '가능성', '검토', '거론', '출마 의향' 등 불확실한 표현은 절대 포함하지 마세요
+3. 현재 데이터에 이미 '공천확정'인 후보는 업데이트하지 마세요.
+4. 현재 데이터의 지역명·후보명과 정확히 일치하는 경우만 포함하세요.
+5. 아래 JSON 형식으로만 응답하세요. 변경사항이 없으면 빈 배열 반환.
+   반드시 JSON만 응답하고 마크다운 코드블록(```)은 사용하지 마세요.
+
+응답 형식:
+{{
+  "updates": [
+    {{
+      "region": "지역명 (현재 데이터와 정확히 일치)",
+      "candidate_name": "후보명 (현재 데이터와 정확히 일치, 또는 새 이름)",
+      "field": "status 또는 pct 또는 name",
+      "old_value": "현재 값",
+      "new_value": "새 값",
+      "reason": "변경 근거 (기사 내용 요약)"
+    }}
+  ]
+}}"""
+
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt
+            )
+            raw = response.text.strip()
+            break
+        except Exception as e:
+            if attempt < 2 and "429" in str(e):
+                wait = 60 * (attempt + 1)
+                print(f"Rate limit — {wait}초 대기 후 재시도 ({attempt+1}/3)")
+                time.sleep(wait)
+            else:
+                print(f"Gemini 분석 실패: {e}")
+                return {}
+    else:
+        return {}
+
+    try:
+        raw = re.sub(r"^```(?:json)?\s*", "", raw)
+        raw = re.sub(r"\s*```$", "", raw)
+        result = json.loads(raw)
+        updates = result.get("updates", [])
+        print(f"Gemini 분석 완료: {len(updates)}개 업데이트 항목 발견")
+        return result
+    except Exception as e:
+        print(f"JSON 파싱 실패: {e}")
+        return {}
+
+
+# ── candidates.json 업데이트 ──────────────────────────────────────────────────
+def apply_updates(candidates_data: dict, updates: list[dict]) -> tuple[dict, int]:
+    """추출된 업데이트를 candidates.json에 적용"""
+    change_count = 0
+    today = datetime.now().strftime("%Y.%m.%d")
+
+    for update in updates:
+        region_name = update.get("region", "")
+        cand_name = update.get("candidate_name", "")
+        field = update.get("field", "")
+        new_value = update.get("new_value")
+        reason = update.get("reason", "")
+
+        found = False
+        for section in ["gwangyeok", "byeol"]:
+            for region in candidates_data.get(section, []):
+                if region["region"] != region_name:
+                    continue
+                for cand in region.get("candidates", []):
+                    if cand["name"] != cand_name and update.get("old_value") != cand["name"]:
+                        continue
+
+                    if field == "status":
+                        old = cand.get("status", "")
+                        if old == new_value:
+                            print(f"  - {region_name} {cand_name}: status 이미 '{old}' — 스킵")
+                            found = True
+                            continue
+                        cand["status"] = new_value
+                        region["surveyDate"] = today
+                        print(f"  ✓ {region_name} {cand_name}: status '{old}' → '{new_value}' ({reason})")
+                        change_count += 1
+                        found = True
+                    elif field == "pct":
+                        try:
+                            old = cand.get("pct")
+                            cand["pct"] = float(new_value)
+                            region["surveyDate"] = today
+                            print(f"  ✓ {region_name} {cand_name}: pct {old} → {new_value} ({reason})")
+                            change_count += 1
+                            found = True
+                        except (ValueError, TypeError):
+                            print(f"  ✗ pct 변환 실패: {new_value}")
+                    elif field == "name":
+                        old = cand.get("name", "")
+                        cand["name"] = new_value
+                        print(f"  ✓ {region_name}: 후보명 '{old}' → '{new_value}' ({reason})")
+                        change_count += 1
+                        found = True
+                    break
+                if found:
+                    break
+
+        if not found:
+            print(f"  ✗ 매칭 실패: {region_name} / {cand_name}")
+
+    return candidates_data, change_count
+
+
+# ── 메인 ──────────────────────────────────────────────────────────────────────
+def main():
+    print(f"\n{'='*60}")
+    print(f"선거 데이터 자동 업데이트 시작: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"{'='*60}\n")
+
+    with open(CANDIDATES_PATH, "r", encoding="utf-8") as f:
+        candidates_data = json.load(f)
+
+    articles = fetch_news()
+
+    if not articles:
+        print("수집된 기사 없음 — 종료")
+        sys.exit(0)
+
+    result = analyze_with_gemini(articles, candidates_data)
+    updates = result.get("updates", [])
+
+    if not updates:
+        print("업데이트 항목 없음 — 종료")
+        sys.exit(0)
+
+    print("\n[업데이트 적용]")
+    updated_data, change_count = apply_updates(candidates_data, updates)
+
+    if change_count == 0:
+        print("실제 변경사항 없음 — 종료")
+        sys.exit(0)
+
+    with open(CANDIDATES_PATH, "w", encoding="utf-8") as f:
+        json.dump(updated_data, f, ensure_ascii=False, indent=2)
+
+    print(f"\n총 {change_count}개 항목 업데이트 완료 → {CANDIDATES_PATH}")
+
+
+if __name__ == "__main__":
+    main()
