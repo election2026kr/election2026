@@ -70,9 +70,9 @@
           <div style="font-size:20px;font-weight:900;">정원오</div>
           <div style="font-size:12px;color:#6ea8fe;font-weight:700;">더불어민주당 · 공천확정</div>
         </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#6ea8fe;">52.3%</div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#6ea8fe;">45.6%</div>
       </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:52.3%;height:12px;border-radius:6px;"></div></div></div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:45.6%;height:12px;border-radius:6px;"></div></div></div>
       <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
         <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">57세 (1969년생)</td></tr>
         <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">성동구청장</td></tr>
@@ -90,9 +90,9 @@
           <div style="font-size:20px;font-weight:900;">오세훈</div>
           <div style="font-size:12px;color:#ff8080;font-weight:700;">국민의힘 · 공천확정</div>
         </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#ff8080;">42.1%</div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#ff8080;">35.4%</div>
       </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:42.1%;height:12px;border-radius:6px;"></div></div></div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:35.4%;height:12px;border-radius:6px;"></div></div></div>
       <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
         <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">63세 (1961년생)</td></tr>
         <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">서울특별시장(현)</td></tr>
@@ -112,8 +112,7 @@
     </div>
     <canvas id="surveyChart" style="max-height:280px;"></canvas>
     <div style="margin-top:12px;font-size:11px;color:#8b949e;text-align:right;">
-      출처: 한국갤럽, 리얼미터, 엠브레인 | 최종 업데이트: 2026.04.22
-    </div>
+      출처: KSOI(CBS 의뢰) | 최종 업데이트: 2026.04.22~23</div>
   </div>
 
   <!-- 여론조사 상세 테이블 -->
@@ -144,39 +143,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="td-source">2026.04.22</td>
-            <td class="td-source">한국갤럽</td>
-            <td class="td-cand1">52.3%</td>
-            <td class="td-cand2">42.1%</td>
-            <td class="td-gap" style="color:#6ea8fe;">+10.2%p</td>
-            <td class="td-source">1,000명</td>
-          </tr>
-          <tr>
-            <td class="td-source">2026.04.15</td>
-            <td class="td-source">리얼미터</td>
-            <td class="td-cand1">51.8%</td>
-            <td class="td-cand2">43.2%</td>
-            <td class="td-gap" style="color:#6ea8fe;">+8.6%p</td>
-            <td class="td-source">1,000명</td>
-          </tr>
-          <tr>
-            <td class="td-source">2026.04.08</td>
-            <td class="td-source">엠브레인</td>
-            <td class="td-cand1">50.4%</td>
-            <td class="td-cand2">44.1%</td>
-            <td class="td-gap" style="color:#6ea8fe;">+6.3%p</td>
-            <td class="td-source">800명</td>
-          </tr>
-          <tr>
-            <td class="td-source">2026.04.01</td>
-            <td class="td-source">한국갤럽</td>
-            <td class="td-cand1">49.2%</td>
-            <td class="td-cand2">45.3%</td>
-            <td class="td-gap" style="color:#6ea8fe;">+3.9%p</td>
-            <td class="td-source">1,000명</td>
-          </tr>
-        </tbody>
+          <tr><td class="td-source">2026.04.22~23</td><td class="td-source">KSOI(CBS 의뢰)</td><td class="td-cand1">45.6%</td><td class="td-cand2">35.4%</td><td class="td-gap" style="color:#6ea8fe;">+10.2%p</td><td class="td-source">1,001명</td></tr>
+          <tr><td class="td-source">2026.04.10~11</td><td class="td-source">한국갤럽(세계일보)</td><td class="td-cand1">44.0%</td><td class="td-cand2">30.0%</td><td class="td-gap" style="color:#6ea8fe;">+14.0%p</td><td class="td-source">1,000명</td></tr>
+          <tr><td class="td-source">2026.04.01</td><td class="td-source">스카이데일리</td><td class="td-cand1">42.6%</td><td class="td-cand2">28.0%</td><td class="td-gap" style="color:#6ea8fe;">+14.6%p</td><td class="td-source">800명</td></tr>
+</tbody>
       </table>
     </div>
   </div>
@@ -238,16 +208,15 @@
 
 <script src="../../js/main.js"></script>
 <script>
-  // 여론조사 추이 차트
   const ctx = document.getElementById('surveyChart').getContext('2d');
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['04.01', '04.08', '04.15', '04.22'],
+      labels: ['04.01', '04.10', '04.22'],
       datasets: [
         {
           label: '정원오 (민주)',
-          data: [49.2, 50.4, 51.8, 52.3],
+          data: [42.6, 44.0, 45.6],
           borderColor: '#004ea2',
           backgroundColor: 'rgba(0,78,162,0.15)',
           borderWidth: 3,
@@ -257,7 +226,7 @@
         },
         {
           label: '오세훈 (국힘)',
-          data: [45.3, 44.1, 43.2, 42.1],
+          data: [28.0, 30.0, 35.4],
           borderColor: '#c9151e',
           backgroundColor: 'rgba(201,21,30,0.10)',
           borderWidth: 3,
@@ -276,7 +245,7 @@
       scales: {
         x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
         y: {
-          min: 35, max: 65,
+          min: 20, max: 60,
           ticks: { color: '#8b949e', callback: v => v + '%' },
           grid: { color: '#21262d' }
         }

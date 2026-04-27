@@ -48,7 +48,7 @@
 </div>
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
     <h1 style="font-size:22px;font-weight:900;margin:0;">전북특별자치도지사</h1>
-    <span class="verdict-badge badge-minjoo" style="font-size:14px;padding:6px 14px;">민주 우세</span>
+    <span class="verdict-badge badge-minjoo" style="font-size:14px;padding:6px 14px;">민주 압승 예상</span>
     <span style="font-size:12px;color:#8b949e;margin-left:auto;">선거여론조사심의위원회 등록 최신 조사 기준</span>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
@@ -59,9 +59,9 @@
           <div style="font-size:20px;font-weight:900;">이원택</div>
           <div style="font-size:12px;color:var(--minjoo-text);font-weight:700;">더불어민주당 · 공천확정</div>
         </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--minjoo-text);">51.3%</div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--minjoo-text);">70.0%</div>
       </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:51.3%;height:12px;border-radius:6px;"></div></div></div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:70.0%;height:12px;border-radius:6px;"></div></div></div>
       <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
         <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">공천 확정</td></tr>
         <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">22대 국회의원 (군산·김제·부안을)</td></tr>
@@ -78,9 +78,9 @@
           <div style="font-size:20px;font-weight:900;">양정무</div>
           <div style="font-size:12px;color:var(--joguk-text);font-weight:700;">더불어민주당 · 공천확정</div>
         </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--joguk-text);">22.4%</div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--joguk-text);">5.0%</div>
       </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-joguk" style="width:22.4%;height:12px;border-radius:6px;"></div></div></div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-joguk" style="width:5.0%;height:12px;border-radius:6px;"></div></div></div>
       <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:12px;display:block;font-size:11px;">🔗 선관위 후보자 정보 보기</a>
     </div>
   </div>
@@ -107,27 +107,46 @@
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['03.31', '04.07', '04.14', '04.21'],
+      labels: ['04.25'],
       datasets: [
-        { label: '이원택', data: [48.3,49.3,50.3,51.3], borderColor: '#004ea2', backgroundColor: 'rgba(0,78,162,0.15)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true },
-        { label: '양정무 (국힘)', data: [24.4,23.4,22.9,22.4], borderColor: '#c9151e', backgroundColor: 'rgba(201,21,30,0.10)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true }
+        {
+          label: '이원택 (민주)',
+          data: [70.0],
+          borderColor: '#004ea2',
+          backgroundColor: 'rgba(0,78,162,0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: '미확정 (국힘)',
+          data: [5.0],
+          borderColor: '#c9151e',
+          backgroundColor: 'rgba(201,21,30,0.10)',
+          borderWidth: 3,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        }
       ]
     },
     options: {
       responsive: true,
-      plugins: { legend: { labels: { color: '#c9d1d9', font: { family: 'Noto Sans KR', size: 12 } } }, tooltip: { mode: 'index', intersect: false } },
+      plugins: {
+        legend: { labels: { color: '#c9d1d9', font: { family: 'Noto Sans KR', size: 12 } } },
+        tooltip: { mode: 'index', intersect: false }
+      },
       scales: {
         x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
-        y: { min: 20, max: 70, ticks: { color: '#8b949e', callback: v => v + '%' }, grid: { color: '#21262d' } }
+        y: {
+          min: 0, max: 85,
+          ticks: { color: '#8b949e', callback: v => v + '%' },
+          grid: { color: '#21262d' }
+        }
       }
     }
   });
-<\/script>
-<script>
-  // Kakao SDK 초기화
-  if (window.Kakao && !window.Kakao.isInitialized()) {
-    window.Kakao.init('73d821e57b593140fbd807a993463884');
-  }
 </script>
 </body>
 </html>

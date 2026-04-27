@@ -59,9 +59,9 @@
           <div style="font-size:20px;font-weight:900;">조상호</div>
           <div style="font-size:12px;color:var(--minjoo-text);font-weight:700;">더불어민주당 · 공천확정</div>
         </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--minjoo-text);">55.8%</div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--minjoo-text);">44.9%</div>
       </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:55.8%;height:12px;border-radius:6px;"></div></div></div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:44.9%;height:12px;border-radius:6px;"></div></div></div>
       <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
         <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">확인 중</td></tr>
         <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">확인 중</td></tr>
@@ -78,9 +78,9 @@
           <div style="font-size:20px;font-weight:900;">최민호</div>
           <div style="font-size:12px;color:var(--gukmin-text);font-weight:700;">국민의힘 · 공천확정</div>
         </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--gukmin-text);">36.2%</div>
+        <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--gukmin-text);">20.0%</div>
       </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:36.2%;height:12px;border-radius:6px;"></div></div></div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:20.0%;height:12px;border-radius:6px;"></div></div></div>
       <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:12px;display:block;font-size:11px;">🔗 선관위 후보자 정보 보기</a>
     </div>
   </div>
@@ -107,27 +107,46 @@
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['03.31', '04.07', '04.14', '04.21'],
+      labels: ['04.18'],
       datasets: [
-        { label: '조상호 (민주)', data: [52.8,53.8,54.8,55.8], borderColor: '#004ea2', backgroundColor: 'rgba(0,78,162,0.15)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true },
-        { label: '최민호 (국힘)', data: [38.2,37.2,36.7,36.2], borderColor: '#c9151e', backgroundColor: 'rgba(201,21,30,0.10)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true }
+        {
+          label: '조상호 (민주)',
+          data: [44.9],
+          borderColor: '#004ea2',
+          backgroundColor: 'rgba(0,78,162,0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: '최민호 (국힘)',
+          data: [20.0],
+          borderColor: '#c9151e',
+          backgroundColor: 'rgba(201,21,30,0.10)',
+          borderWidth: 3,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        }
       ]
     },
     options: {
       responsive: true,
-      plugins: { legend: { labels: { color: '#c9d1d9', font: { family: 'Noto Sans KR', size: 12 } } }, tooltip: { mode: 'index', intersect: false } },
+      plugins: {
+        legend: { labels: { color: '#c9d1d9', font: { family: 'Noto Sans KR', size: 12 } } },
+        tooltip: { mode: 'index', intersect: false }
+      },
       scales: {
         x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
-        y: { min: 20, max: 70, ticks: { color: '#8b949e', callback: v => v + '%' }, grid: { color: '#21262d' } }
+        y: {
+          min: 10, max: 60,
+          ticks: { color: '#8b949e', callback: v => v + '%' },
+          grid: { color: '#21262d' }
+        }
       }
     }
   });
-<\/script>
-<script>
-  // Kakao SDK 초기화
-  if (window.Kakao && !window.Kakao.isInitialized()) {
-    window.Kakao.init('73d821e57b593140fbd807a993463884');
-  }
 </script>
 </body>
 </html>
