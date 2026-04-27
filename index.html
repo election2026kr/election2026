@@ -79,14 +79,14 @@
             <span class="cat-name">광역단체장</span>
             <span class="cat-count">16개 지역</span>
           </div>
-          <div class="cat-summary">
+          <div class="cat-summary" id="verdict-summary">
             <span class="sum-chip chip-minjoo">민주 우세 14</span>
             <span class="sum-chip chip-gukmin">국힘 우세 1</span>
             <span class="sum-chip chip-close">접전 2</span>
             <span class="cat-toggle">▼</span>
           </div>
         </div>
-        <div class="cat-list" id="cat-gwangyeok">
+        <div class="cat-list" id="cat-gwangyeok" data-polls-sidebar="gwangyeok">
           <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')">
             <div class="item-left">
               <div class="item-region">🏙️ 서울특별시</div>
@@ -406,7 +406,7 @@
     </div>
 
     <!-- 광역단체장 카드 목록 -->
-    <div class="bigmatch-grid">
+    <div class="bigmatch-grid" id="gwangyeok-cards">
       <!-- 서울 -->
       <div class="match-card">
         <div class="region-tag"><span>🏙️ 서울특별시</span><span class="verdict-badge badge-minjoo">민주 우세</span></div>
@@ -828,7 +828,7 @@
           <th>조사일·기관</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="survey-table-body">
         <tr>
           <td class="td-region">서울</td>
           <td class="td-cand1">정원오(민주) 45.6%</td>
@@ -1046,6 +1046,7 @@
 <button class="float-top" id="floatTop" onclick="scrollToTop()">↑</button>
 
 <script src="js/main.js"></script>
+<script src="js/polls.js"></script>
 <script>
   // Kakao SDK 초기화
   if (window.Kakao && !window.Kakao.isInitialized()) {

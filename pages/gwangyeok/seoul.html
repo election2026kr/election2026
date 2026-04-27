@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>서울특별시장 선거 대진표 & 여론조사 | 2026 지방선거</title>
-  <meta name="description" content="2026년 6월 3일 서울특별시장 선거 후보 대진표, 최신 여론조사 추이, 후보자 프로필을 한눈에 확인하세요.">
-  <meta property="og:title" content="서울특별시장 선거 | 2026 지방선거">
+  <title>서울특별시 서울시장 선거 대진표 & 여론조사 | 2026 지방선거</title>
+  <meta name="description" content="2026년 6월 3일 서울특별시 서울시장 후보 대진표, 최신 여론조사 추이, 후보자 프로필을 한눈에 확인하세요.">
+  <meta property="og:title" content="서울특별시 서울시장 선거 | 2026 지방선거">
   <meta property="og:description" content="정원오(민주) vs 오세훈(국힘) 최신 여론조사 판세">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,9 +15,9 @@
      crossorigin="anonymous"></script>
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body data-region="seoul">
 <header>
-  <a href="../../index.html" class="logo">🗳️ 6.3 지방선거 <span class="dday" id="headerDday">D-38</span></a>
+  <a href="../../index.html" class="logo">🗳️ 6.3 지방선거 <span class="dday" id="headerDday">D-37</span></a>
   <div class="header-actions">
     <button class="btn-kakao" onclick="shareKakao()">🟡 카카오 공유</button>
     <button class="btn-copy" onclick="copyLink()" title="링크 복사">🔗</button>
@@ -35,7 +35,7 @@
 
 <!-- 브레드크럼 -->
 <div style="max-width:900px;margin:16px auto 0;padding:0 20px;font-size:12px;color:#8b949e;">
-  <a href="../../index.html" style="color:#388bfd;">🏠 홈</a> › <a href="../../index.html#section-daejinaepyo" style="color:#388bfd;">대진표</a> › 서울특별시장
+  <a href="../../index.html" style="color:#388bfd;">🏠 홈</a> › <a href="../../index.html#section-daejinaepyo" style="color:#388bfd;">대진표</a> › 서울특별시 서울시장
 </div>
 
 <!-- 메인 콘텐츠 -->
@@ -53,66 +53,24 @@
 </script>
 </div>
 
-  <!-- 지역 헤더 -->
+  <!-- 지역 헤더 (polls.js 동적 렌더링) -->
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
-    <h1 style="font-size:22px;font-weight:900;margin:0;">🏙️ 서울특별시장</h1>
-    <span class="verdict-badge badge-minjoo" style="font-size:14px;padding:6px 14px;">민주 우세</span>
-    <span style="font-size:12px;color:#8b949e;margin-left:auto;">선거여론조사심의위원회 등록 최신 조사 기준</span>
+    <h1 id="detail-title" style="font-size:22px;font-weight:900;margin:0;">로딩 중...</h1>
+    <span id="detail-verdict-badge" class="verdict-badge" style="font-size:14px;padding:6px 14px;"></span>
+    <span id="detail-subtitle" style="font-size:12px;color:#8b949e;margin-left:auto;"></span>
   </div>
 
-  <!-- 후보 대결 카드 -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
-    <!-- 정원오 -->
-    <div class="cand-detail-card" style="border-left:4px solid #004ea2;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-        <div class="candidate-avatar avatar-minjoo" style="width:56px;height:56px;font-size:20px;">박</div>
-        <div>
-          <div style="font-size:20px;font-weight:900;">정원오</div>
-          <div style="font-size:12px;color:#6ea8fe;font-weight:700;">더불어민주당 · 공천확정</div>
-        </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#6ea8fe;">45.6%</div>
-      </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:45.6%;height:12px;border-radius:6px;"></div></div></div>
-      <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
-        <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">57세 (1969년생)</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">성동구청장</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">학력</td><td style="font-weight:600;">서울대 법학과</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">주요 경력</td><td style="font-weight:600;">21·22대 국회의원(인천 계양을)</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">핵심 공약</td><td style="font-weight:600;">부동산 규제 강화, 청년 주거 지원, 서울 균형발전</td></tr>
-      </table>
-      <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:12px;display:block;font-size:11px;">🔗 선관위 후보자 정보 보기</a>
-    </div>
-    <!-- 오세훈 -->
-    <div class="cand-detail-card" style="border-left:4px solid #c9151e;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-        <div class="candidate-avatar avatar-gukmin" style="width:56px;height:56px;font-size:20px;">오</div>
-        <div>
-          <div style="font-size:20px;font-weight:900;">오세훈</div>
-          <div style="font-size:12px;color:#ff8080;font-weight:700;">국민의힘 · 공천확정</div>
-        </div>
-        <div style="margin-left:auto;font-size:28px;font-weight:900;color:#ff8080;">35.4%</div>
-      </div>
-      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:35.4%;height:12px;border-radius:6px;"></div></div></div>
-      <table style="width:100%;margin-top:12px;font-size:12px;border-collapse:collapse;">
-        <tr><td style="color:#8b949e;padding:3px 0;">나이</td><td style="font-weight:600;">63세 (1961년생)</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">현직</td><td style="font-weight:600;">서울특별시장(현)</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">학력</td><td style="font-weight:600;">서울대 법학과</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">주요 경력</td><td style="font-weight:600;">16·17·18대 국회의원, 서울시장(2006~2011, 2021~현재)</td></tr>
-        <tr><td style="color:#8b949e;padding:3px 0;">핵심 공약</td><td style="font-weight:600;">재개발·재건축 규제 완화, 한강 르네상스 2.0, GTX 확대</td></tr>
-      </table>
-      <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:12px;display:block;font-size:11px;">🔗 선관위 후보자 정보 보기</a>
-    </div>
+  <!-- 후보 대결 카드 (polls.js 동적 렌더링) -->
+  <div id="detail-candidate-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+    <!-- polls.js가 자동 렌더링 -->
   </div>
 
   <!-- 여론조사 추이 차트 -->
   <div class="section" style="padding:20px;margin-bottom:20px;">
     <h2 class="section-title" style="font-size:16px;margin-bottom:16px;">📊 여론조사 추이</h2>
-    <div class="notice-box" style="margin-bottom:16px;">
-      선거여론조사심의위원회 등록 조사 기준. 수치는 참고용이며 실제 결과와 다를 수 있습니다.
-    </div>
+    <div class="notice-box" style="margin-bottom:16px;">선거여론조사심의위원회 등록 조사 기준. 수치는 참고용이며 실제 결과와 다를 수 있습니다.</div>
     <canvas id="surveyChart" style="max-height:280px;"></canvas>
-    <div style="margin-top:12px;font-size:11px;color:#8b949e;text-align:right;">
-      출처: KSOI(CBS 의뢰) | 최종 업데이트: 2026.04.22~23</div>
+    <div id="detail-last-updated" style="margin-top:12px;font-size:11px;color:#8b949e;text-align:right;"></div>
   </div>
 
   <!-- 여론조사 상세 테이블 -->
@@ -129,28 +87,27 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<h2 class="section-title" style="font-size:16px;margin-bottom:12px;">📋 여론조사 상세 내역</h2>
+    <h2 class="section-title" style="font-size:16px;margin-bottom:12px;">📋 여론조사 상세 내역</h2>
     <div style="overflow-x:auto;">
       <table class="survey-table">
         <thead>
           <tr>
             <th>조사일</th>
             <th>조사기관</th>
-            <th>정원오(민주)</th>
-            <th>오세훈(국힘)</th>
+            <th id="detail-th-cand0">후보1(민주)</th>
+            <th id="detail-th-cand1">후보2(국힘)</th>
             <th>격차</th>
             <th>표본수</th>
           </tr>
         </thead>
-        <tbody>
-          <tr><td class="td-source">2026.04.22~23</td><td class="td-source">KSOI(CBS 의뢰)</td><td class="td-cand1">45.6%</td><td class="td-cand2">35.4%</td><td class="td-gap" style="color:#6ea8fe;">+10.2%p</td><td class="td-source">1,001명</td></tr>
-          <tr><td class="td-source">2026.04.10~11</td><td class="td-source">한국갤럽(세계일보)</td><td class="td-cand1">44.0%</td><td class="td-cand2">30.0%</td><td class="td-gap" style="color:#6ea8fe;">+14.0%p</td><td class="td-source">1,000명</td></tr>
-          <tr><td class="td-source">2026.04.01</td><td class="td-source">스카이데일리</td><td class="td-cand1">42.6%</td><td class="td-cand2">28.0%</td><td class="td-gap" style="color:#6ea8fe;">+14.6%p</td><td class="td-source">800명</td></tr>
-</tbody>
+        <tbody id="detail-survey-tbody">
+          <!-- polls.js가 자동 렌더링 -->
+        </tbody>
       </table>
     </div>
   </div>
 
+  <!-- 주요 공약 비교 -->
   <!-- 주요 공약 비교 -->
   <div class="section" style="padding:20px;margin-bottom:20px;">
     <h2 class="section-title" style="font-size:16px;margin-bottom:12px;">📌 주요 공약 비교</h2>
@@ -192,7 +149,7 @@
   <!-- 네비게이션 -->
   <div style="display:flex;justify-content:space-between;margin-top:24px;flex-wrap:wrap;gap:12px;">
     <a href="../../index.html#section-daejinaepyo" style="background:#21262d;color:#c9d1d9;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;">← 전체 대진표로 돌아가기</a>
-    <a href="busan.html" style="background:#1f6feb;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;">다음: 부산광역시장 →</a>
+    
   </div>
 
 </main>
@@ -207,52 +164,7 @@
 <button class="float-top" id="floatTop" onclick="scrollToTop()">↑</button>
 
 <script src="../../js/main.js"></script>
-<script>
-  const ctx = document.getElementById('surveyChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['04.01', '04.10', '04.22'],
-      datasets: [
-        {
-          label: '정원오 (민주)',
-          data: [42.6, 44.0, 45.6],
-          borderColor: '#004ea2',
-          backgroundColor: 'rgba(0,78,162,0.15)',
-          borderWidth: 3,
-          pointRadius: 5,
-          tension: 0.3,
-          fill: true
-        },
-        {
-          label: '오세훈 (국힘)',
-          data: [28.0, 30.0, 35.4],
-          borderColor: '#c9151e',
-          backgroundColor: 'rgba(201,21,30,0.10)',
-          borderWidth: 3,
-          pointRadius: 5,
-          tension: 0.3,
-          fill: true
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { labels: { color: '#c9d1d9', font: { family: 'Noto Sans KR', size: 12 } } },
-        tooltip: { mode: 'index', intersect: false }
-      },
-      scales: {
-        x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
-        y: {
-          min: 20, max: 60,
-          ticks: { color: '#8b949e', callback: v => v + '%' },
-          grid: { color: '#21262d' }
-        }
-      }
-    }
-  });
-</script>
+<script src="../../js/polls.js"></script>
 <script>
   // Kakao SDK 초기화
   if (window.Kakao && !window.Kakao.isInitialized()) {
