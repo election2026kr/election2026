@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <!-- Google AdSense -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3047503741835826"
      crossorigin="anonymous"></script>
   <!-- Kakao SDK -->
@@ -33,17 +34,898 @@
   </div>
 </header>
 
-<!-- 상단 광고 배너 -->
-<div class="ad-banner">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3047503741835826"
-     data-ad-slot="9851285699"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<!-- ===== STICKY NAV ===== -->
+<nav class="sticky-nav" id="stickyNav">
+  <a href="#section-voting" class="nav-highlight">📍 투표소 찾기</a>
+  <a href="#section-daejinaepyo">🏛️ 대진표</a>
+  <a href="#section-bigmatch">⚡ 격전지</a>
+  <a href="#section-survey">📊 여론조사</a>
+  <a href="#section-guide">📋 투표 안내</a>
+  <span class="nav-spacer"></span>
+  <a href="#" onclick="scrollToTop();return false;">↑ 맨 위로</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section style="max-width:1200px;margin:0 auto;padding:24px 20px 16px;">
+  <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start;">
+
+    <!-- 히어로 좌측 -->
+    <div>
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        LIVE · 실시간 여론조사 반영
+      </div>
+      <h1>2026 지방선거<br><span>판세 총정리</span></h1>
+      <p class="hero-sub">광역단체장 · 서울 구청장 · 국회의원 보궐</p>
+      <p class="hero-date">📅 선거일: <strong>2026년 6월 3일(수)</strong> 오전 6시 ~ 오후 6시</p>
+      <div class="hero-btns">
+        <button class="btn-kakao-lg" onclick="shareKakao()">🟡 카카오톡으로 공유</button>
+        <button class="btn-copy-lg" onclick="copyLink()">🔗</button>
+      </div>
+    </div>
+
+    <!-- 히어로 우측: 판세 현황판 -->
+    <div class="dashboard">
+      <div class="dashboard-title">
+        <span class="live-dot2"></span>
+        실시간 판세 현황판 — 클릭하면 상세 확인
+      </div>
+
+      <!-- 광역단체장 패널 -->
+      <div class="cat-panel">
+        <div class="cat-header" onclick="toggleCat('cat-gwangyeok', this)">
+          <div class="cat-header-left">
+            <span class="cat-icon">🏛️</span>
+            <span class="cat-name">광역단체장</span>
+            <span class="cat-count">16개 지역</span>
+          </div>
+          <div class="cat-summary">
+            <span class="sum-chip chip-minjoo">민주 우세 8</span>
+            <span class="sum-chip chip-gukmin">국힘 우세 3</span>
+            <span class="sum-chip chip-close">초접전 5</span>
+            <span class="cat-toggle">▼</span>
+          </div>
+        </div>
+        <div class="cat-list" id="cat-gwangyeok">
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">🏙️ 서울특별시</div>
+              <div class="item-cands">정원오(민주) vs 오세훈(국힘)</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:48%"></div></div>
+                <span class="item-pct" style="color:#ff8080">48%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:44%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">44%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-c">초접전</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">🌊 부산광역시</div>
+              <div class="item-cands">전재수(민주) vs 박형준(국힘)</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:48%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">48.2%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:47%"></div></div>
+                <span class="item-pct" style="color:#ff8080">46.8%</span>
+              </div>
+            </div>            <span class="item-badge badge-c">초접전</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">🌾 경기도</div>
+              <div class="item-cands">추미애(민주) vs 국힘 경선 중</div>            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:52%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">52%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:38%"></div></div>
+                <span class="item-pct" style="color:#ff8080">38%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-m">민주 우세</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">🌻 충청북도</div>
+              <div class="item-cands">신용한(민주) vs 국힘 경선 중</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:47%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">46.5%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:45%"></div></div>
+                <span class="item-pct" style="color:#ff8080">45.2%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-c">초접전</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')" style="justify-content:center;color:#388bfd;font-size:12px;font-weight:700;">
+            전체 16개 지역 보기 →
+          </a>
+        </div>
+      </div>
+
+      <!-- 서울 구청장 패널 -->
+      <div class="cat-panel">
+        <div class="cat-header" onclick="toggleCat('cat-seoul', this)">
+          <div class="cat-header-left">
+            <span class="cat-icon">🏙️</span>
+            <span class="cat-name">서울 구청장</span>
+            <span class="cat-count">25개 자치구</span>
+          </div>
+          <div class="cat-summary">
+            <span class="sum-chip chip-minjoo">민주 21</span>
+            <span class="sum-chip chip-gukmin">국힘 3</span>
+            <span class="sum-chip chip-close">초접전 1</span>
+            <span class="cat-toggle">▼</span>
+          </div>
+        </div>
+        <div class="cat-list" id="cat-seoul">
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-seoul','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">강남구</div>
+              <div class="item-cands">민주 후보 vs 이성헌(국힘)</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:52%"></div></div>
+                <span class="item-pct" style="color:#ff8080">52%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:42%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">42%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-g">국힘 우세</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-seoul','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">서초구</div>
+              <div class="item-cands">민주 후보 vs 전성수(국힘)</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:51%"></div></div>
+                <span class="item-pct" style="color:#ff8080">51%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:44%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">44%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-c">초접전</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-seoul','tabGroup1')" style="justify-content:center;color:#388bfd;font-size:12px;font-weight:700;">
+            전체 25개 구 보기 →
+          </a>
+        </div>
+      </div>
+
+      <!-- 보궐선거 패널 -->
+      <div class="cat-panel">
+        <div class="cat-header" onclick="toggleCat('cat-byeol', this)">
+          <div class="cat-header-left">
+            <span class="cat-icon">📋</span>
+            <span class="cat-name">국회의원 보궐</span>
+            <span class="cat-count">8개 지역구</span>
+          </div>
+          <div class="cat-summary">
+            <span class="sum-chip chip-minjoo">민주 공천 1</span>
+            <span class="sum-chip chip-gukmin">국힘 공천 1</span>
+            <span class="sum-chip chip-joguk" style="background:rgba(0,48,135,0.35);color:#7eb3ff;border:1px solid #003087;">조국 강세 2</span>
+            <span class="cat-toggle">▼</span>
+          </div>
+        </div>
+        <div class="cat-list" id="cat-byeol">
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-byeol','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">인천 계양을</div>
+              <div class="item-cands">김남준(민주) vs 국힘 공천 중</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:44%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">44%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:28%"></div></div>
+                <span class="item-pct" style="color:#ff8080">28%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-m">민주 우세</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-byeol','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">경기 평택을</div>
+              <div class="item-cands">유의동(국힘) vs 민주 공천 중</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#ff8080">국</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-gukmin" style="width:48%"></div></div>
+                <span class="item-pct" style="color:#ff8080">48%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:31%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">31%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-g">국힘 우세</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-byeol','tabGroup1')">
+            <div class="item-left">
+              <div class="item-region">전북 군산·김제·부안갑</div>
+              <div class="item-cands">조국혁신당 강세</div>
+            </div>
+            <div class="item-bar-wrap">
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#7eb3ff">조</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-joguk" style="width:38%"></div></div>
+                <span class="item-pct" style="color:#7eb3ff">38%</span>
+              </div>
+              <div class="item-bar-row">
+                <span class="item-bar-label" style="color:#6ea8fe">민</span>
+                <div class="item-bar-bg"><div class="item-bar-fill item-bar-minjoo" style="width:32%"></div></div>
+                <span class="item-pct" style="color:#6ea8fe">32%</span>
+              </div>
+            </div>
+            <span class="item-badge badge-j">조국 우세</span>
+            <span class="item-arrow">›</span>
+          </a>
+          <a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-byeol','tabGroup1')" style="justify-content:center;color:#388bfd;font-size:12px;font-weight:700;">
+            전체 8개 지역구 보기 →
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /dashboard -->
+  </div>
+</section>
+
+<!-- ===== AD: 상단 배너 ===== -->
+<div class="ad-banner" style="margin:0 auto 0;max-width:1200px;padding:0 20px;">
+  <div style="background:#1c2128;border:1px dashed #30363d;border-radius:8px;padding:14px;text-align:center;color:#8b949e;font-size:12px;">
+    📢 광고 영역 (728×90) — 실제 배포 시 Google AdSense 코드로 교체
+  </div>
+</div>
+
+<!-- ===== 대진표 섹션 ===== -->
+<section class="section" id="section-daejinaepyo">
+  <div class="section-header">
+    <h2 class="section-title">🗳️ 전국 대진표</h2>
+    <button class="back-top-btn" onclick="scrollToTop()">↑ 맨 위로</button>
+  </div>
+
+  <div class="notice-box">
+    <strong>📌 표시 기준</strong> — 후보명은 <strong>언론 보도 공천 확정 기준</strong>(연합뉴스·뉴시스 2026.04.26 기준)으로 표기합니다.
+    수치는 <strong>선거여론조사심의위원회 등록 최신 조사 기준</strong>이며, 공천 미확정 지역은 확정 즉시 업데이트됩니다.
+    개표 후(2026.06.03 오후 8시~)에는 실제 득표율로 자동 전환됩니다.
+  </div>
+
+  <!-- 탭 -->
+  <div class="tab-bar" id="tabGroup1">
+    <button class="tab-btn active" data-tab="tab-gwangyeok" data-group="tabGroup1">🏛️ 광역단체장 (16)</button>
+    <button class="tab-btn" data-tab="tab-seoul" data-group="tabGroup1">🏙️ 서울 구청장 (25)</button>
+    <button class="tab-btn" data-tab="tab-byeol" data-group="tabGroup1">📋 국회의원 보궐 (8)</button>
+  </div>
+
+  <!-- 광역단체장 탭 -->
+  <div class="tab-content active" id="tab-gwangyeok">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+      <div class="party-legend">
+        <span class="legend-item"><span class="legend-dot" style="background:#004ea2"></span>더불어민주당</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#c9151e"></span>국민의힘</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#003087"></span>조국혁신당</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span>초접전</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#555"></span>경선 진행 중</span>
+      </div>
+    </div>
+
+    <!-- 전국 판세 지도 -->
+    <div style="overflow-x:auto;margin-bottom:20px;">
+      <div style="display:grid;grid-template-columns:repeat(6,80px);grid-template-rows:repeat(5,70px);gap:6px;min-width:510px;">
+        <!-- Row 1 -->
+        <div class="region-block gukmin-win" style="grid-column:1;grid-row:1;" onclick="openCandModal('강원 후보','gukmin','','강원특별자치도지사','강원특별자치도','','','')">
+          <div class="r-name">강원</div><div class="r-cand">김진태(국힘)</div>
+        </div>
+        <div class="region-block minjoo-win" style="grid-column:2;grid-row:1;" onclick="openCandModal('추미애','minjoo','','경기도지사','경기도','','','')">
+          <div class="r-name">경기</div><div class="r-cand">추미애(민주)</div>
+        </div>
+        <div class="region-block close-race" style="grid-column:3;grid-row:1;" onclick="openCandModal('오세훈','gukmin','','서울특별시장','서울특별시','','','')">
+          <div class="r-name">서울</div><div class="r-cand">오세훈(국힘)</div><div class="r-pct">48%</div>
+        </div>
+        <div class="region-block minjoo-win" style="grid-column:4;grid-row:1;" onclick="openCandModal('박찬대','minjoo','','인천광역시장','인천광역시','','','')">
+          <div class="r-name">인천</div><div class="r-cand">박찬대(민주)</div>
+        </div>
+        <!-- Row 2 -->
+        <div class="region-block close-race" style="grid-column:2;grid-row:2;" onclick="openCandModal('신용한','minjoo','','충청북도지사','충청북도','','','')">
+          <div class="r-name">충북</div><div class="r-cand">초접전</div>
+        </div>
+        <div class="region-block minjoo-win" style="grid-column:3;grid-row:2;" onclick="openCandModal('허태정','minjoo','','대전광역시장','대전광역시','','','')">
+          <div class="r-name">대전</div><div class="r-cand">허태정(민주)</div>
+        </div>
+        <div class="region-block minjoo-win" style="grid-column:4;grid-row:2;" onclick="openCandModal('조상호','minjoo','','세종특별자치시장','세종특별자치시','','','')">
+          <div class="r-name">세종</div><div class="r-cand">조상호(민주)</div>
+        </div>
+        <!-- Row 3 -->
+        <div class="region-block close-race" style="grid-column:1;grid-row:3;" onclick="openCandModal('박수현','minjoo','','충청남도지사','충청남도','','','')">
+          <div class="r-name">충남</div><div class="r-cand">초접전</div>
+        </div>
+        <div class="region-block gukmin-win" style="grid-column:2;grid-row:3;" onclick="openCandModal('이철우','gukmin','','경상북도지사','경상북도','','','')">
+          <div class="r-name">경북</div><div class="r-cand">이철우(국힘)</div><div class="r-pct">62.3%</div>
+        </div>
+        <div class="region-block close-race" style="grid-column:3;grid-row:3;" onclick="openCandModal('추경호','gukmin','','대구광역시장','대구광역시','','','')">
+          <div class="r-name">대구</div><div class="r-cand">추경호(국힘)</div><div class="r-pct">46%</div>
+        </div>
+        <div class="region-block close-race" style="grid-column:4;grid-row:3;" onclick="openCandModal('박완수','gukmin','','경상남도지사','경상남도','','','')">
+          <div class="r-name">경남</div><div class="r-cand">초접전</div>
+        </div>
+        <div class="region-block close-race" style="grid-column:5;grid-row:3;" onclick="openCandModal('부산 후보','minjoo','','부산광역시장','부산광역시','','','')">
+          <div class="r-name">부산</div><div class="r-cand">초접전</div>
+        </div>
+        <div class="region-block close-race" style="grid-column:6;grid-row:3;" onclick="openCandModal('울산 후보','minjoo','','울산광역시장','울산광역시','','','')">
+          <div class="r-name">울산</div><div class="r-cand">초접전</div>
+        </div>
+        <!-- Row 4 -->
+        <div class="region-block minjoo-win" style="grid-column:1;grid-row:4;" onclick="openCandModal('이원택','minjoo','','전북특별자치도지사','전북특별자치도','','','')">
+          <div class="r-name">전북</div><div class="r-cand">이원택(민주)</div>
+        </div>
+        <div class="region-block minjoo-win" style="grid-column:2;grid-row:4;" onclick="openCandModal('민형배','minjoo','','전남광주통합특별시장','전남광주통합특별시','','','')">
+          <div class="r-name">전남</div><div class="r-cand">민형배(민주)</div>
+        </div>
+        <div class="region-block minjoo-win" style="grid-column:3;grid-row:4;" onclick="openCandModal('민형배','minjoo','','전남광주통합특별시장','전남광주통합특별시','','','')">
+          <div class="r-name">광주</div><div class="r-cand">통합특별시</div>
+        </div>
+        <!-- Row 5 -->
+        <div class="region-block minjoo-win" style="grid-column:5;grid-row:5;" onclick="openCandModal('위성곤','minjoo','','제주특별자치도지사','제주특별자치도','','','')">
+          <div class="r-name">제주</div><div class="r-cand">위성곤(민주)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 광역단체장 카드 목록 -->
+    <div class="bigmatch-grid">
+      <!-- 서울 -->
+      <div class="match-card">
+        <div class="region-tag"><span>🏙️ 서울특별시</span><span class="verdict-badge badge-close">초접전</span></div>
+        <div class="region-name">서울특별시장</div>
+        <div class="candidate-row">
+          <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('박찬대','minjoo','57세','더불어민주당 원내대표','서울특별시','','','부동산 규제 강화·청년 주거 지원')">박</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('박찬대','minjoo','57세','더불어민주당 원내대표','서울특별시','','','부동산 규제 강화·청년 주거 지원')">박찬대</div>
+            <div class="candidate-party">더불어민주당 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#6ea8fe">52.3%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:52.3%"></div></div></div>
+        <div class="candidate-row" style="margin-top:8px;">
+          <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('오세훈','gukmin','63세','서울특별시장(현)','서울특별시','','','재개발·재건축 규제 완화')">오</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('오세훈','gukmin','63세','서울특별시장(현)','서울특별시','','','재개발·재건축 규제 완화')">오세훈</div>
+            <div class="candidate-party">국민의힘 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#ff8080">42.1%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:42.1%"></div></div></div>
+        <div class="match-footer">
+          <span class="survey-date">📅 2026.04.22 · 한국갤럽</span>
+          <a href="pages/gwangyeok/seoul.html" style="font-size:12px;color:#388bfd;font-weight:700;">상세 보기 →</a>
+        </div>
+      </div>
+
+      <!-- 부산 -->
+      <div class="match-card">
+        <div class="region-tag"><span>🌊 부산광역시</span><span class="verdict-badge badge-close">초접전</span></div>
+        <div class="region-name">부산광역시장</div>
+        <div class="candidate-row">
+          <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('전재수','minjoo','58세','국회의원(부산 북구갑)','부산광역시','','','')">전</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('전재수','minjoo','58세','국회의원(부산 북구갑)','부산광역시','','','')">전재수</div>
+            <div class="candidate-party">더불어민주당 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#6ea8fe">48.2%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:48.2%"></div></div></div>
+        <div class="candidate-row" style="margin-top:8px;">
+          <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('박형준','gukmin','60세','부산광역시장(현)','부산광역시','','','')">박</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('박형준','gukmin','60세','부산광역시장(현)','부산광역시','','','')">박형준</div>
+            <div class="candidate-party">국민의힘 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#ff8080">46.8%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:46.8%"></div></div></div>
+        <div class="match-footer">
+          <span class="survey-date">📅 2026.04.21 · 리얼미터</span>
+          <a href="pages/gwangyeok/busan.html" style="font-size:12px;color:#388bfd;font-weight:700;">상세 보기 →</a>
+        </div>
+      </div>
+
+      <!-- 경기 -->
+      <div class="match-card">
+        <div class="region-tag"><span>🌾 경기도</span><span class="verdict-badge badge-minjoo">민주 우세</span></div>
+        <div class="region-name">경기도지사</div>
+        <div class="candidate-row">
+          <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('추미애','minjoo','62세','국회의원(하남갑)','경기도','','','')">김</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('추미애','minjoo','62세','국회의원(하남갑)','경기도','','','')">추미애</div>
+            <div class="candidate-party">더불어민주당 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#6ea8fe">53.8%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:53.8%"></div></div></div>
+        <div class="candidate-row" style="margin-top:8px;">
+          <div class="candidate-avatar avatar-gukmin">국</div>
+          <div class="candidate-info">
+            <div class="candidate-name">경선 진행 중</div>
+            <div class="candidate-party">국민의힘 · 경선 진행 중</div>
+          </div>
+          <div class="candidate-pct" style="color:#ff8080">38.4%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:38.4%"></div></div></div>
+        <div class="match-footer">
+          <span class="survey-date">📅 2026.04.23 · 한국갤럽</span>
+          <a href="pages/gwangyeok/gyeonggi.html" style="font-size:12px;color:#388bfd;font-weight:700;">상세 보기 →</a>
+        </div>
+      </div>
+
+      <!-- 충남 -->
+      <div class="match-card">
+        <div class="region-tag"><span>🌊 충청남도</span><span class="verdict-badge badge-close">초접전</span></div>
+        <div class="region-name">충청남도지사</div>
+        <div class="candidate-row">
+          <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('박수현','minjoo','58세','국회의원(충남 공주·부여·청양)','충청남도','','','')">박</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('박수현','minjoo','58세','국회의원(충남 공주·부여·청양)','충청남도','','','')">박수현</div>
+            <div class="candidate-party">더불어민주당 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#6ea8fe">47.8%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:47.8%"></div></div></div>
+        <div class="candidate-row" style="margin-top:8px;">
+          <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('김태흠','gukmin','57세','충청남도지사(현)','충청남도','','','')">김</div>
+          <div class="candidate-info">
+            <div class="candidate-name" onclick="openCandModal('김태흠','gukmin','57세','충청남도지사(현)','충청남도','','','')">김태흠</div>
+            <div class="candidate-party">국민의힘 · 공천확정</div>
+          </div>
+          <div class="candidate-pct" style="color:#ff8080">46.1%</div>
+        </div>
+        <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:46.1%"></div></div></div>
+        <div class="match-footer">
+          <span class="survey-date">📅 2026.04.17 · 한국갤럽</span>
+          <a href="pages/gwangyeok/chungnam.html" style="font-size:12px;color:#388bfd;font-weight:700;">상세 보기 →</a>
+        </div>
+      </div>
+
+    </div><!-- /bigmatch-grid -->
+    <div style="text-align:center;margin-top:16px;">
+      <a href="pages/gwangyeok/" style="background:#1f6feb;color:#fff;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:700;display:inline-block;">전체 16개 광역단체장 보기 →</a>
+    </div>
+  </div><!-- /tab-gwangyeok -->
+
+  <!-- 서울 구청장 탭 -->
+  <div class="tab-content" id="tab-seoul">
+    <div class="notice-box">
+      서울 25개 자치구 구청장 선거. 지도 블록 클릭 시 후보 프로필 확인 가능합니다.
+    </div>
+    <div class="seoul-map-wrap">
+      <div class="seoul-map-grid" style="display:grid;grid-template-columns:repeat(5,80px);gap:6px;min-width:420px;">
+        <!-- 서울 25개 구 지도 (지리적 위치 근사) -->
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:1;" onclick="openCandModal('도봉구청장 후보','minjoo','','','도봉구','','','')"><span class="g-name">도봉</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:1;" onclick="openCandModal('노원구청장 후보','minjoo','','','노원구','','','')"><span class="g-name">노원</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:2;" onclick="openCandModal('은평구청장 후보','minjoo','','','은평구','','','')"><span class="g-name">은평</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:2;" onclick="openCandModal('강북구청장 후보','minjoo','','','강북구','','','')"><span class="g-name">강북</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:2;" onclick="openCandModal('성북구청장 후보','minjoo','','','성북구','','','')"><span class="g-name">성북</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:2;" onclick="openCandModal('중랑구청장 후보','minjoo','','','중랑구','','','')"><span class="g-name">중랑</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:3;" onclick="openCandModal('서대문구청장 후보','minjoo','','','서대문구','','','')"><span class="g-name">서대문</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:3;" onclick="openCandModal('종로구청장 후보','minjoo','','','종로구','','','')"><span class="g-name">종로</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:3;" onclick="openCandModal('동대문구청장 후보','minjoo','','','동대문구','','','')"><span class="g-name">동대문</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:3;" onclick="openCandModal('광진구청장 후보','minjoo','','','광진구','','','')"><span class="g-name">광진</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:5;grid-row:3;" onclick="openCandModal('강동구청장 후보','minjoo','','','강동구','','','')"><span class="g-name">강동</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:4;" onclick="openCandModal('마포구청장 후보','minjoo','','','마포구','','','')"><span class="g-name">마포</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:4;" onclick="openCandModal('중구청장 후보','minjoo','','','중구','','','')"><span class="g-name">중구</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:4;" onclick="openCandModal('성동구청장 후보','minjoo','','','성동구','','','')"><span class="g-name">성동</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:4;" onclick="openCandModal('송파구청장 후보','minjoo','','','송파구','','','')"><span class="g-name">송파</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:5;" onclick="openCandModal('양천구청장 후보','minjoo','','','양천구','','','')"><span class="g-name">양천</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:5;" onclick="openCandModal('영등포구청장 후보','minjoo','','','영등포구','','','')"><span class="g-name">영등포</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:5;" onclick="openCandModal('동작구청장 후보','minjoo','','','동작구','','','')"><span class="g-name">동작</span></div>
+        <div class="gu-block close-race" style="grid-column:4;grid-row:5;" onclick="openCandModal('서초구청장 후보','gukmin','','','서초구','','','')"><span class="g-name">서초</span></div>
+        <div class="gu-block gukmin-win" style="grid-column:5;grid-row:5;" onclick="openCandModal('강남구청장 후보','gukmin','','','강남구','','','')"><span class="g-name">강남</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:6;" onclick="openCandModal('강서구청장 후보','minjoo','','','강서구','','','')"><span class="g-name">강서</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:6;" onclick="openCandModal('구로구청장 후보','minjoo','','','구로구','','','')"><span class="g-name">구로</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:6;" onclick="openCandModal('관악구청장 후보','minjoo','','','관악구','','','')"><span class="g-name">관악</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:7;" onclick="openCandModal('금천구청장 후보','minjoo','','','금천구','','','')"><span class="g-name">금천</span></div>
+        <div class="gu-block gukmin-win" style="grid-column:2;grid-row:7;" onclick="openCandModal('용산구청장 후보','gukmin','','','용산구','','','')"><span class="g-name">용산</span></div>
+      </div>
+    </div>
+    <div class="party-legend" style="margin-top:12px;">
+      <span class="legend-item"><span class="legend-dot" style="background:#004ea2"></span>민주 우세</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#c9151e"></span>국힘 우세</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span>초접전</span>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <a href="pages/seoul/" style="background:#1f6feb;color:#fff;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:700;display:inline-block;">서울 25개 구청장 상세 보기 →</a>
+    </div>
+  </div><!-- /tab-seoul -->
+
+  <!-- 보궐선거 탭 -->
+  <div class="tab-content" id="tab-byeol">
+    <div class="notice-box">
+      <strong>📌 다당제 표시 원칙</strong> — 여론조사 등록 기준 상위 3개 후보(정당)를 모두 표시합니다.
+      조국혁신당·개혁신당·무소속 후보가 1위인 경우 해당 정당 색상으로 표시하며, 공천 미확정 지역은 확정 즉시 업데이트됩니다.
+    </div>
+    <div class="byeol-grid">
+      <!-- 인천 계양을 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 인천 계양을</div>
+        <span class="byeol-reason">박찬대 의원 광역단체장 출마 사직</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-minjoo" onclick="openCandModal('김남준','minjoo','','','인천 계양을','','','')">김</div>
+          <div><div class="byeol-name" onclick="openCandModal('김남준','minjoo','','','인천 계양을','','','')">김남준</div><div class="byeol-party">더불어민주당 · 전략공천 확정</div></div>
+        </div>
+        <div class="byeol-bars">
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#6ea8fe">민</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-minjoo" style="width:44%"></div></div><span class="byeol-bar-pct" style="color:#6ea8fe">44%</span></div>
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#ff8080">국</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-gukmin" style="width:28%"></div></div><span class="byeol-bar-pct" style="color:#ff8080">28%</span></div>
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#7eb3ff">조</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-joguk" style="width:18%"></div></div><span class="byeol-bar-pct" style="color:#7eb3ff">18%</span></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+
+      <!-- 경기 평택을 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 경기 평택을</div>
+        <span class="byeol-reason">이병진 의원 당선무효형 확정</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-gukmin" onclick="openCandModal('유의동','gukmin','','','경기 평택을','','','')">유</div>
+          <div><div class="byeol-name" onclick="openCandModal('유의동','gukmin','','','경기 평택을','','','')">유의동</div><div class="byeol-party">국민의힘 · 단수공천 확정</div></div>
+        </div>
+        <div class="byeol-bars">
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#ff8080">국</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-gukmin" style="width:48%"></div></div><span class="byeol-bar-pct" style="color:#ff8080">48%</span></div>
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#6ea8fe">민</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-minjoo" style="width:31%"></div></div><span class="byeol-bar-pct" style="color:#6ea8fe">31%</span></div>
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#7eb3ff">조</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-joguk" style="width:12%"></div></div><span class="byeol-bar-pct" style="color:#7eb3ff">12%</span></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 2026.04.22</div>
+      </div>
+
+      <!-- 전북 군산·김제·부안갑 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 전북 군산·김제·부안갑 <span class="byeol-rank1" style="background:#003087;color:#fff">조국 우세</span></div>
+        <span class="byeol-reason">신영대 의원 당선무효형 확정</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-joguk">조</div>
+          <div><div class="byeol-name" style="color:#7eb3ff">조국혁신당 후보</div><div class="byeol-party">조국혁신당 · 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-bars">
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#7eb3ff">조</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-joguk" style="width:38%"></div></div><span class="byeol-bar-pct" style="color:#7eb3ff">38%</span></div>
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#6ea8fe">민</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-minjoo" style="width:32%"></div></div><span class="byeol-bar-pct" style="color:#6ea8fe">32%</span></div>
+          <div class="byeol-bar-row"><span class="byeol-bar-label" style="color:#ff8080">국</span><div class="byeol-bar-bg"><div class="byeol-bar-fill bar-gukmin" style="width:18%"></div></div><span class="byeol-bar-pct" style="color:#ff8080">18%</span></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+
+      <!-- 전북 군산·김제·부안을 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 전북 군산·김제·부안을 <span class="byeol-rank1" style="background:#003087;color:#fff">조국 강세</span></div>
+        <span class="byeol-reason">이원택 의원 광역단체장 출마 사직</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-joguk">조</div>
+          <div><div class="byeol-name" style="color:#7eb3ff">조국혁신당 후보</div><div class="byeol-party">조국혁신당 · 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-minjoo">민</div>
+          <div><div class="tbd">더불어민주당 — 공천 진행 중</div></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+
+      <!-- 부산 북구갑 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 부산 북구갑</div>
+        <span class="byeol-reason">전재수 의원 광역단체장 출마 사직</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-minjoo">민</div>
+          <div><div class="tbd">더불어민주당 — 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-gukmin">국</div>
+          <div><div class="tbd">국민의힘 — 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-joguk">조</div>
+          <div><div class="tbd" style="color:#7eb3ff">조국혁신당 — 공천 진행 중</div></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+
+      <!-- 충남 공주·부여·청양 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 충남 공주·부여·청양</div>
+        <span class="byeol-reason">박수현 의원 광역단체장 출마 사직</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-minjoo">민</div>
+          <div><div class="tbd">더불어민주당 — 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-gukmin">국</div>
+          <div><div class="tbd">국민의힘 — 공천 진행 중</div></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+
+      <!-- 충남 아산을 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 충남 아산을</div>
+        <span class="byeol-reason">강훈식 의원 대통령실 입성 사직</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-minjoo">민</div>
+          <div><div class="tbd">더불어민주당 — 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-gukmin">국</div>
+          <div><div class="tbd">국민의힘 — 공천 진행 중</div></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+
+      <!-- 경기 안산갑 -->
+      <div class="byeol-card">
+        <div class="byeol-region">📍 경기 안산갑</div>
+        <span class="byeol-reason">양문석 의원 유죄 확정</span>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-minjoo">민</div>
+          <div><div class="tbd">더불어민주당 — 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-gukmin">국</div>
+          <div><div class="tbd">국민의힘 — 공천 진행 중</div></div>
+        </div>
+        <div class="byeol-cand-row">
+          <div class="byeol-avatar avatar-joguk">조</div>
+          <div><div class="tbd" style="color:#7eb3ff">조국혁신당 — 공천 진행 중</div></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 공천 확정 후 여론조사 예정</div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;">
+      <div class="party-legend">
+        <span class="legend-item"><span class="legend-dot" style="background:#004ea2"></span>더불어민주당</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#c9151e"></span>국민의힘</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#003087"></span>조국혁신당</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#e85d00"></span>개혁신당</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#64748b"></span>무소속</span>
+      </div>
+    </div>
+  </div><!-- /tab-byeol -->
+
+</section>
+
+<!-- ===== AD: 중간 배너 ===== -->
+<div style="max-width:1200px;margin:0 auto;padding:0 20px 16px;">
+  <div style="background:#1c2128;border:1px dashed #30363d;border-radius:8px;padding:14px;text-align:center;color:#8b949e;font-size:12px;">
+    📢 광고 영역 (336×280 또는 반응형) — 실제 배포 시 Google AdSense 코드로 교체
+  </div>
+</div>
+
+<!-- ===== 주요 격전지 빅매치 ===== -->
+<section class="section" id="section-bigmatch">
+  <div class="section-header">
+    <h2 class="section-title">⚡ 주요 격전지 빅매치</h2>
+    <button class="back-top-btn" onclick="scrollToTop()">↑ 맨 위로</button>
+  </div>
+  <div class="notice-box">
+    <strong>📌 표시 기준</strong> — 선거여론조사심의위원회 등록 최신 조사 기준 수치. 개표 후 실제 득표율로 자동 전환.
+  </div>
+  <div class="bigmatch-grid">
+    <div class="match-card">
+      <div class="region-tag"><span>🌊 부산광역시장</span><span class="verdict-badge badge-close">초접전</span></div>
+      <div class="candidate-row">
+        <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('전재수','minjoo','58세','국회의원(부산 북구갑)','부산광역시','','','')">전</div>
+        <div class="candidate-info"><div class="candidate-name">전재수</div><div class="candidate-party">더불어민주당</div></div>
+        <div class="candidate-pct" style="color:#6ea8fe">48.2%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:48.2%"></div></div></div>
+      <div class="candidate-row" style="margin-top:6px;">
+        <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('박형준','gukmin','60세','부산광역시장(현)','부산광역시','','','')">박</div>
+        <div class="candidate-info"><div class="candidate-name">박형준</div><div class="candidate-party">국민의힘</div></div>
+        <div class="candidate-pct" style="color:#ff8080">46.8%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:46.8%"></div></div></div>
+      <div class="match-footer"><span class="survey-date">📅 2026.04.21 · 리얼미터</span><span style="font-size:11px;color:#c4b5fd;">격차 1.4%p</span></div>
+    </div>
+    <div class="match-card">
+      <div class="region-tag"><span>🌻 충청북도지사</span><span class="verdict-badge badge-close">초접전</span></div>
+      <div class="candidate-row">
+        <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('신용한','minjoo','','','충청북도','','','')">신</div>
+        <div class="candidate-info"><div class="candidate-name">신용한</div><div class="candidate-party">더불어민주당</div></div>
+        <div class="candidate-pct" style="color:#6ea8fe">46.5%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:46.5%"></div></div></div>
+      <div class="candidate-row" style="margin-top:6px;">
+        <div class="candidate-avatar avatar-gukmin">국</div>
+        <div class="candidate-info"><div class="candidate-name">경선 진행 중</div><div class="candidate-party">국민의힘 (김영환·윤갑근)</div></div>
+        <div class="candidate-pct" style="color:#ff8080">45.2%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:45.2%"></div></div></div>
+      <div class="match-footer"><span class="survey-date">📅 2026.04.19 · 리얼미터</span><span style="font-size:11px;color:#c4b5fd;">격차 1.3%p</span></div>
+    </div>
+    <div class="match-card">
+      <div class="region-tag"><span>🌊 충청남도지사</span><span class="verdict-badge badge-close">초접전</span></div>
+      <div class="candidate-row">
+        <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('박수현','minjoo','58세','국회의원','충청남도','','','')">박</div>
+        <div class="candidate-info"><div class="candidate-name">박수현</div><div class="candidate-party">더불어민주당</div></div>
+        <div class="candidate-pct" style="color:#6ea8fe">47.8%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:47.8%"></div></div></div>
+      <div class="candidate-row" style="margin-top:6px;">
+        <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('김태흠','gukmin','57세','충청남도지사(현)','충청남도','','','')">김</div>
+        <div class="candidate-info"><div class="candidate-name">김태흠</div><div class="candidate-party">국민의힘</div></div>
+        <div class="candidate-pct" style="color:#ff8080">46.1%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:46.1%"></div></div></div>
+      <div class="match-footer"><span class="survey-date">📅 2026.04.17 · 한국갤럽</span><span style="font-size:11px;color:#c4b5fd;">격차 1.7%p</span></div>
+    </div>
+    <div class="match-card">
+      <div class="region-tag"><span>⛰️ 강원특별자치도지사</span><span class="verdict-badge badge-close">초접전</span></div>
+      <div class="candidate-row">
+        <div class="candidate-avatar avatar-gukmin" onclick="openCandModal('김진태','gukmin','57세','강원특별자치도지사(현)','강원특별자치도','','','')">김</div>
+        <div class="candidate-info"><div class="candidate-name">김진태</div><div class="candidate-party">국민의힘</div></div>
+        <div class="candidate-pct" style="color:#ff8080">47.8%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-gukmin" style="width:47.8%"></div></div></div>
+      <div class="candidate-row" style="margin-top:6px;">
+        <div class="candidate-avatar avatar-minjoo">민</div>
+        <div class="candidate-info"><div class="candidate-name">공천 진행 중</div><div class="candidate-party">더불어민주당</div></div>
+        <div class="candidate-pct" style="color:#6ea8fe">46.2%</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-bg"><div class="bar-fill bar-minjoo" style="width:46.2%"></div></div></div>
+      <div class="match-footer"><span class="survey-date">📅 2026.04.20 · 엠브레인</span><span style="font-size:11px;color:#c4b5fd;">격차 1.6%p</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 여론조사 테이블 ===== -->
+<section class="section" id="section-survey">
+  <div class="section-header">
+    <h2 class="section-title">📊 전국 여론조사 요약</h2>
+    <button class="back-top-btn" onclick="scrollToTop()">↑ 맨 위로</button>
+  </div>
+  <div class="notice-box">
+    선거여론조사심의위원회 등록 최신 조사 기준. 1위 후보 수치 기준 정렬. 개표 후 실제 득표율로 전환.
+  </div>
+  <div style="overflow-x:auto;">
+    <table class="survey-table">
+      <thead>
+        <tr>
+          <th>지역</th>
+          <th>1위 후보(정당)</th>
+          <th>2위 후보(정당)</th>
+          <th>3위 후보(정당)</th>
+          <th>격차</th>
+          <th>판세</th>
+          <th>조사일·기관</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-region">서울</td>
+          <td class="td-cand1">오세훈(국힘) 48%</td>
+          <td class="td-cand2">정원오(민주) 44%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#6ea8fe">+4%p</td>
+          <td><span class="verdict-badge badge-minjoo">민주 우세</span></td>
+          <td class="td-source">04.22 한국갤럽</td>
+        </tr>
+        <tr>
+          <td class="td-region">부산</td>
+          <td class="td-cand1">전재수(민주) 48.2%</td>
+          <td class="td-cand2">박형준(국힘) 46.8%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#c4b5fd">+1.4%p</td>
+          <td><span class="verdict-badge badge-close">초접전</span></td>
+          <td class="td-source">04.21 리얼미터</td>
+        </tr>
+        <tr>
+          <td class="td-region">대구</td>
+          <td class="td-cand2">추경호(국힘) 46%</td>
+          <td class="td-cand1">김부겸(민주) 45%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#ff8080">+1%p</td>
+          <td><span class="verdict-badge badge-gukmin">국힘 우세</span></td>
+          <td class="td-source">04.20 엠브레인</td>
+        </tr>
+        <tr>
+          <td class="td-region">경기</td>
+          <td class="td-cand1">추미애(민주) 52%</td>
+          <td class="td-cand2">국힘 경선 중 38%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#6ea8fe">+14%p</td>
+          <td><span class="verdict-badge badge-minjoo">민주 우세</span></td>
+          <td class="td-source">04.23 한국갤럽</td>
+        </tr>
+        <tr>
+          <td class="td-region">충북</td>
+          <td class="td-cand1">신용한(민주) 46.5%</td>
+          <td class="td-cand2">국힘 경선 중 45.2%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#c4b5fd">+1.3%p</td>
+          <td><span class="verdict-badge badge-close">초접전</span></td>
+          <td class="td-source">04.19 리얼미터</td>
+        </tr>
+        <tr>
+          <td class="td-region">충남</td>
+          <td class="td-cand1">박수현(민주) 47.8%</td>
+          <td class="td-cand2">김태흠(국힘) 46.1%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#c4b5fd">+1.7%p</td>
+          <td><span class="verdict-badge badge-close">초접전</span></td>
+          <td class="td-source">04.17 한국갤럽</td>
+        </tr>
+        <tr>
+          <td class="td-region">전북</td>
+          <td class="td-cand1">이원택(민주) 51.3%</td>
+          <td class="td-cand3">조국혁신당 22.4%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#6ea8fe">+28.9%p</td>
+          <td><span class="verdict-badge badge-minjoo">민주 우세</span></td>
+          <td class="td-source">04.18 리얼미터</td>
+        </tr>
+        <tr>
+          <td class="td-region">경북</td>
+          <td class="td-cand2">이철우(국힘) 62.3%</td>
+          <td class="td-cand1">민주 후보 24.1%</td>
+          <td class="td-source">—</td>
+          <td class="td-gap" style="color:#ff8080">+38.2%p</td>
+          <td><span class="verdict-badge badge-gukmin">국힘 우세</span></td>
+          <td class="td-source">04.19 한국갤럽</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== AD: 하단 배너 ===== -->
+<div style="max-width:1200px;margin:0 auto;padding:0 20px 16px;">
+  <div style="background:#1c2128;border:1px dashed #30363d;border-radius:8px;padding:14px;text-align:center;color:#8b949e;font-size:12px;">
+    📢 광고 영역 (728×90) — 실제 배포 시 Google AdSense 코드로 교체
+  </div>
 </div>
 
 <!-- ===== 투표소 찾기 ===== -->
