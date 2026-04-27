@@ -1013,6 +1013,40 @@
       "surveyDate": "공천 확정 후 여론조사 예정"
     },
     {
+      "id": "incheon-yeonsu-gap",
+      "region": "인천 연수갑",
+      "reason": "박찬대 의원 인천시장 출마 사직",
+      "verdict": "민주 우세",
+      "candidates": [
+        {
+          "name": "송영길",
+          "partyName": "더불어민주당",
+          "party": "minjoo",
+          "status": "전략공천 확정",
+          "pct": null,
+          "age": "62세",
+          "current": "전 더불어민주당 대표",
+          "education": "서울대 법학과",
+          "career": "5선 국회의원(인천 계양을), 민주당 대표",
+          "pledge": "연수갑 지역경제 활성화, 인천 발전"
+        },
+        {
+          "name": "미확정",
+          "partyName": "국민의힘",
+          "party": "gukmin",
+          "status": "공천 진행 중",
+          "pct": null,
+          "age": "",
+          "current": "",
+          "education": "",
+          "career": "",
+          "pledge": ""
+        }
+      ],
+      "history": [],
+      "lastUpdated": "2026.04.27"
+    },
+    {
       "id": "gyeonggi-pyeongtaek-eul",
       "region": "경기 평택을",
       "reason": "이병진 의원 당선무효형 확정",
