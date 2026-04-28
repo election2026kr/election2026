@@ -2,7 +2,7 @@
 """
 선거 데이터 자동 업데이트 스크립트
 - 연합뉴스·뉴시스·동아일보 RSS에서 선거 관련 뉴스 수집
-- Gemini API로 공천 확정 및 여론조사 수치 추출
+- OpenAI GPT-4.1-mini로 공천 확정 및 여론조사 수치 추출
 - candidates.json 자동 업데이트
 """
 
@@ -14,7 +14,7 @@ import time
 import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
-from google import genai
+from openai import OpenAI
 
 # ── 설정 ──────────────────────────────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,8 +34,8 @@ KEYWORDS = [
     "단수공천", "전략공천", "공천확정", "공천 확정"
 ]
 
-# Gemini API 설정
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+# OpenAI API 설정
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 # ── 뉴스 수집 ─────────────────────────────────────────────────────────────────
@@ -80,9 +80,9 @@ def fetch_news() -> list[dict]:
     return articles
 
 
-# ── Gemini 분석 ───────────────────────────────────────────────────────────────
-def analyze_with_gemini(articles: list[dict], candidates_data: dict) -> dict:
-    """Gemini로 뉴스에서 데이터 변경사항 추출"""
+# ── OpenAI 분석 ───────────────────────────────────────────────────────────────
+def analyze_with_openai(articles: list[dict], candidates_data: dict) -> dict:
+    """OpenAI GPT-4.1-mini로 뉴스에서 데이터 변경사항 추출"""
 
     if not articles:
         print("분석할 기사 없음")
@@ -144,19 +144,24 @@ def analyze_with_gemini(articles: list[dict], candidates_data: dict) -> dict:
 
     for attempt in range(3):
         try:
-            response = client.models.generate_content(
-                model="gemini-2.0-flash",
-                contents=prompt
+            response = client.chat.completions.create(
+                model="gpt-4.1-mini",
+                messages=[
+                    {"role": "system", "content": "당신은 한국 지방선거 데이터 분석 전문가입니다. 반드시 JSON 형식으로만 응답하세요."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.1,
+                max_tokens=2000
             )
-            raw = response.text.strip()
+            raw = response.choices[0].message.content.strip()
             break
         except Exception as e:
-            if attempt < 2 and "429" in str(e):
-                wait = 60 * (attempt + 1)
+            if attempt < 2 and ("429" in str(e) or "rate" in str(e).lower()):
+                wait = 30 * (attempt + 1)
                 print(f"Rate limit — {wait}초 대기 후 재시도 ({attempt+1}/3)")
                 time.sleep(wait)
             else:
-                print(f"Gemini 분석 실패: {e}")
+                print(f"OpenAI 분석 실패: {e}")
                 return {}
     else:
         return {}
@@ -166,10 +171,11 @@ def analyze_with_gemini(articles: list[dict], candidates_data: dict) -> dict:
         raw = re.sub(r"\s*```$", "", raw)
         result = json.loads(raw)
         updates = result.get("updates", [])
-        print(f"Gemini 분석 완료: {len(updates)}개 업데이트 항목 발견")
+        print(f"OpenAI 분석 완료: {len(updates)}개 업데이트 항목 발견")
         return result
     except Exception as e:
         print(f"JSON 파싱 실패: {e}")
+        print(f"원본 응답: {raw[:500]}")
         return {}
 
 
@@ -256,7 +262,7 @@ def main():
         print("수집된 기사 없음 — 종료")
         sys.exit(0)
 
-    result = analyze_with_gemini(articles, candidates_data)
+    result = analyze_with_openai(articles, candidates_data)
     updates = result.get("updates", [])
 
     if not updates:
