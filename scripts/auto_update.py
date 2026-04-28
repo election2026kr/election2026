@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """
-선거 데이터 자동 업데이트 스크립트
-- 연합뉴스·뉴시스·동아일보 RSS에서 선거 관련 뉴스 수집
-- OpenAI GPT-4.1-mini로 공천 확정 및 여론조사 수치 추출
-- candidates.json 자동 업데이트
+선거 데이터 자동 업데이트 스크립트 (Gemini 유료 버전)
+- 연합뉴스·뉴시스·동아일보·한겨레·조선일보 RSS에서 선거 관련 뉴스 수집
+- Google Gemini 2.0 Flash로 공천 확정 및 여론조사 수치 추출
+- candidates.json 자동 업데이트 (광역단체장 + 보궐선거 전체)
 """
-
 import json
 import os
 import re
@@ -14,33 +13,42 @@ import time
 import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
-from openai import OpenAI
+import google.generativeai as genai
 
 # ── 설정 ──────────────────────────────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CANDIDATES_PATH = os.path.join(BASE_DIR, "data", "candidates.json")
 
 RSS_FEEDS = [
-    "https://www.yna.co.kr/rss/politics.xml",       # 연합뉴스 정치
-    "https://www.yna.co.kr/rss/local.xml",           # 연합뉴스 지역
-    "https://www.yna.co.kr/rss/all.xml",             # 연합뉴스 전체
-    "https://www.newsis.com/RSS/politics.xml",       # 뉴시스 정치
-    "https://rss.donga.com/politics.xml",            # 동아일보 정치
+    "https://www.yna.co.kr/rss/politics.xml",
+    "https://www.yna.co.kr/rss/local.xml",
+    "https://www.yna.co.kr/rss/all.xml",
+    "https://www.newsis.com/RSS/politics.xml",
+    "https://rss.donga.com/politics.xml",
+    "https://www.hani.co.kr/rss/politics/",
+    "https://www.chosun.com/arc/outboundfeeds/rss/category/politics/",
 ]
 
 KEYWORDS = [
     "지방선거", "공천", "후보", "여론조사", "광역단체장",
     "시장", "도지사", "구청장", "보궐선거", "2026",
-    "단수공천", "전략공천", "공천확정", "공천 확정"
+    "단수공천", "전략공천", "공천확정", "공천 확정",
+    "출마", "선거운동", "지지율", "지지도", "접전", "격전",
+    "민주당", "국민의힘", "조국혁신당", "개혁신당"
 ]
 
-# OpenAI API 설정
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+# Gemini API 설정
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    print("오류: GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
+    sys.exit(1)
+
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 
 # ── 뉴스 수집 ─────────────────────────────────────────────────────────────────
 def fetch_news() -> list[dict]:
-    """RSS 피드에서 선거 관련 뉴스 수집"""
     articles = []
     seen_titles = set()
     headers = {"User-Agent": "Mozilla/5.0 (compatible; election-bot/1.0)"}
@@ -50,7 +58,7 @@ def fetch_news() -> list[dict]:
             resp = requests.get(feed_url, headers=headers, timeout=10)
             resp.encoding = "utf-8"
             soup = BeautifulSoup(resp.text, "xml")
-            items = soup.find_all("item")[:50]  # 피드당 50건 수집
+            items = soup.find_all("item")[:50]
 
             for item in items:
                 title = item.find("title")
@@ -61,7 +69,6 @@ def fetch_news() -> list[dict]:
                 desc_text = desc.get_text(strip=True) if desc else ""
                 combined = title_text + " " + desc_text
 
-                # 중복 제거
                 if title_text in seen_titles:
                     continue
 
@@ -80,10 +87,8 @@ def fetch_news() -> list[dict]:
     return articles
 
 
-# ── OpenAI 분석 ───────────────────────────────────────────────────────────────
-def analyze_with_openai(articles: list[dict], candidates_data: dict) -> dict:
-    """OpenAI GPT-4.1-mini로 뉴스에서 데이터 변경사항 추출"""
-
+# ── Gemini 분석 ───────────────────────────────────────────────────────────────
+def analyze_with_gemini(articles: list[dict], candidates_data: dict) -> dict:
     if not articles:
         print("분석할 기사 없음")
         return {}
@@ -94,74 +99,71 @@ def analyze_with_openai(articles: list[dict], candidates_data: dict) -> dict:
             for cand in region.get("candidates", []):
                 current_summary.append({
                     "region": region["region"],
+                    "section": section,
                     "name": cand["name"],
                     "party": cand["partyName"],
                     "status": cand.get("status", ""),
                     "pct": cand.get("pct")
                 })
 
-    news_text = "\n".join([
-        f"[{a['date']}] {a['title']}\n{a['desc']}"
-        for a in articles[:30]
+    articles_text = "\n\n".join([
+        f"[{i+1}] {a['title']}\n{a['desc']}"
+        for i, a in enumerate(articles[:80])
     ])
 
-    prompt = f"""당신은 2026년 한국 지방선거 데이터 분석 전문가입니다.
-아래 뉴스 기사들을 분석하여 현재 후보 데이터에서 업데이트가 필요한 항목을 찾아주세요.
+    prompt = f"""당신은 2026년 대한민국 지방선거 데이터 분석 전문가입니다.
 
-## 현재 후보 데이터 (요약)
+아래 뉴스 기사들을 분석하여 후보자 정보 변경사항을 JSON으로 추출해 주세요.
+
+## 현재 등록된 후보 목록 (광역단체장 + 보궐선거 전체):
 {json.dumps(current_summary, ensure_ascii=False, indent=2)}
 
-## 최신 뉴스 기사
-{news_text}
+## 최신 뉴스 기사:
+{articles_text}
 
-## 지시사항
-1. 뉴스에서 **공식 공천 확정** 또는 **공식 여론조사 수치**만 추출하세요.
-2. 반드시 아래 조건을 모두 충족해야 업데이트 항목에 포함하세요:
-   - '공천확정', '단수공천', '전략공천', '공천 확정' 등 확정 표현이 명시된 경우만 status 업데이트
-   - 구체적인 퍼센트 수치가 기사에 명시된 경우만 pct 업데이트
-   - '가능성', '검토', '거론', '출마 의향' 등 불확실한 표현은 절대 포함하지 마세요
-3. 현재 데이터에 이미 '공천확정'인 후보는 status를 업데이트하지 마세요.
-4. 현재 데이터의 지역명과 정확히 일치하는 경우만 포함하세요.
-   - 후보명이 '미확정', '공천 진행 중', '민주 후보', '국힘 후보', '조국혁신당 후보' 등 미정인 경우,
-     뉴스에서 해당 지역·정당의 후보가 확정되면 field를 "name"으로 하여 새 이름으로 교체하세요.
-   - 이름 교체 시 status도 "공천확정"으로 함께 업데이트하세요 (별도 항목으로 추가).
-5. 아래 JSON 형식으로만 응답하세요. 변경사항이 없으면 빈 배열 반환.
-   반드시 JSON만 응답하고 마크다운 코드블록(```)은 사용하지 마세요.
+## 추출 규칙:
+1. **공천 확정**: status를 "confirmed"로 변경 (단수공천, 전략공천, 공천확정 등)
+2. **후보 사퇴/탈락**: status를 "withdrawn"으로 변경
+3. **여론조사 수치**: pct 필드를 최신 지지율(%)로 업데이트
+4. **후보명 변경**: 미확정 후보명이 실제 이름으로 확정된 경우
+5. 광역단체장(gwangyeok)과 보궐선거(byeol) 모두 포함하여 분석
+6. 확실한 근거가 있는 경우에만 업데이트 (추측 금지)
+7. 이미 현재 값과 동일한 경우 제외
 
-응답 형식:
+## 응답 형식 (JSON만 출력):
 {{
   "updates": [
     {{
-      "region": "지역명 (현재 데이터와 정확히 일치)",
-      "candidate_name": "현재 데이터의 후보명 (교체 대상이면 현재 미정 이름)",
+      "region": "지역명",
+      "candidate_name": "후보자 이름",
       "field": "status 또는 pct 또는 name",
       "old_value": "현재 값",
       "new_value": "새 값",
-      "reason": "변경 근거 (기사 내용 요약)"
+      "reason": "변경 근거"
     }}
   ]
-}}"""
+}}
+
+변경사항이 없으면: {{"updates": []}}"""
 
     for attempt in range(3):
         try:
-            response = client.chat.completions.create(
-                model="gpt-4.1-mini",
-                messages=[
-                    {"role": "system", "content": "당신은 한국 지방선거 데이터 분석 전문가입니다. 반드시 JSON 형식으로만 응답하세요."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.1,
-                max_tokens=2000
+            response = model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.1,
+                    max_output_tokens=4096,
+                )
             )
-            raw = response.choices[0].message.content.strip()
+            raw = response.text.strip()
             break
         except Exception as e:
-            if attempt < 2 and ("429" in str(e) or "rate" in str(e).lower()):
+            if attempt < 2 and ("429" in str(e) or "quota" in str(e).lower() or "rate" in str(e).lower()):
                 wait = 30 * (attempt + 1)
                 print(f"Rate limit — {wait}초 대기 후 재시도 ({attempt+1}/3)")
                 time.sleep(wait)
             else:
-                print(f"OpenAI 분석 실패: {e}")
+                print(f"Gemini 분석 실패: {e}")
                 return {}
     else:
         return {}
@@ -171,7 +173,7 @@ def analyze_with_openai(articles: list[dict], candidates_data: dict) -> dict:
         raw = re.sub(r"\s*```$", "", raw)
         result = json.loads(raw)
         updates = result.get("updates", [])
-        print(f"OpenAI 분석 완료: {len(updates)}개 업데이트 항목 발견")
+        print(f"Gemini 분석 완료: {len(updates)}개 업데이트 항목 발견")
         return result
     except Exception as e:
         print(f"JSON 파싱 실패: {e}")
@@ -181,7 +183,6 @@ def analyze_with_openai(articles: list[dict], candidates_data: dict) -> dict:
 
 # ── candidates.json 업데이트 ──────────────────────────────────────────────────
 def apply_updates(candidates_data: dict, updates: list[dict]) -> tuple[dict, int]:
-    """추출된 업데이트를 candidates.json에 적용"""
     change_count = 0
     today = datetime.now().strftime("%Y.%m.%d")
 
@@ -198,7 +199,6 @@ def apply_updates(candidates_data: dict, updates: list[dict]) -> tuple[dict, int
                 if region["region"] != region_name:
                     continue
                 for cand in region.get("candidates", []):
-                    # 이름 매칭: 정확히 일치하거나 old_value와 일치
                     if cand["name"] != cand_name and update.get("old_value") != cand["name"]:
                         continue
 
@@ -213,21 +213,27 @@ def apply_updates(candidates_data: dict, updates: list[dict]) -> tuple[dict, int
                         print(f"  ✓ {region_name} {cand_name}: status '{old}' → '{new_value}' ({reason})")
                         change_count += 1
                         found = True
+
                     elif field == "pct":
                         try:
                             old = cand.get("pct")
-                            cand["pct"] = float(new_value)
+                            new_pct = float(new_value)
+                            if old == new_pct:
+                                print(f"  - {region_name} {cand_name}: pct 이미 {old} — 스킵")
+                                found = True
+                                continue
+                            cand["pct"] = new_pct
                             region["surveyDate"] = today
-                            print(f"  ✓ {region_name} {cand_name}: pct {old} → {new_value} ({reason})")
+                            print(f"  ✓ {region_name} {cand_name}: pct {old} → {new_pct} ({reason})")
                             change_count += 1
                             found = True
                         except (ValueError, TypeError):
                             print(f"  ✗ pct 변환 실패: {new_value}")
+
                     elif field == "name":
                         old = cand.get("name", "")
-                        # 미정 후보명인 경우에만 교체 허용
                         undecided = ["미확정", "공천 진행 중", "민주 후보", "국힘 후보",
-                                     "조국혁신당 후보", "무소속 후보", "공천 중"]
+                                     "조국혁신당 후보", "무소속 후보", "공천 중", "개혁신당 후보"]
                         if any(u in old for u in undecided):
                             cand["name"] = new_value
                             region["surveyDate"] = today
@@ -251,25 +257,29 @@ def apply_updates(candidates_data: dict, updates: list[dict]) -> tuple[dict, int
 def main():
     print(f"\n{'='*60}")
     print(f"선거 데이터 자동 업데이트 시작: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"AI 엔진: Google Gemini 2.0 Flash (유료 Tier 1)")
     print(f"{'='*60}\n")
 
     with open(CANDIDATES_PATH, "r", encoding="utf-8") as f:
         candidates_data = json.load(f)
 
-    articles = fetch_news()
+    total_gwangyeok = sum(len(r.get("candidates", [])) for r in candidates_data.get("gwangyeok", []))
+    total_byeol = sum(len(r.get("candidates", [])) for r in candidates_data.get("byeol", []))
+    print(f"분석 대상: 광역단체장 {total_gwangyeok}명, 보궐선거 {total_byeol}명 (총 {total_gwangyeok + total_byeol}명)\n")
 
+    articles = fetch_news()
     if not articles:
         print("수집된 기사 없음 — 종료")
         sys.exit(0)
 
-    result = analyze_with_openai(articles, candidates_data)
+    result = analyze_with_gemini(articles, candidates_data)
     updates = result.get("updates", [])
 
     if not updates:
         print("업데이트 항목 없음 — 종료")
         sys.exit(0)
 
-    print("\n[업데이트 적용]")
+    print(f"\n[업데이트 적용] {len(updates)}개 항목 처리 중...")
     updated_data, change_count = apply_updates(candidates_data, updates)
 
     if change_count == 0:
