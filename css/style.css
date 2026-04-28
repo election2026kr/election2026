@@ -804,3 +804,22 @@ footer a { color: var(--blue-light); }
   .byeol-grid { grid-template-columns: 1fr; }
   .guide-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== HERO GRID RESPONSIVE ===== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-grid > div:first-child {
+    order: 1;
+  }
+  .hero-grid .dashboard {
+    order: 2;
+  }
+}
