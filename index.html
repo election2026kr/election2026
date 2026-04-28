@@ -736,7 +736,7 @@
           if (!grid || !data.byeol) return;
           grid.innerHTML = data.byeol.map(renderCard).join('');
           // 탭 카운트 업데이트
-          const tabBtn = document.querySelector('[data-tab="byeol"]');
+          const tabBtn = document.querySelector('[data-tab="tab-byeol"]');
           if (tabBtn) {
             tabBtn.textContent = tabBtn.textContent.replace(/\(\d+\)/, `(${data.byeol.length})`);
           }

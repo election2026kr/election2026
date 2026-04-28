@@ -227,6 +227,22 @@ def apply_updates(candidates_data: dict, updates: list[dict]) -> tuple[dict, int
                             print(f"  ✓ {region_name} {cand_name}: pct {old} → {new_pct} ({reason})")
                             change_count += 1
                             found = True
+                            # history 배열에 최신 수치 추가 (같은 날짜 중복 방지)
+                            history = region.get("history", [])
+                            # 같은 날짜 항목이 이미 있으면 업데이트, 없으면 추가
+                            today_entry = next((h for h in history if h.get("date") == today), None)
+                            if today_entry is None:
+                                # 현재 모든 후보의 pct 수집
+                                pcts = [c.get("pct") for c in region.get("candidates", [])]
+                                history.append({
+                                    "date": today,
+                                    "org": update.get("reason", "자동수집")[:20],
+                                    "pcts": pcts,
+                                    "gap": "",
+                                    "sample": ""
+                                })
+                                region["history"] = history
+                                print(f"    → history에 {today} 항목 추가")
                         except (ValueError, TypeError):
                             print(f"  ✗ pct 변환 실패: {new_value}")
 
