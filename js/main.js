@@ -40,6 +40,23 @@ function switchTab(tabId, groupId) {
   if (activeContent) activeContent.classList.add('active');
 }
 
+// ===== 탭 전환 + 스크롤 통합 함수 =====
+// 사이드바/카드에서 특정 탭으로 이동할 때 사용
+// tabId: 활성화할 탭 ID, groupId: 탭바 ID, sectionId: 스크롤 목적지 섹션 ID
+function goToTab(tabId, groupId, sectionId) {
+  // 1. 탭 전환 먼저
+  switchTab(tabId, groupId);
+  // 2. 탭바가 보이도록 섹션으로 부드럽게 스크롤
+  const section = document.getElementById(sectionId || 'section-daejinaepyo');
+  if (section) {
+    // 헤더/sticky-nav 높이 보정 (약 110px)
+    const offset = 110;
+    const top = section.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+  return false; // href 기본 동작 방지
+}
+
 // 탭 버튼 이벤트 등록
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.tab-btn').forEach(btn => {

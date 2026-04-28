@@ -200,7 +200,7 @@
       const barFillClass0 = c0.party === 'gukmin' ? 'item-bar-gukmin' : 'item-bar-minjoo';
       const barFillClass1 = c1.party === 'gukmin' ? 'item-bar-gukmin' : 'item-bar-minjoo';
 
-      return `<a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')">
+      return `<a class="cat-item" href="#section-daejinaepyo" onclick="return goToTab('tab-gwangyeok','tabGroup1')">
         <div class="item-left">
           <div class="item-region">${r.emoji} ${r.region}</div>
           <div class="item-cands">${c0.name}(민주) vs ${c1.name}(국힘)</div>
@@ -222,7 +222,7 @@
       </a>`;
     }).join('');
 
-    container.innerHTML = items + `<a class="cat-item" href="#section-daejinaepyo" onclick="switchTab('tab-gwangyeok','tabGroup1')" style="justify-content:center;color:#388bfd;font-size:12px;font-weight:700;">
+    container.innerHTML = items + `<a class="cat-item" href="#section-daejinaepyo" onclick="return goToTab('tab-gwangyeok','tabGroup1')" style="justify-content:center;color:#388bfd;font-size:12px;font-weight:700;">
       전체 ${data.gwangyeok.length}개 지역 보기 →
     </a>`;
   }
