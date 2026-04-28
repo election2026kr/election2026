@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": "2026-04-27",
+    "version": "2026-04-28",
     "description": "2026 지방선거 광역단체장 후보 및 여론조사 데이터",
     "source": "중앙선거여론조사심의위원회 / 연합뉴스 / 각 언론사 보도",
-    "lastUpdated": "2026-04-27"
+    "lastUpdated": "2026-04-28"
   },
   "party_colors": {
     "minjoo": {
@@ -795,15 +795,15 @@
           "pct": 70.0
         },
         {
-          "name": "미확정",
+          "name": "양정무",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
+          "status": "단수공천 확정",
           "age": "—",
-          "current": "—",
+          "current": "전 전주갑 당협위원장",
           "education": "—",
-          "career": "—",
-          "pledge": "—",
+          "career": "전북 전주갑 당협위원장",
+          "pledge": "전북 경제 혁신, 새만금 개발",
           "pct": 5.0
         }
       ],
@@ -1252,11 +1252,11 @@
       "verdict": "pending",
       "candidates": [
         {
-          "name": "공천 진행 중",
+          "name": "하정우",
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "전략공천 확정",
+          "background": "전 청와대 AI수석비서관, 영화감독",
           "pct": null
         },
         {
@@ -1347,56 +1347,56 @@
       "id": "seongdong",
       "gu": "성동구",
       "trend": "minjoo",
-      "dem": "정원오 후임",
-      "ppu": "미확정"
+      "dem": "유보화",
+      "ppu": "고재현"
     },
     {
       "id": "gwangjin",
       "gu": "광진구",
       "trend": "minjoo",
-      "dem": "김경호",
-      "ppu": "미확정"
+      "dem": "문종철",
+      "ppu": "김경호"
     },
     {
       "id": "dongdaemun",
       "gu": "동대문구",
       "trend": "minjoo",
-      "dem": "이필형",
-      "ppu": "미확정"
+      "dem": "최동민",
+      "ppu": "이필형"
     },
     {
       "id": "jungnang",
       "gu": "중랑구",
       "trend": "minjoo",
       "dem": "류경기",
-      "ppu": "미확정"
+      "ppu": "황종석"
     },
     {
       "id": "seongbuk",
       "gu": "성북구",
       "trend": "minjoo",
       "dem": "이승로",
-      "ppu": "미확정"
+      "ppu": "민병웅"
     },
     {
       "id": "gangbuk",
       "gu": "강북구",
       "trend": "minjoo",
-      "dem": "이순희",
-      "ppu": "미확정"
+      "dem": "이승훈",
+      "ppu": "장지호"
     },
     {
       "id": "dobong",
       "gu": "도봉구",
       "trend": "minjoo",
-      "dem": "오언석",
-      "ppu": "미확정"
+      "dem": "김동욱",
+      "ppu": "오언석"
     },
     {
       "id": "nowon",
       "gu": "노원구",
       "trend": "minjoo",
-      "dem": "오승록",
+      "dem": "서준오",
       "ppu": "미확정"
     },
     {
@@ -1404,62 +1404,62 @@
       "gu": "은평구",
       "trend": "minjoo",
       "dem": "김미경",
-      "ppu": "미확정"
+      "ppu": "남기정"
     },
     {
       "id": "seodaemun",
       "gu": "서대문구",
       "trend": "minjoo",
-      "dem": "이성헌",
-      "ppu": "미확정"
+      "dem": "박윤기",
+      "ppu": "이성헌"
     },
     {
       "id": "mapo",
       "gu": "마포구",
       "trend": "minjoo",
-      "dem": "박강수",
-      "ppu": "미확정"
+      "dem": "유동균",
+      "ppu": "박강수"
     },
     {
       "id": "yangcheon",
       "gu": "양천구",
       "trend": "close",
-      "dem": "이기재",
-      "ppu": "미확정"
+      "dem": "우영찬",
+      "ppu": "이기재"
     },
     {
       "id": "gangseo",
       "gu": "강서구",
       "trend": "minjoo",
       "dem": "진교훈",
-      "ppu": "미확정"
+      "ppu": "김진선"
     },
     {
       "id": "guro",
       "gu": "구로구",
       "trend": "minjoo",
-      "dem": "문헌일",
+      "dem": "장인홍",
       "ppu": "미확정"
     },
     {
       "id": "geumcheon",
       "gu": "금천구",
       "trend": "minjoo",
-      "dem": "유성훈",
-      "ppu": "미확정"
+      "dem": "최기찬",
+      "ppu": "이희권"
     },
     {
       "id": "yeongdeungpo",
       "gu": "영등포구",
       "trend": "minjoo",
-      "dem": "최호권",
-      "ppu": "미확정"
+      "dem": "미확정",
+      "ppu": "최웅식"
     },
     {
       "id": "dongjak",
       "gu": "동작구",
       "trend": "close",
-      "dem": "박일하",
+      "dem": "류삼영",
       "ppu": "미확정"
     },
     {
@@ -1467,35 +1467,35 @@
       "gu": "관악구",
       "trend": "minjoo",
       "dem": "박준희",
-      "ppu": "미확정"
+      "ppu": "이남형"
     },
     {
       "id": "seocho",
       "gu": "서초구",
       "trend": "gukmin",
-      "dem": "미확정",
+      "dem": "황인식",
       "ppu": "전성수"
     },
     {
       "id": "gangnam",
       "gu": "강남구",
       "trend": "gukmin",
-      "dem": "미확정",
-      "ppu": "조성명"
+      "dem": "김형곤",
+      "ppu": "김현기"
     },
     {
       "id": "songpa",
       "gu": "송파구",
       "trend": "close",
-      "dem": "서강석",
-      "ppu": "미확정"
+      "dem": "미확정",
+      "ppu": "서강석"
     },
     {
       "id": "gangdong",
       "gu": "강동구",
       "trend": "minjoo",
-      "dem": "이수희",
-      "ppu": "미확정"
+      "dem": "미확정",
+      "ppu": "이수희"
     }
   ]
 }
