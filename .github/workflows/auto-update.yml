@@ -1,14 +1,8 @@
 name: 선거 데이터 자동 업데이트
 on:
   schedule:
-    # 한국시간 기준: 오전 6시, 9시, 12시, 15시, 18시, 21시 (UTC -9시간)
-    - cron: '0 21 * * *'
-    - cron: '0 0 * * *'
-    - cron: '0 3 * * *'
-    - cron: '0 6 * * *'
-    - cron: '0 9 * * *'
-    - cron: '0 12 * * *'
-  workflow_dispatch:  # 수동 실행 버튼
+    - cron: '0 * * * *'
+  workflow_dispatch:
 jobs:
   update-election-data:
     runs-on: ubuntu-latest
@@ -22,10 +16,10 @@ jobs:
         with:
           python-version: '3.11'
       - name: 의존성 설치
-        run: pip install openai requests beautifulsoup4 lxml
+        run: pip install google-generativeai requests beautifulsoup4 lxml
       - name: 선거 데이터 자동 업데이트 실행
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/auto_update.py
       - name: 변경사항 커밋 및 푸시
         run: |
