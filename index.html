@@ -723,10 +723,10 @@
             if (c.pct == null) return;
             const p = PARTY_COLOR[c.party] || { text: '#aaa', bar: '', label: '?' };
             const label = c.party === 'musosok' ? c.name.charAt(0) : p.label;
-            const barStyle = p.bar ? `class="byeol-bar-fill ${p.bar}"` : `class="byeol-bar-fill" style="background:#888;"`;
+            const barBg = p.bar ? '' : 'background:#888;';
             barsHtml += `<div class="byeol-bar-row">
               <span class="byeol-bar-label" style="color:${p.text}">${label}</span>
-              <div class="byeol-bar-bg"><div ${barStyle} style="width:${c.pct}%"></div></div>
+              <div class="byeol-bar-bg"><div class="byeol-bar-fill ${p.bar}" style="width:${c.pct}%;${barBg}"></div></div>
               <span class="byeol-bar-pct" style="color:${p.text}">${c.pct}%</span>
             </div>`;
           });
