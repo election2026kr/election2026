@@ -173,7 +173,7 @@
         {
           "name": "박형준",
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "공천확정",
           "age": "60세 (1966년생)",
           "current": "부산광역시장(현)",
@@ -477,7 +477,7 @@
         {
           "name": "김두겸",
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "공천확정",
           "age": "62세 (1964년생)",
           "current": "울산광역시장(현)",
@@ -1255,7 +1255,7 @@
         {
           "name": "하정우",
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "인재영입 전략공천 확정",
           "background": "영화감독 출신, 전 청와대 AI수석비서관 역임 주장",
           "pct": 35.5
@@ -1265,13 +1265,13 @@
           "party": "musosok",
           "partyName": "무소속",
           "status": "출마 예정 (국힌 공청 거부 시 무소속)",
-          "background": "전 국민의힌 대표, 전 법무부장관",
+          "background": "전 국민의힘 대표, 전 법무부장관",
           "pct": 28.5
         },
         {
           "name": "박민식",
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "단일화 협의 대기 중",
           "background": "전 국가보훈부 장관, 전 의원",
           "pct": 26.0
@@ -1290,7 +1290,7 @@
         {
           "name": "이진숙",
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "전략공천 거론 중",
           "background": "전 방송통신위원장, 전 MBC 사장",
           "pct": null
@@ -1379,7 +1379,7 @@
         {
           "name": null,
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "공천 진행 중",
           "background": "공천 미확정",
           "pct": null
@@ -1406,7 +1406,7 @@
         {
           "name": null,
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "공천 진행 중",
           "background": "공천 미확정",
           "pct": null
@@ -1433,7 +1433,7 @@
         {
           "name": null,
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "공천 진행 중",
           "background": "공천 미확정",
           "pct": null
@@ -1460,7 +1460,7 @@
         {
           "name": null,
           "party": "gukmin",
-          "partyName": "국민의힌",
+          "partyName": "국민의힘",
           "status": "공천 진행 중",
           "background": "공천 미확정",
           "pct": null
@@ -1482,15 +1482,15 @@
       "id": "junggu",
       "gu": "중구",
       "trend": "minjoo",
-      "dem": "김길성",
-      "ppu": "이진수"
+      "dem": "이동현",
+      "ppu": "김길성"
     },
     {
       "id": "yongsan",
       "gu": "용산구",
       "trend": "close",
       "dem": "강태웅",
-      "ppu": "박희영"
+      "ppu": "김경대"
     },
     {
       "id": "seongdong",
