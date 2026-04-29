@@ -1,26 +1,38 @@
 name: 선거 데이터 자동 업데이트
+
 on:
   schedule:
-    - cron: '0 * * * *'
+    # 한국시간 기준: 오전 8시 (UTC 23:00), 오후 2시 (UTC 05:00), 오후 8시 (UTC 11:00)
+    - cron: '0 23 * * *'
+    - cron: '0 5 * * *'
+    - cron: '0 11 * * *'
   workflow_dispatch:
+
 jobs:
   update-election-data:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Python 설정
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: 의존성 설치
         run: pip install google-generativeai requests beautifulsoup4 lxml
+
       - name: 선거 데이터 자동 업데이트 실행
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/auto_update.py
+
       - name: 변경사항 커밋 및 푸시
         run: |
           git config user.name "election-bot"
@@ -29,6 +41,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "변경사항 없음 — 커밋 생략"
           else
-            git commit -m "auto: 선거 데이터 자동 업데이트 $(date +'%Y-%m-%d %H:%M')"
+            git commit -m "auto: 선거 데이터 자동 업데이트 $(date +'%Y-%m-%d %H:%M KST')"
             git push
           fi
