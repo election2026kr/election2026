@@ -682,7 +682,7 @@
       "region": "충청북도",
       "title": "충북도지사",
       "emoji": "🌻",
-      "verdict": "close",
+      "verdict": "minjoo",
       "candidates": [
         {
           "name": "신용한",
@@ -1079,8 +1079,8 @@
       "id": "gyeonggi-pyeongtaek-eul",
       "region": "경기 평택을",
       "reason": "이병진 의원 당선무효형 확정",
-      "verdict": "close",
-      "verdictLabel": "초접전",
+      "verdict": "joguk",
+      "verdictLabel": "조국 우세",
       "candidates": [
         {
           "name": "조국",
@@ -1108,7 +1108,7 @@
         }
       ],
       "surveyDate": "KSOI 2026.04.26",
-      "lastUpdated": "2026.04.28"
+      "lastUpdated": "2026.04.30"
     },
     {
       "id": "gyeonggi-ansan-gap",
@@ -1285,7 +1285,7 @@
       "region": "대구 달성군",
       "reason": "추경호 의원 대구시장 출마 사직 (4.29)",
       "verdict": "gukmin",
-      "verdictLabel": "국한 강세",
+      "verdictLabel": "국힘 강세",
       "candidates": [
         {
           "name": "이진숙",

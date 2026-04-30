@@ -519,6 +519,7 @@ h1 span { color: var(--yellow-light); }
 .badge-minjoo { background: rgba(0,78,162,0.3); color: var(--minjoo-text); border: 1px solid var(--minjoo); }
 .badge-gukmin { background: rgba(201,21,30,0.3); color: var(--gukmin-text); border: 1px solid var(--gukmin); }
 .badge-close { background: rgba(124,58,237,0.3); color: #c4b5fd; border: 1px solid var(--purple); }
+.badge-joguk { background: rgba(0,48,135,0.35); color: var(--joguk-text); border: 1px solid var(--joguk); }
 .survey-date { font-size: 10px; color: var(--text2); }
 
 /* ===== 여론조사 테이블 ===== */
