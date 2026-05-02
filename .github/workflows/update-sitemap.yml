@@ -3,6 +3,9 @@ name: Update Sitemap
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-sitemap:
     runs-on: ubuntu-latest
