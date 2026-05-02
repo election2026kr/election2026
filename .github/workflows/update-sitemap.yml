@@ -1,0 +1,83 @@
+name: Update Sitemap
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate full sitemap.xml
+        run: |
+          cat > sitemap.xml << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url><loc>https://election2026.aphrocaptain.com/</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/voting.html</loc><lastmod>2026-05-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/seoul.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/busan.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/daegu.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/incheon.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/gwangju.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/daejeon.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/ulsan.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/sejong.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/gyeonggi.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/gangwon.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/chungbuk.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/chungnam.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/jeonbuk.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/jeonnam.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/jeonnam-gwangju.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/gyeongbuk.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/gyeongnam.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/gwangyeok/jeju.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/jongno.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/junggu.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/yongsan.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/seongdong.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/gwangjin.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/dongdaemun.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/jungnang.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/seongbuk.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/gangbuk.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/dobong.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/nowon.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/eunpyeong.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/seodaemun.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/mapo.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/yangcheon.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/gangseo.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/guro.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/geumcheon.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/yeongdeungpo.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/dongjak.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/gwanak.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/seocho.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/gangnam.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/songpa.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/seoul_gu/gangdong.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/incheon_gyeyang.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/incheon_yeonsu.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/gyeonggi_pyeongtaek.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/gyeonggi_ansan.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/gyeonggi_hanam.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/gyeonggi_siheung.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/jeonbuk_gunsan_a.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/jeonbuk_gunsan_b.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/busan_buk_a.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/daegu_dalseong.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/gwangju_gwangsan.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/chungbuk_cheongju.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/chungnam_asan.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+            <url><loc>https://election2026.aphrocaptain.com/pages/byeol/chungnam_gongju.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+          </urlset>
+          EOF
+      - name: Commit sitemap.xml
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git diff --staged --quiet || git commit -m "chore: update sitemap.xml with all pages"
+          git push
