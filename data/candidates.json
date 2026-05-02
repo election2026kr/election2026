@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": "2026-05-01",
+    "version": "2026-05-02",
     "description": "2026 지방선거 광역단체장 후보 및 여론조사 데이터",
     "source": "중앙선거여론조사심의위원회 / 연합뉴스 / MBC / KBS / 경향신문 보도",
-    "lastUpdated": "2026-05-01"
+    "lastUpdated": "2026-05-02"
   },
   "party_colors": {
     "minjoo": {
@@ -100,7 +100,7 @@
           "education": "서울대 법학과",
           "career": "21·22대 국회의원(인천 계양을)",
           "pledge": "부동산 규제 강화, 청년 주거 지원, 서울 균형발전",
-          "pct": 43.0
+          "pct": 48.0
         },
         {
           "name": "오세훈",
@@ -115,10 +115,20 @@
           "pct": 32.0
         }
       ],
-      "surveyDate": "2026.04.25~27",
-      "surveyOrg": "코리아리서치(KBS 의뢰)",
-      "sampleSize": "1,000명",
+      "surveyDate": "2026.04.28~29",
+      "surveyOrg": "코리아리서치(MBC 의뢰)",
+      "sampleSize": "800명",
       "history": [
+        {
+          "date": "2026.04.28~29",
+          "org": "코리아리서치(MBC 의뢰)",
+          "pcts": [
+            48.0,
+            32.0
+          ],
+          "gap": "+16.0%p",
+          "sample": "800명"
+        },
         {
           "date": "2026.04.25~27",
           "org": "코리아리서치(KBS 의뢰)",
@@ -454,7 +464,7 @@
           "education": "충남대 경제학과",
           "career": "대전시장(2018~2022)",
           "pledge": "대전 과학기술 허브 완성, 대덕특구 혁신",
-          "pct": 46.3
+          "pct": 47.0
         },
         {
           "name": "이장우",
@@ -466,13 +476,23 @@
           "education": "충남대 행정학과",
           "career": "19·20·21대 국회의원, 대전시장(2022~현재)",
           "pledge": "대전 스마트시티 구축, 교통 인프라 확충",
-          "pct": 22.0
+          "pct": 31.0
         }
       ],
-      "surveyDate": "2026.04.25",
-      "surveyOrg": "연합뉴스",
-      "sampleSize": "1,000명",
+      "surveyDate": "2026.04.25~27",
+      "surveyOrg": "한국리서치(KBS대전 의뢰)",
+      "sampleSize": "800명",
       "history": [
+        {
+          "date": "2026.04.25~27",
+          "org": "한국리서치(KBS대전 의뢰)",
+          "pcts": [
+            47.0,
+            31.0
+          ],
+          "gap": "+16.0%p",
+          "sample": "800명"
+        },
         {
           "date": "2026.04.25",
           "org": "연합뉴스",
@@ -570,7 +590,7 @@
           "education": "고려대 법학과",
           "career": "22대 국회의원",
           "pledge": "행정수도 완성, 세종 자족기능 강화",
-          "pct": 44.9
+          "pct": 45.0
         },
         {
           "name": "최민호",
@@ -582,13 +602,23 @@
           "education": "서울대 행정학과",
           "career": "세종시장(2022~현재)",
           "pledge": "세종 스마트시티 완성, 교통 인프라 확충",
-          "pct": 20.0
+          "pct": 18.0
         }
       ],
-      "surveyDate": "2026.04.25",
-      "surveyOrg": "연합뉴스",
-      "sampleSize": "1,000명",
+      "surveyDate": "2026.04.27~29",
+      "surveyOrg": "한국리서치(KBS대전 의뢰)",
+      "sampleSize": "800명",
       "history": [
+        {
+          "date": "2026.04.27~29",
+          "org": "한국리서치(KBS대전 의뢰)",
+          "pcts": [
+            45.0,
+            18.0
+          ],
+          "gap": "+27.0%p",
+          "sample": "800명"
+        },
         {
           "date": "2026.04.25",
           "org": "연합뉴스",
@@ -631,14 +661,14 @@
           "pct": 55.0
         },
         {
-          "name": "미확정",
+          "name": "경선 결과 발표 중",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "5.2 경선 결과 발표 예정",
+          "status": "5.2 경선 결과 발표 (양향자·이성배·함진규 중)",
           "age": "—",
           "current": "—",
           "education": "—",
-          "career": "3인 경선 투표 완료 (양향자·이성배·함진규, 4.30~5.1 투표, 5.2 발표 예정)",
+          "career": "3인 경선 투표 완료 (4.30~5.1 투표, 5.2 오전 결과 발표)",
           "pledge": "—",
           "pct": 20.0
         }
@@ -783,10 +813,10 @@
           "education": "충남대 행정학과",
           "career": "20·21·22대 국회의원, 청와대 대변인",
           "pledge": "충남 산업 혁신, 내포신도시 발전",
-          "pct": 42.2
+          "pct": 44.0
         },
         {
-          "name": "김태흠",
+          "name": "김태흥",
           "party": "gukmin",
           "partyName": "국민의힘",
           "status": "공천확정",
@@ -795,13 +825,23 @@
           "education": "충남대 법학과",
           "career": "20·21대 국회의원, 충남도지사(2022~현재)",
           "pledge": "충남 기업 유치, 서해안 경제벨트 완성",
-          "pct": 22.0
+          "pct": 23.0
         }
       ],
-      "surveyDate": "2026.04.25",
-      "surveyOrg": "연합뉴스",
-      "sampleSize": "1,000명",
+      "surveyDate": "2026.04.26~28",
+      "surveyOrg": "한국리서치(KBS대전 의뢰)",
+      "sampleSize": "800명",
       "history": [
+        {
+          "date": "2026.04.26~28",
+          "org": "한국리서치(KBS대전 의뢰)",
+          "pcts": [
+            44.0,
+            23.0
+          ],
+          "gap": "+21.0%p",
+          "sample": "800명"
+        },
         {
           "date": "2026.04.25",
           "org": "연합뉴스",
@@ -1044,10 +1084,11 @@
           "pct": 44
         },
         {
-          "name": null,
+          "name": "심왕섭",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
+          "status": "단수공천 확정 (5.1)",
+          "background": "환경조경발전재단 이사장, 계양초교 총동창회장 출신",
           "pct": null
         },
         {
@@ -1059,7 +1100,7 @@
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.28"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "incheon-yeonsu-gap",
@@ -1077,16 +1118,16 @@
           "pct": null
         },
         {
-          "name": null,
+          "name": "박종진",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "단수공천 확정 (5.1)",
+          "background": "인천 서구을 당협위원장",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.28"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "gyeonggi-hanam-gap",
@@ -1104,16 +1145,16 @@
           "pct": null
         },
         {
-          "name": null,
+          "name": "이용",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "단수공천 확정 (5.1)",
+          "background": "전 비례대표 의원, 하남시 당협위원장",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.28"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "gyeonggi-pyeongtaek-eul",
@@ -1331,7 +1372,7 @@
           "name": "이진숙",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 신청 (4.30, 전 방통위원장, 5.5 최종 확정 예정)",
+          "status": "단수공천 확정 (5.1)",
           "background": "전 방송통신위원장, 전 MBC 사장",
           "pct": null
         },
@@ -1339,13 +1380,13 @@
           "name": null,
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
+          "status": "공천 진행 중 (박형룡 대구달성군 지역위원장 등 검토)",
           "background": "공천 미확정",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.30"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "gyeonggi-siheung",
@@ -1385,21 +1426,21 @@
           "name": null,
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
+          "status": "공천 진행 중 (강위원 전남도 경제부지사 등 검토)",
           "background": "공천 미확정",
           "pct": null
         },
         {
-          "name": null,
-          "party": "joguk",
-          "partyName": "조국혁신당",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "name": "안태욱",
+          "party": "gukmin",
+          "partyName": "국민의힘",
+          "status": "단수공천 확정 (5.1)",
+          "background": "전 광주시당위원장",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.28"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "chungbuk-cheongju-sangdang",
@@ -1444,16 +1485,16 @@
           "pct": null
         },
         {
-          "name": null,
+          "name": "김태규",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공모 예정 (5.1 전후)",
-          "background": "공천 미확정",
+          "status": "단수공천 확정 (5.1)",
+          "background": "전 방통위 부위원장, 울산남갑 당협위원장",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.30"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "jeju-seogwipo",
@@ -1463,24 +1504,24 @@
       "verdictLabel": "민주 강세",
       "candidates": [
         {
-          "name": null,
+          "name": "김성범",
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "영입인재 3호 전략공천 확정 (4.30)",
+          "background": "전 해양수산부 차관, 민주당 영입인재 3호",
           "pct": null
         },
         {
-          "name": null,
+          "name": "고기철",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "단수공천 확정 (5.1)",
+          "background": "제주도당위원장",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.30"
+      "lastUpdated": "2026.05.02"
     },
     {
       "id": "jeonbuk-gunsan-eul-new",
@@ -1586,7 +1627,7 @@
       "gu": "노원구",
       "trend": "minjoo",
       "dem": "서준오",
-      "ppu": "미확정"
+      "ppu": "미확정 (공천 진행 중)"
     },
     {
       "id": "eunpyeong",
@@ -1641,7 +1682,7 @@
       "id": "yeongdeungpo",
       "gu": "영등포구",
       "trend": "minjoo",
-      "dem": "미확정 (김정태 전 시의원 vs 조유진 전 청와대 행정관 경선)",
+      "dem": "미확정 (경선 진행 중)",
       "ppu": "최웅식"
     },
     {
@@ -1649,7 +1690,7 @@
       "gu": "동작구",
       "trend": "close",
       "dem": "류삼영",
-      "ppu": "미확정 (김정태 전 충북대병원 상임감사 vs 이유원 전 춘천 MBC 아나운서 결선)"
+      "ppu": "미확정 (결선 진행 중)"
     },
     {
       "id": "gwanak",
@@ -1683,7 +1724,7 @@
       "id": "gangdong",
       "gu": "강동구",
       "trend": "minjoo",
-      "dem": "미확정 (강경량 전 경찰대학장 vs 양준욱 전 시의장 vs 김종무 전 시의원 경선)",
+      "dem": "미확정 (경선 진행 중)",
       "ppu": "이수희"
     }
   ]
