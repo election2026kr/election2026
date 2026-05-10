@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": "2026-05-09-v1",
+    "version": "2026-05-10-v1",
     "description": "2026 지방선거 광역단체장 후보 및 여론조사 데이터",
-    "source": "중앙선거여론조사심의위원회 / JTBC / SBS / KBS / MBC / 연합뉴스 / 뉴스1 보도",
-    "lastUpdated": "2026-05-09"
+    "source": "중앙선거여론조사심의위원회 / JTBC / SBS / KBS / MBC / 연합뉴스 / 뉴스1 / 대구MBC 보도",
+    "lastUpdated": "2026-05-10"
   },
   "party_colors": {
     "minjoo": {
@@ -1022,7 +1022,7 @@
           "education": "경북대 행정학과",
           "career": "경북도의원",
           "pledge": "경북 산업 다각화, 포항 철강 혁신",
-          "pct": 26.5
+          "pct": 30.2
         },
         {
           "name": "이철우",
@@ -1034,13 +1034,23 @@
           "education": "경북대 법학과",
           "career": "18·19·20대 국회의원, 경북도지사(2018~현재)",
           "pledge": "경북 첨단산업 유치, 안동 문화관광 활성화",
-          "pct": 49.2
+          "pct": 55.2
         }
       ],
-      "surveyDate": "2026.04.25",
-      "surveyOrg": "연합뉴스",
-      "sampleSize": "1,000명",
+      "surveyDate": "2026.05.02~03",
+      "surveyOrg": "에이스리서치(대구MBC 의뢰)",
+      "sampleSize": "1,010명",
       "history": [
+        {
+          "date": "2026.05.02~03",
+          "org": "에이스리서치(대구MBC 의뢰)",
+          "pcts": [
+            30.2,
+            55.2
+          ],
+          "gap": "-25.0%p",
+          "sample": "1,010명"
+        },
         {
           "date": "2026.04.25",
           "org": "연합뉴스",
@@ -1253,10 +1263,18 @@
           "status": "단수공천 확정 (5.1)",
           "background": "전 비례대표 의원, 하남시 당협위원장",
           "pct": null
+        },
+        {
+          "name": "김성열",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "출마 확정",
+          "background": "개혁신당 최고위원",
+          "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.05.02"
+      "lastUpdated": "2026.05.10"
     },
     {
       "id": "gyeonggi-pyeongtaek-eul",
@@ -1294,12 +1312,20 @@
           "party": "musosok",
           "partyName": "자유와혁신",
           "status": "공천확정",
-          "background": "전 국무총리, 전 자유한국당 대표",
+          "background": "전 국무종리, 전 자유한국당 대표",
           "pct": 11.0
+        },
+        {
+          "name": "김재연",
+          "party": "jinbo",
+          "partyName": "진보당",
+          "status": "공천확정",
+          "background": "진보당 상임대표",
+          "pct": 6.0
         }
       ],
       "surveyDate": "JTBC/메타보이스 2026.05.04~05 (502명)",
-      "lastUpdated": "2026.05.07"
+      "lastUpdated": "2026.05.10"
     },
     {
       "id": "gyeonggi-ansan-gap",
@@ -1374,13 +1400,21 @@
           "name": null,
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "경선 진행 중 (소정임·윤민아·윤용근 3인 경선)",
+          "status": "경선 진행 중 (소정임·윤민아·윤용근 3인 경선, 5.13 최종 후보 선출 예정)",
           "background": "정진석 전 의원 출마 철회 후 3인 경선 진행 중",
+          "pct": null
+        },
+        {
+          "name": "이은창",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "개혁신당 충남 공주·부여·청양 후보",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.05.09"
+      "lastUpdated": "2026.05.10"
     },
     {
       "id": "jeonbuk-gunsan-gap",
@@ -1449,15 +1483,7 @@
           "partyName": "더불어민주당",
           "status": "인재영입 전략공천 확정 (4.29)",
           "background": "전 청와대 AI미래기획수석비서관, 영화배우 출신",
-          "pct": 34.3
-        },
-        {
-          "name": "한동훈",
-          "party": "musosok",
-          "partyName": "무소속",
-          "status": "무소속 출마 선언 (국민의힘 제명)",
-          "background": "전 국민의힘 대표, 전 법무부장관",
-          "pct": 33.5
+          "pct": 37.0
         },
         {
           "name": "박민식",
@@ -1465,11 +1491,19 @@
           "partyName": "국민의힘",
           "status": "단수공천 확정 (5.5)",
           "background": "전 국가보훈부 장관, 전 의원",
-          "pct": 21.5
+          "pct": 26.0
+        },
+        {
+          "name": "한동훈",
+          "party": "musosok",
+          "partyName": "무소속",
+          "status": "무소속 출마 선언 (국민의힘 제명)",
+          "background": "전 국민의힘 대표, 전 법무부장관",
+          "pct": 25.0
         }
       ],
-      "surveyDate": "한길리서치(부산MBC 의뢰) 2026.05.01~03 (1,013명)",
-      "lastUpdated": "2026.05.08"
+      "surveyDate": "메타보이스·리서치랩(JTBC 의뢰) 2026.05.04~05 (501명)",
+      "lastUpdated": "2026.05.10"
     },
     {
       "id": "daegu-dalseong",
@@ -1601,10 +1635,26 @@
           "status": "단수공천 확정 (5.1)",
           "background": "전 방통위 부위원장, 울산남갑 당협위원장",
           "pct": null
+        },
+        {
+          "name": "김동칠",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정",
+          "background": "개혁신당 울산시당 창당 후 공천",
+          "pct": null
+        },
+        {
+          "name": "이미영",
+          "party": "musosok",
+          "partyName": "새미래민주당",
+          "status": "공천확정",
+          "background": "새미래민주당 후보",
+          "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.05.02"
+      "lastUpdated": "2026.05.10"
     },
     {
       "id": "jeju-seogwipo",
