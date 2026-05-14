@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": "2026-05-13-v1",
+    "version": "2026-05-14-v1",
     "description": "2026 지방선거 광역단체장 후보 및 여론조사 데이터",
-    "source": "중앙선거여론조사심의위원회 / 한국갤럽(뉴스1 의뢰) / KBS대구 / 리얼미터 / 연합뉴스 / 뉴시스 / 헤럴드경제 / 뉴데일리 / 굿모닝충청 / 전북매일 보도",
-    "lastUpdated": "2026-05-13"
+    "source": "중앙선거여론조사심의위원회 / 한국갤럽(뉴스1 의뢰) / 경남통계리서치(경남언론협회 의뢰) / 연합뉴스 / 뉴시스 / 헤럴드경제 / 동아일보 / 아주경제 / 경인일보 보도",
+    "lastUpdated": "2026-05-14"
   },
   "party_colors": {
     "minjoo": {
@@ -465,7 +465,7 @@
           "education": "연세대 법학과",
           "career": "20·21·22대 국회의원, 민주당 원내대표",
           "pledge": "인천 경제자유구역 확대, 청라·송도 발전",
-          "pct": 49.0
+          "pct": 54.0
         },
         {
           "name": "유정복",
@@ -477,13 +477,23 @@
           "education": "고려대 행정학과",
           "career": "17·18·19대 국회의원, 인천시장(2014~2018, 2022~현재)",
           "pledge": "인천 글로벌 허브 도시 완성",
-          "pct": 33.0
+          "pct": 37.7
         }
       ],
-      "surveyDate": "2026.04.25",
-      "surveyOrg": "연합뉴스",
+      "surveyDate": "2026.05.12~13",
+      "surveyOrg": "한길리서치(뉴스토마토 의뢰)",
       "sampleSize": "1,000명",
       "history": [
+        {
+          "date": "2026.05.12~13",
+          "org": "한길리서치(뉴스토마토 의뢰)",
+          "pcts": [
+            54.0,
+            37.7
+          ],
+          "gap": "+16.3%p",
+          "sample": "1,000명"
+        },
         {
           "date": "2026.04.25",
           "org": "연합뉴스",
@@ -1211,6 +1221,16 @@
           "sample": "804명"
         },
         {
+          "date": "2026.05.08~10",
+          "org": "경남통계리서치(경남언론협회 의뢰)",
+          "pcts": [
+            40.3,
+            42.0
+          ],
+          "gap": "-1.7%p (오차범위 내 초접전)",
+          "sample": "1,000명"
+        },
+        {
           "date": "2026.05.05~06",
           "org": "메타보이스·리서치랩(JTBC 의뢰)",
           "pcts": [
@@ -1357,10 +1377,18 @@
           "status": "단수공천 확정 (5.1)",
           "background": "인천 서구을 당협위원장",
           "pct": null
+        },
+        {
+          "name": "정승연",
+          "party": "gaehyeok",
+          "partyName": "개혁신당",
+          "status": "공천확정 (2026.05.13 개혁신당 입당)",
+          "background": "전 국민의힘 인천 연수갑 당협위원장, 2026.05.13 국민의힘 탈당 후 개혁신당 입당",
+          "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.05.02"
+      "lastUpdated": "2026.05.14"
     },
     {
       "id": "gyeonggi-hanam-gap",
@@ -1630,28 +1658,28 @@
       "id": "gyeonggi-siheung",
       "region": "경기 시흥갑",
       "reason": "문정복 의원 당선무효형 확정",
-      "verdict": "pending",
-      "verdictLabel": "판세 미정",
+      "verdict": "minjoo",
+      "verdictLabel": "민주 압도 (무투표 당선 유력)",
       "candidates": [
         {
-          "name": null,
+          "name": "임병택",
           "party": "minjoo",
           "partyName": "더불어민주당",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "공천확정 (현 시흥시장, 3선 도전)",
+          "background": "현 시흥시장 (2014~현재), 더불어민주당 공천 확정",
           "pct": null
         },
         {
           "name": null,
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "무공천 확정 (2026.05.13)",
+          "background": "국민의힘 공천 신청자 없어 무공천 결정",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.04.28"
+      "lastUpdated": "2026.05.14"
     },
     {
       "id": "gwangju-gwangsan-eul",
@@ -1782,7 +1810,7 @@
       "region": "전북 군산·김제·부안을",
       "reason": "이원택 의원 전북도지사 출마 사직",
       "verdict": "minjoo",
-      "verdictLabel": "민주 강세",
+      "verdictLabel": "민주 압도 (박지원 단독 출마 유력)",
       "candidates": [
         {
           "name": "박지원",
@@ -1796,13 +1824,13 @@
           "name": null,
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "공천 진행 중",
-          "background": "공천 미확정",
+          "status": "무공천 확정 (2026.05.13)",
+          "background": "국민의힘 공천 신청자 부적격 판정으로 무공천 결정",
           "pct": null
         }
       ],
       "surveyDate": "공천 확정 후 여론조사 예정",
-      "lastUpdated": "2026.05.07"
+      "lastUpdated": "2026.05.14"
     }
   ],
   "seoul_gu": [
