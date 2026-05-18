@@ -79,9 +79,9 @@
             <span class="cat-count">16개 지역</span>
           </div>
           <div class="cat-summary" id="verdict-summary">
-            <span class="sum-chip chip-minjoo">민주 우세 9</span>
+            <span class="sum-chip chip-minjoo">민주 우세 11</span>
             <span class="sum-chip chip-gukmin">국힘 우세 1</span>
-            <span class="sum-chip chip-close">접전 6</span>
+            <span class="sum-chip chip-close">접전 4</span>
             <span class="cat-toggle">▼</span>
           </div>
         </div>
@@ -181,9 +181,9 @@
             <span class="cat-count">25개 자치구</span>
           </div>
           <div class="cat-summary">
-            <span class="sum-chip chip-minjoo">민주 21</span>
-            <span class="sum-chip chip-gukmin">국힘 3</span>
-            <span class="sum-chip chip-close">초접전 1</span>
+            <span class="sum-chip chip-minjoo">민주 19</span>
+            <span class="sum-chip chip-gukmin">국힘 2</span>
+            <span class="sum-chip chip-close">초접전 4</span>
             <span class="cat-toggle">▼</span>
           </div>
         </div>
@@ -225,7 +225,7 @@
                 <span class="item-pct" style="color:#6ea8fe">44%</span>
               </div>
             </div>
-            <span class="item-badge badge-close">초접전</span>
+            <span class="item-badge badge-gukmin">국힘 우세</span>
             <span class="item-arrow">›</span>
           </a>
           <a class="cat-item" href="#section-daejinaepyo" onclick="return goToTab('tab-seoul','tabGroup1')" style="justify-content:center;color:#388bfd;font-size:12px;font-weight:700;">
@@ -436,7 +436,7 @@
     <div class="bigmatch-grid" id="gwangyeok-cards">
       <!-- 서울 -->
       <div class="match-card">
-        <div class="region-tag"><span>🏙️ 서울특별시</span><span class="verdict-badge badge-close">오차범위 내 접전</span></div>
+        <div class="region-tag"><span>🏙️ 서울특별시</span><span class="verdict-badge badge-minjoo">민주 우세</span></div>
         <div class="region-name">서울특별시장</div>
         <div class="candidate-row">
           <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('정원오','minjoo','58세','전 성동구청장','서울특별시','','','부동산 규제 강화·청년 주거 지원')">정</div>
@@ -464,7 +464,7 @@
 
       <!-- 부산 -->
       <div class="match-card">
-        <div class="region-tag"><span>🌊 부산광역시</span><span class="verdict-badge badge-close">오차범위 내 초박빙</span></div>
+        <div class="region-tag"><span>🌊 부산광역시</span><span class="verdict-badge badge-minjoo">민주 우세</span></div>
         <div class="region-name">부산광역시장</div>
         <div class="candidate-row">
           <div class="candidate-avatar avatar-minjoo" onclick="openCandModal('전재수','minjoo','58세','전 국회의원(부산 북구갑)','부산광역시','','','')">전</div>
@@ -585,33 +585,39 @@
       서울 25개 자치구 구청장 선거. 지도 블록 클릭 시 후보 프로필 확인 가능합니다.
     </div>
     <div class="seoul-map-wrap">
-      <div class="seoul-map-grid" style="display:grid;grid-template-columns:repeat(5,80px);gap:6px;min-width:420px;">
-        <!-- 서울 25개 구 지도 (지리적 위치 근사) -->
-        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:1;" onclick="location.href='pages/seoul_gu/dobong.html'"><span class="g-name">도봉</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:1;" onclick="location.href='pages/seoul_gu/nowon.html'"><span class="g-name">노원</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:2;" onclick="location.href='pages/seoul_gu/eunpyeong.html'"><span class="g-name">은평</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:2;" onclick="location.href='pages/seoul_gu/gangbuk.html'"><span class="g-name">강북</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:2;" onclick="location.href='pages/seoul_gu/seongbuk.html'"><span class="g-name">성북</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:2;" onclick="location.href='pages/seoul_gu/jungnang.html'"><span class="g-name">중랑</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:3;" onclick="location.href='pages/seoul_gu/seodaemun.html'"><span class="g-name">서대문</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:3;" onclick="location.href='pages/seoul_gu/jongno.html'"><span class="g-name">종로</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:3;" onclick="location.href='pages/seoul_gu/dongdaemun.html'"><span class="g-name">동대문</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:3;" onclick="location.href='pages/seoul_gu/gwangjin.html'"><span class="g-name">광진</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:5;grid-row:3;" onclick="location.href='pages/seoul_gu/gangdong.html'"><span class="g-name">강동</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:4;" onclick="location.href='pages/seoul_gu/mapo.html'"><span class="g-name">마포</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:4;" onclick="location.href='pages/seoul_gu/junggu.html'"><span class="g-name">중구</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:4;" onclick="location.href='pages/seoul_gu/seongdong.html'"><span class="g-name">성동</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:4;" onclick="location.href='pages/seoul_gu/songpa.html'"><span class="g-name">송파</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:5;" onclick="location.href='pages/seoul_gu/yangcheon.html'"><span class="g-name">양천</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:5;" onclick="location.href='pages/seoul_gu/yeongdeungpo.html'"><span class="g-name">영등포</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:5;" onclick="location.href='pages/seoul_gu/dongjak.html'"><span class="g-name">동작</span></div>
-        <div class="gu-block close-race" style="grid-column:4;grid-row:5;" onclick="location.href='pages/seoul_gu/seocho.html'"><span class="g-name">서초</span></div>
-        <div class="gu-block gukmin-win" style="grid-column:5;grid-row:5;" onclick="location.href='pages/seoul_gu/gangnam.html'"><span class="g-name">강남</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:6;" onclick="location.href='pages/seoul_gu/gangseo.html'"><span class="g-name">강서</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:6;" onclick="location.href='pages/seoul_gu/guro.html'"><span class="g-name">구로</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:6;" onclick="location.href='pages/seoul_gu/gwanak.html'"><span class="g-name">관악</span></div>
-        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:7;" onclick="location.href='pages/seoul_gu/geumcheon.html'"><span class="g-name">금천</span></div>
-        <div class="gu-block gukmin-win" style="grid-column:2;grid-row:7;" onclick="location.href='pages/seoul_gu/yongsan.html'"><span class="g-name">용산</span></div>
+      <div class="seoul-map-grid" style="display:grid;grid-template-columns:repeat(6,72px);gap:5px;min-width:460px;">
+        <!-- 서울 25개 구 지도 (지리적 위치 근사, 6열×7행) -->
+        <!-- Row 1: 북부 -->
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:1;" onclick="location.href='pages/seoul_gu/eunpyeong.html'"><span class="g-name">은평</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:1;" onclick="location.href='pages/seoul_gu/dobong.html'"><span class="g-name">도봉</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:1;" onclick="location.href='pages/seoul_gu/nowon.html'"><span class="g-name">노원</span></div>
+        <!-- Row 2 -->
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:2;" onclick="location.href='pages/seoul_gu/seodaemun.html'"><span class="g-name">서대문</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:2;" onclick="location.href='pages/seoul_gu/gangbuk.html'"><span class="g-name">강북</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:2;" onclick="location.href='pages/seoul_gu/seongbuk.html'"><span class="g-name">성북</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:5;grid-row:2;" onclick="location.href='pages/seoul_gu/jungnang.html'"><span class="g-name">중랑</span></div>
+        <!-- Row 3: 중부 -->
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:3;" onclick="location.href='pages/seoul_gu/gangseo.html'"><span class="g-name">강서</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:3;" onclick="location.href='pages/seoul_gu/mapo.html'"><span class="g-name">마포</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:3;grid-row:3;" onclick="location.href='pages/seoul_gu/jongno.html'"><span class="g-name">종로</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:3;" onclick="location.href='pages/seoul_gu/dongdaemun.html'"><span class="g-name">동대문</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:5;grid-row:3;" onclick="location.href='pages/seoul_gu/gwangjin.html'"><span class="g-name">광진</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:6;grid-row:3;" onclick="location.href='pages/seoul_gu/gangdong.html'"><span class="g-name">강동</span></div>
+        <!-- Row 4 -->
+        <div class="gu-block close-race" style="grid-column:1;grid-row:4;" onclick="location.href='pages/seoul_gu/yangcheon.html'"><span class="g-name">양천</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:4;" onclick="location.href='pages/seoul_gu/yeongdeungpo.html'"><span class="g-name">영등포</span></div>
+        <div class="gu-block close-race" style="grid-column:3;grid-row:4;" onclick="location.href='pages/seoul_gu/yongsan.html'"><span class="g-name">용산</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:4;grid-row:4;" onclick="location.href='pages/seoul_gu/junggu.html'"><span class="g-name">중구</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:5;grid-row:4;" onclick="location.href='pages/seoul_gu/seongdong.html'"><span class="g-name">성동</span></div>
+        <div class="gu-block close-race" style="grid-column:6;grid-row:4;" onclick="location.href='pages/seoul_gu/songpa.html'"><span class="g-name">송파</span></div>
+        <!-- Row 5: 남부 -->
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:5;" onclick="location.href='pages/seoul_gu/guro.html'"><span class="g-name">구로</span></div>
+        <div class="gu-block close-race" style="grid-column:2;grid-row:5;" onclick="location.href='pages/seoul_gu/dongjak.html'"><span class="g-name">동작</span></div>
+        <div class="gu-block gukmin-win" style="grid-column:3;grid-row:5;" onclick="location.href='pages/seoul_gu/seocho.html'"><span class="g-name">서초</span></div>
+        <div class="gu-block gukmin-win" style="grid-column:4;grid-row:5;" onclick="location.href='pages/seoul_gu/gangnam.html'"><span class="g-name">강남</span></div>
+        <!-- Row 6 -->
+        <div class="gu-block minjoo-win" style="grid-column:1;grid-row:6;" onclick="location.href='pages/seoul_gu/geumcheon.html'"><span class="g-name">금천</span></div>
+        <div class="gu-block minjoo-win" style="grid-column:2;grid-row:6;" onclick="location.href='pages/seoul_gu/gwanak.html'"><span class="g-name">관악</span></div>
       </div>
     </div>
     <div class="party-legend" style="margin-top:12px;">
