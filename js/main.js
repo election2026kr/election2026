@@ -40,21 +40,38 @@ function switchTab(tabId, groupId) {
   if (activeContent) activeContent.classList.add('active');
 }
 
-// ===== 탭 전환 + 스크롤 통합 함수 =====
-// 사이드바/카드에서 특정 탭으로 이동할 때 사용
-// tabId: 활성화할 탭 ID, groupId: 탭바 ID, sectionId: 스크롤 목적지 섹션 ID
-function goToTab(tabId, groupId, sectionId) {
-  // 1. 탭 전환 먼저
-  switchTab(tabId, groupId);
-  // 2. 탭바가 보이도록 섹션으로 부드럽게 스크롤
+// ===== 섹션 스크롤 (광고 건너뛰기) =====
+// 섹션의 탭바(있으면) 또는 섹션 시작점으로 스크롤
+function scrollToContent(sectionId) {
   const section = document.getElementById(sectionId || 'section-daejinaepyo');
+  if (!section) return;
+  const stickyNavH = document.getElementById('stickyNav') ? document.getElementById('stickyNav').offsetHeight : 50;
+  const headerH = document.querySelector('header') ? document.querySelector('header').offsetHeight : 56;
+  const offset = headerH + stickyNavH + 8;
+  // 탭바가 있는 섹션은 탭바 위치로, 없으면 섹션 시작점으로
+  const tabBar = section.querySelector('.tab-bar');
+  const target = tabBar || section;
+  const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+}
+
+// ===== 탭 전환 + 스크롤 통합 함수 =====
+function goToTab(tabId, groupId, sectionId) {
+  // 1. 탭 전환
+  switchTab(tabId, groupId);
+  // 2. 탭바 바로 위까지 스크롤 (광고 건너뜀)
+  const resolvedSection = sectionId || 'section-daejinaepyo';
+  const section = document.getElementById(resolvedSection);
   if (section) {
-    // 헤더/sticky-nav 높이 보정 (약 110px)
-    const offset = 110;
-    const top = section.getBoundingClientRect().top + window.pageYOffset - offset;
+    const tabBar = section.querySelector('.tab-bar');
+    const target = tabBar || section;
+    const stickyNavH = document.getElementById('stickyNav') ? document.getElementById('stickyNav').offsetHeight : 50;
+    const headerH = document.querySelector('header') ? document.querySelector('header').offsetHeight : 56;
+    const offset = headerH + stickyNavH + 8;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
   }
-  return false; // href 기본 동작 방지
+  return false;
 }
 
 // 탭 버튼 이벤트 등록
@@ -64,6 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const tabId = btn.dataset.tab;
       const groupId = btn.dataset.group;
       switchTab(tabId, groupId);
+      // 탭 클릭 시 탭바가 화면 상단에 보이도록 스크롤
+      const tabBarEl = document.getElementById(groupId);
+      if (tabBarEl) {
+        const stickyNavH = document.getElementById('stickyNav') ? document.getElementById('stickyNav').offsetHeight : 50;
+        const headerH = document.querySelector('header') ? document.querySelector('header').offsetHeight : 56;
+        const offset = headerH + stickyNavH + 8;
+        const top = tabBarEl.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
     });
   });
   // 첫 번째 탭 기본 활성화
