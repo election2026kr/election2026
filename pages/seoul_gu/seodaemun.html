@@ -54,10 +54,10 @@
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
     <div class="cand-detail-card" style="border-left:4px solid var(--minjoo);">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-        <div class="candidate-avatar avatar-minjoo" style="width:56px;height:56px;font-size:20px;">민</div>
+        <div class="candidate-avatar avatar-minjoo" style="width:56px;height:56px;font-size:20px;cursor:pointer;" onclick="openCandModal('박운기','minjoo','','','서대문구')">박</div>
         <div>
-          <div style="font-size:20px;font-weight:900;">민주 후보</div>
-          <div style="font-size:12px;color:var(--minjoo-text);font-weight:700;">더불어민주당</div>
+          <div style="font-size:20px;font-weight:900;cursor:pointer;" onclick="openCandModal('박운기','minjoo','','','서대문구')">박운기</div>
+          <div style="font-size:12px;color:var(--minjoo-text);font-weight:700;">더불어민주당 · 공천확정</div>
         </div>
         <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--minjoo-text);">56.4%</div>
       </div>
@@ -66,10 +66,10 @@
     </div>
     <div class="cand-detail-card" style="border-left:4px solid var(--gukmin);">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-        <div class="candidate-avatar avatar-gukmin" style="width:56px;height:56px;font-size:20px;">국</div>
+        <div class="candidate-avatar avatar-gukmin" style="width:56px;height:56px;font-size:20px;cursor:pointer;" onclick="openCandModal('이성헌','gukmin','','','서대문구')">이</div>
         <div>
-          <div style="font-size:20px;font-weight:900;">국힘 후보</div>
-          <div style="font-size:12px;color:var(--gukmin-text);font-weight:700;">국민의힘</div>
+          <div style="font-size:20px;font-weight:900;cursor:pointer;" onclick="openCandModal('이성헌','gukmin','','','서대문구')">이성헌</div>
+          <div style="font-size:12px;color:var(--gukmin-text);font-weight:700;">국민의힘 · 공천확정</div>
         </div>
         <div style="margin-left:auto;font-size:28px;font-weight:900;color:var(--gukmin-text);">36.2%</div>
       </div>
@@ -93,6 +93,29 @@
     <p style="font-size:11px;color:#555;margin-top:8px;">본 사이트는 공직선거법 제82조의4에 따라 선거운동을 목적으로 하지 않으며, 공개된 정보를 정리·제공하는 정보 허브입니다.</p>
   </div>
 </footer>
+
+
+<!-- ===== 후보자 프로필 모달 ===== -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-avatar" id="modal-avatar">?</div>
+      <div>
+        <div class="modal-name" id="modal-name">후보자</div>
+        <div class="modal-party" id="modal-party-label"></div>
+        <div style="font-size:11px;color:#8b949e;margin-top:2px;" id="modal-region"></div>
+      </div>
+    </div>
+    <div class="modal-section"><h4>나이</h4><p id="modal-age">확인 중</p></div>
+    <div class="modal-section"><h4>주요 경력</h4><p id="modal-career">공천 확정 후 업데이트 예정</p></div>
+    <div class="modal-section"><h4>재산 신고액</h4><p id="modal-assets">선관위 등록 후 공개</p></div>
+    <div class="modal-section"><h4>전과 기록</h4><p id="modal-criminal">없음 (선관위 등록 후 확인)</p></div>
+    <div class="modal-section"><h4>핵심 공약</h4><p id="modal-pledges">공천 확정 후 업데이트 예정</p></div>
+    <a class="modal-link" id="modal-nec-link" href="https://info.nec.go.kr" target="_blank">🔗 중앙선관위 상세 정보 보기</a>
+  </div>
+</div>
+<!-- ===== 플로팅 맨 위로 버튼 ===== -->
 <button class="float-top" id="floatTop" onclick="scrollToTop()">↑</button>
 <script src="../../js/main.js"><\/script>
 <script>
@@ -102,8 +125,8 @@
     data: {
       labels: ['03.31', '04.07', '04.14', '04.21'],
       datasets: [
-        { label: '민주 후보', data: [53.4,54.4,55.4,56.4], borderColor: '#004ea2', backgroundColor: 'rgba(0,78,162,0.15)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true },
-        { label: '국힘 후보', data: [38.2,37.2,36.7,36.2], borderColor: '#c9151e', backgroundColor: 'rgba(201,21,30,0.10)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true }
+        { label: '박운기', data: [53.4,54.4,55.4,56.4], borderColor: '#004ea2', backgroundColor: 'rgba(0,78,162,0.15)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true },
+        { label: '이성헌', data: [38.2,37.2,36.7,36.2], borderColor: '#c9151e', backgroundColor: 'rgba(201,21,30,0.10)', borderWidth: 3, pointRadius: 5, tension: 0.3, fill: true }
       ]
     },
     options: {
