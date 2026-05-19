@@ -636,40 +636,45 @@
       <strong>📌 다당제 표시 원칙</strong> — 여론조사 등록 기준 상위 3개 후보(정당)를 모두 표시합니다.
       조국혁신당·개혁신당·무소속 후보가 1위인 경우 해당 정당 색상으로 표시하며, 공천 미확정 지역은 확정 즉시 업데이트됩니다.
     </div>
-    <div class="byeol-grid" id="byeol-grid-container">
-      <!-- candidates.json에서 JS로 동적 렌더링 -->
+
+    <!-- 보궐선거 블록 그리드 -->
+    <div id="byeol-block-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:16px;">
+      <!-- JS로 동적 렌더링 -->
     </div>
 
-    <div style="margin-top:12px;">
-      <div class="party-legend">
-        <span class="legend-item"><span class="legend-dot" style="background:#004ea2"></span>더불어민주당</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#c9151e"></span>국민의힘</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#003087"></span>조국혁신당</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#e85d00"></span>개혁신당</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#64748b"></span>무소속</span>
-      </div>
+    <!-- 선택된 지역구 상세 카드 -->
+    <div id="byeol-detail-panel" style="display:none;margin-bottom:16px;">
+      <!-- JS로 동적 렌더링 -->
+    </div>
+
+    <div class="byeol-grid" id="byeol-grid-container" style="display:none;">
+      <!-- 기존 카드 렌더링 (숨김) -->
+    </div>
+
+    <div class="party-legend" style="margin-top:12px;">
+      <span class="legend-item"><span class="legend-dot" style="background:#004ea2"></span>민주 우세</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#c9151e"></span>국힘 우세</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span>초접전/판세미정</span>
+      <span class="legend-item" style="font-size:11px;color:#8b949e;">▶ 블록 클릭 시 후보 상세 표시</span>
     </div>
 
     <script>
     (function() {
       const PARTY_COLOR = {
-        minjoo:  { text: '#6ea8fe', bar: 'bar-minjoo',  cls: 'avatar-minjoo',  label: '민' },
-        gukmin:  { text: '#ff8080', bar: 'bar-gukmin',  cls: 'avatar-gukmin',  label: '국' },
-        joguk:   { text: '#7eb3ff', bar: 'bar-joguk',   cls: 'avatar-joguk',   label: '조' },
-        gaehyuk: { text: '#f97316', bar: 'bar-gaehyuk', cls: 'avatar-gaehyuk', label: '개' },
-        jinbo:   { text: '#a78bfa', bar: '',             cls: 'avatar-jinbo',   label: '진' },
-        musosok: { text: '#aaaaaa', bar: '',             cls: '',               label: '무' }
+        minjoo:  { text: '#6ea8fe', bar: 'bar-minjoo',  cls: 'avatar-minjoo',  label: '민', bg: 'rgba(0,78,162,0.55)', border: 'var(--minjoo)', blockCls: 'minjoo-win' },
+        gukmin:  { text: '#ff8080', bar: 'bar-gukmin',  cls: 'avatar-gukmin',  label: '국', bg: 'rgba(201,21,30,0.55)',  border: 'var(--gukmin)', blockCls: 'gukmin-win' },
+        joguk:   { text: '#7eb3ff', bar: 'bar-joguk',   cls: 'avatar-joguk',   label: '조', bg: 'rgba(0,48,135,0.55)',  border: '#003087',        blockCls: 'close-race' },
+        gaehyuk: { text: '#f97316', bar: 'bar-gaehyuk', cls: 'avatar-gaehyuk', label: '개', bg: 'rgba(232,93,0,0.55)',  border: '#e85d00',        blockCls: 'close-race' },
+        jinbo:   { text: '#a78bfa', bar: '',             cls: 'avatar-jinbo',   label: '진', bg: 'rgba(167,139,250,0.3)', border: '#a78bfa',       blockCls: 'close-race' },
+        musosok: { text: '#aaaaaa', bar: '',             cls: '',               label: '무', bg: 'rgba(100,116,139,0.4)', border: '#64748b',       blockCls: 'close-race' }
       };
-
       const VERDICT_MAP = {
-        minjoo:  { label: '민주 우세', cls: 'badge-minjoo' },
-        gukmin:  { label: '국힘 우세', cls: 'badge-gukmin' },
-        joguk:   { label: '조국 우세', cls: 'badge-joguk' },
-        close:   { label: '초접전',    cls: 'badge-close' },
-        pending: { label: '',          cls: '' }
+        minjoo:  { label: '민주 우세', cls: 'badge-minjoo', blockCls: 'minjoo-win' },
+        gukmin:  { label: '국힘 우세', cls: 'badge-gukmin', blockCls: 'gukmin-win' },
+        joguk:   { label: '조국 우세', cls: 'badge-joguk',  blockCls: 'close-race' },
+        close:   { label: '초접전',    cls: 'badge-close',  blockCls: 'close-race' },
+        pending: { label: '판세 미정', cls: 'badge-close',  blockCls: 'close-race' }
       };
-
-      // 상세 페이지 URL 매핑
       const PAGE_MAP = {
         'incheon-gyeyang-eul':     'pages/byeol/incheon_gyeyang.html',
         'incheon-yeonsu-gap':      'pages/byeol/incheon_yeonsu.html',
@@ -679,7 +684,6 @@
         'chungnam-asan-eul':       'pages/byeol/chungnam_asan.html',
         'chungnam-gongju-buyeo-cheongyang': 'pages/byeol/chungnam_gongju.html',
         'jeonbuk-gunsan-gap':      'pages/byeol/jeonbuk_gunsan_a.html',
-        'jeonbuk-gunsan-eul':      'pages/byeol/jeonbuk_gunsan_b.html',
         'busan-buk-gap':           'pages/byeol/busan_buk_a.html',
         'daegu-dalseong':          'pages/byeol/daegu_dalseong.html',
         'gyeonggi-siheung':        'pages/byeol/gyeonggi_siheung.html',
@@ -690,84 +694,134 @@
         'jeonbuk-gunsan-eul-new':   'pages/byeol/jeonbuk_gunsan_b.html'
       };
 
+      let byeolData = [];
+      let selectedId = null;
+
       function getInitial(name) {
-        if (!name || name === '공천 진행 중' || name === '경선 진행 중' || name === '미확정') {
-          return name === '경선 진행 중' ? '경' : (name === '미확정' ? '미' : '공');
-        }
+        if (!name || name === '공천 진행 중' || name === '경선 진행 중' || name === '미확정') return '?';
         return name.charAt(0);
       }
 
-      function renderCard(item) {
-        const pageUrl = PAGE_MAP[item.id];
-        const verdict = VERDICT_MAP[item.verdict] || { label: '', cls: '' };
+      // 지역명 축약 (블록에 표시)
+      function shortRegion(region) {
+        return region
+          .replace('경기 ', '').replace('인천 ', '').replace('충남 ', '').replace('충북 ', '')
+          .replace('전북 ', '').replace('부산 ', '').replace('대구 ', '').replace('광주 ', '')
+          .replace('울산 ', '').replace('제주 ', '')
+          .replace('국회의원 ', '').replace('보궐선거', '');
+      }
+
+      // 1위 후보 정당 가져오기
+      function getTopParty(item) {
         const hasPct = item.candidates.some(c => c.pct != null);
+        if (hasPct) {
+          const sorted = [...item.candidates].filter(c => c.pct != null).sort((a,b) => b.pct - a.pct);
+          return sorted[0]?.party || item.verdict || 'pending';
+        }
+        return item.verdict || 'pending';
+      }
+
+      function renderBlockGrid(items) {
+        const grid = document.getElementById('byeol-block-grid');
+        if (!grid) return;
+        grid.innerHTML = items.map(item => {
+          const verdict = VERDICT_MAP[item.verdict] || VERDICT_MAP['pending'];
+          const blockCls = verdict.blockCls;
+          const region = shortRegion(item.region);
+          // 1위 후보 이름
+          const topCand = item.candidates.find(c => c.pct != null)
+            ? [...item.candidates].filter(c=>c.pct!=null).sort((a,b)=>b.pct-a.pct)[0]
+            : item.candidates[0];
+          const topName = topCand?.name || '미정';
+          const topParty = topCand?.party || 'pending';
+          const pc = PARTY_COLOR[topParty];
+          const isSelected = item.id === selectedId;
+          const selectedStyle = isSelected ? 'outline:3px solid #fff;outline-offset:2px;' : '';
+          return `<div class="region-block ${blockCls}" style="cursor:pointer;min-height:70px;padding:8px 4px;${selectedStyle}" onclick="selectByeol('${item.id}')">
+            <div class="r-name" style="font-size:10px;font-weight:800;text-align:center;line-height:1.3;">${region}</div>
+            <div class="r-cand" style="font-size:9px;text-align:center;margin-top:3px;opacity:0.9;">${topName !== '미정' ? topName : '미정'}</div>
+            <div style="text-align:center;margin-top:2px;"><span class="verdict-badge ${verdict.cls}" style="font-size:8px;padding:1px 5px;">${verdict.label}</span></div>
+          </div>`;
+        }).join('');
+      }
+
+      function renderDetailPanel(item) {
+        const panel = document.getElementById('byeol-detail-panel');
+        if (!panel) return;
+        const verdict = VERDICT_MAP[item.verdict] || VERDICT_MAP['pending'];
+        const pageUrl = PAGE_MAP[item.id];
 
         let candRows = '';
         item.candidates.forEach(c => {
-          const p = PARTY_COLOR[c.party] || { text: '#aaa', cls: '', label: '?' };
+          const p = PARTY_COLOR[c.party] || { text: '#aaa', cls: '', label: '?', bar: '' };
           const initial = getInitial(c.name);
-          const avatarStyle = c.party === 'musosok' ? 'style="background:#888;color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;"' : '';
-          const avatarCls = avatarStyle ? '' : `class="byeol-avatar ${p.cls}"`;
           const isTbd = !c.name || c.name.includes('진행') || c.name === '미확정';
-
-          if (isTbd) {
-            candRows += `<div class="byeol-cand-row">
-              <div ${avatarCls} ${avatarStyle}>${initial}</div>
-              <div><div class="tbd" style="color:${p.text}">${c.partyName} — ${c.status}</div></div>
-            </div>`;
-          } else {
-            candRows += `<div class="byeol-cand-row">
-              <div ${avatarCls} ${avatarStyle}>${initial}</div>
-              <div>
-                <div class="byeol-name">${c.name}</div>
-                <div class="byeol-party">${c.partyName} · ${c.status}</div>
-              </div>
-            </div>`;
+          const nameHtml = isTbd
+            ? `<div class="tbd" style="color:${p.text}">${c.partyName} — ${c.status}</div>`
+            : `<div style="font-size:14px;font-weight:800;color:#e6edf3;">${c.name}</div><div style="font-size:11px;color:${p.text};">${c.partyName} · ${c.status}</div>`;
+          candRows += `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+            <div class="candidate-avatar ${p.cls}" style="width:36px;height:36px;font-size:14px;flex-shrink:0;">${initial}</div>
+            <div style="flex:1;">${nameHtml}</div>
+            ${c.pct != null ? `<div style="font-size:16px;font-weight:900;color:${p.text};min-width:48px;text-align:right;">${c.pct}%</div>` : ''}
+          </div>`;
+          if (c.pct != null) {
+            const barBg = p.bar ? '' : 'background:#888;';
+            candRows += `<div style="margin-left:46px;margin-bottom:10px;"><div style="background:var(--card2);border-radius:4px;height:7px;overflow:hidden;"><div class="${p.bar}" style="height:100%;border-radius:4px;width:${c.pct}%;${barBg}"></div></div></div>`;
           }
         });
 
-        let barsHtml = '';
-        if (hasPct) {
-          barsHtml = '<div class="byeol-bars">';
-          item.candidates.forEach(c => {
-            if (c.pct == null) return;
-            const p = PARTY_COLOR[c.party] || { text: '#aaa', bar: '', label: '?' };
-            const label = c.party === 'musosok' ? c.name.charAt(0) : p.label;
-            const barBg = p.bar ? '' : 'background:#888;';
-            barsHtml += `<div class="byeol-bar-row">
-              <span class="byeol-bar-label" style="color:${p.text}">${label}</span>
-              <div class="byeol-bar-bg"><div class="byeol-bar-fill ${p.bar}" style="width:${c.pct}%;${barBg}"></div></div>
-              <span class="byeol-bar-pct" style="color:${p.text}">${c.pct}%</span>
-            </div>`;
-          });
-          barsHtml += '</div>';
-        }
+        const surveyInfo = item.surveyDate
+          ? `<div style="font-size:11px;color:#8b949e;margin-top:10px;">📅 ${item.surveyDate}</div>`
+          : `<div style="font-size:11px;color:#8b949e;margin-top:10px;">📅 공천 확정 후 여론조사 예정</div>`;
 
-        const verdictBadge = verdict.label
-          ? `<span class="verdict-badge ${verdict.cls}" style="margin-left:8px;font-size:11px;padding:2px 8px;border-radius:10px;">${verdict.label}</span>`
+        const detailBtn = pageUrl
+          ? `<a href="${pageUrl}" style="display:block;margin-top:12px;background:#1f6feb;color:#fff;padding:10px;border-radius:8px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;">📊 상세 여론조사 보기 →</a>`
           : '';
 
-        const clickAttr = pageUrl ? `style="cursor:pointer;" onclick="location.href='${pageUrl}'"` : '';
-
-        return `<div class="byeol-card" ${clickAttr}>
-          <div class="byeol-region">📍 ${item.region}${verdictBadge}</div>
-          <span class="byeol-reason">${item.reason}</span>
-          ${candRows}
-          ${barsHtml}
-          <div style="margin-top:8px;font-size:10px;color:#8b949e;">📅 ${item.surveyDate || '공천 확정 후 여론조사 예정'}</div>
-        </div>`;
+        panel.style.display = 'block';
+        panel.innerHTML = `
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+              <span style="font-size:15px;font-weight:900;">📍 ${item.region}</span>
+              <span class="verdict-badge ${verdict.cls}">${verdict.label}</span>
+            </div>
+            <div style="font-size:11px;color:var(--text2);background:var(--card2);padding:4px 10px;border-radius:6px;display:inline-block;margin-bottom:14px;">${item.reason}</div>
+            ${candRows}
+            ${surveyInfo}
+            ${detailBtn}
+          </div>`;
       }
 
-      fetch('/data/candidates.json')
+      window.selectByeol = function(id) {
+        if (selectedId === id) {
+          // 같은 블록 재클릭 시 닫기
+          selectedId = null;
+          document.getElementById('byeol-detail-panel').style.display = 'none';
+          renderBlockGrid(byeolData);
+          return;
+        }
+        selectedId = id;
+        const item = byeolData.find(b => b.id === id);
+        if (item) {
+          renderDetailPanel(item);
+          renderBlockGrid(byeolData); // 선택 표시 업데이트
+          // 상세 패널로 스크롤
+          setTimeout(() => {
+            document.getElementById('byeol-detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 50);
+        }
+      };
+
+      fetch('data/candidates.json')
         .then(r => r.json())
         .then(data => {
-          const grid = document.getElementById('byeol-grid-container');
-          if (!grid || !data.byeol) return;
-          grid.innerHTML = data.byeol.map(renderCard).join('');
+          if (!data.byeol) return;
+          byeolData = data.byeol;
+          renderBlockGrid(byeolData);
           // 탭 카운트 업데이트
           const tabBtn = document.querySelector('[data-tab="tab-byeol"]');
           if (tabBtn) {
-            tabBtn.textContent = tabBtn.textContent.replace(/\(\d+\)/, `(${data.byeol.length})`);
+            tabBtn.textContent = `📋 국회의원 보궐 (${data.byeol.length})`;
           }
         })
         .catch(err => console.error('byeol 데이터 로드 실패:', err));
