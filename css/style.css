@@ -533,7 +533,7 @@ h1 span { color: var(--yellow-light); }
 .badge-joguk { background: rgba(0,48,135,0.35); color: var(--joguk-text); border: 1px solid var(--joguk); }
 .survey-date { font-size: 10px; color: var(--text2); }
 
-/* ===== 여론조사 테이블 ===== */
+/* ===== 여론조사 테이블 (레거시 유지) ===== */
 .survey-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .survey-table th {
   background: var(--card2);
@@ -557,6 +557,102 @@ h1 span { color: var(--yellow-light); }
 .td-cand3 { color: var(--joguk-text); font-weight: 700; }
 .td-gap { font-weight: 700; }
 .td-source { font-size: 11px; color: var(--text2); }
+
+/* ===== 여론조사 카드 리스트 ===== */
+.survey-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .survey-card-list {
+    grid-template-columns: 1fr;
+  }
+}
+.sc-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sc-region {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+.sc-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sc-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sc-rank {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  min-width: 28px;
+  text-align: center;
+}
+.sc-rank1 {
+  background: rgba(56,139,253,0.2);
+  color: var(--minjoo-text);
+}
+.sc-rank2 {
+  background: rgba(201,21,30,0.18);
+  color: var(--gukmin-text);
+}
+.sc-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 700;
+}
+.sc-name small {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.75;
+  margin-left: 3px;
+}
+.sc-pct {
+  font-size: 15px;
+  font-weight: 800;
+  min-width: 48px;
+  text-align: right;
+}
+.sc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  gap: 8px;
+}
+.sc-gap {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sc-source {
+  font-size: 10px;
+  color: var(--text2);
+  text-align: right;
+  line-height: 1.4;
+}
 
 /* ===== 보궐선거 카드 ===== */
 .byeol-grid {
