@@ -97,35 +97,75 @@
     `;
   }
 
-  // 여론조사 요약 테이블
+  // 여론조사 요약 카드 (신규 카드형 레이아웃)
   function renderIndexSurveyTable(data) {
-    const tbody = document.getElementById('survey-table-body');
-    if (!tbody) return;
+    const container = document.getElementById('survey-table-body');
+    if (!container) return;
 
-    tbody.innerHTML = data.gwangyeok.map(r => {
-      const c0 = r.candidates[0];
-      const c1 = r.candidates[1];
+    // 정당별 바 색상
+    const barClass = {
+      minjoo: 'sc-bar-minjoo', gukmin: 'sc-bar-gukmin', joguk: 'sc-bar-joguk',
+      gaehyeok: 'sc-bar-gaehyeok', musosok: 'sc-bar-indep', indep: 'sc-bar-indep'
+    };
+
+    // 판세별 카드 클래스
+    const verdictCardClass = {
+      minjoo: 'verdict-minjoo', minjoo_strong: 'verdict-minjoo-strong',
+      gukmin: 'verdict-gukmin', close: 'verdict-close',
+      joguk: 'verdict-joguk', pending: 'verdict-pending'
+    };
+
+    // 광역단체장 카드 렌더링
+    const gwangyeokCards = data.gwangyeok.map(r => {
+      const vl = data.verdict_labels[r.verdict] || { label: r.verdict, badgeClass: 'badge-close' };
+      const cardClass = verdictCardClass[r.verdict] || 'verdict-close';
       const latest = r.history && r.history[0];
       const gap = latest ? latest.gap : '—';
-      const vl = data.verdict_labels[r.verdict] || { label: r.verdict, badgeClass: 'badge-close' };
       const gapCol = gapColor(gap);
 
-      const p0short = (c0.partyName||'').replace('더불어민주당','민주').replace('국민의힘','국힘').replace('조국혁신당','조국').replace('개혁신당','개혁');
-      const p1short = (c1.partyName||'').replace('더불어민주당','민주').replace('국민의힘','국힘').replace('조국혁신당','조국').replace('개혁신당','개혁');
-      const textColor0 = partyTextClass(c0.party);
-      const textColor1 = partyTextClass(c1.party);
-      return `<tr>
-        <td class="td-region">${r.region}</td>
-        <td class="td-cand1" style="color:${textColor0};cursor:pointer;" onclick="openPollsCandModal('${r.id}',0)"><span style="text-decoration:underline dotted;">${c0.name}</span><span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p0short})</span></td>
-        <td class="td-cand1" style="color:${textColor0};">${pctStr(c0.pct)}</td>
-        <td class="td-cand2" style="color:${textColor1};cursor:pointer;" onclick="openPollsCandModal('${r.id}',1)"><span style="text-decoration:underline dotted;">${c1.name}</span><span style="font-size:11px;opacity:0.75;margin-left:4px;">(${p1short})</span></td>
-        <td class="td-cand2" style="color:${textColor1};">${pctStr(c1.pct)}</td>
-        <td class="td-gap" style="color:${gapCol};">${gap}</td>
-        <td><span class="verdict-badge ${vl.badgeClass}" style="font-size:11px;padding:3px 8px;">${vl.label}</span></td>
-        <td class="td-source">${r.surveyDate}</td>
-        <td class="td-source">${r.surveyOrg}</td>
-      </tr>`;
+      // 후보 행 렌더링 (최대 3명)
+      const candRows = r.candidates.slice(0, 3).map(c => {
+        const tc = partyTextClass(c.party);
+        const bc = barClass[c.party] || 'sc-bar-indep';
+        const pct = c.pct != null ? c.pct : 0;
+        const partyShort = (c.partyName||'').replace('더불어민주당','더불어민주당').replace('국민의힘','국민의힘');
+        return `
+          <div class="sc-row">
+            <div class="sc-cand-info">
+              <span class="sc-name" style="color:${tc}">${c.name}</span>
+              <span class="sc-party-tag" style="color:${tc}">${partyShort}</span>
+            </div>
+            <div class="sc-bar-wrap">
+              <div class="sc-bar-bg"><div class="sc-bar-fill ${bc}" style="width:${pct}%"></div></div>
+            </div>
+            <span class="sc-pct" style="color:${tc}">${pctStr(c.pct)}</span>
+          </div>`;
+      }).join('');
+
+      // 조사 출처
+      const sourceText = r.surveyOrg
+        ? `${r.surveyOrg}<br>${r.surveyDate} · ${r.sampleSize || ''}`
+        : r.surveyDate || '—';
+
+      // 상세 페이지 링크
+      const detailLink = `pages/gwangyeok/${r.id}.html`;
+
+      return `
+        <div class="sc-card ${cardClass}">
+          <div class="sc-head">
+            <span class="sc-region">${r.emoji || ''} ${r.title || r.region}</span>
+            <span class="verdict-badge ${vl.badgeClass}">${vl.label}</span>
+          </div>
+          <div class="sc-rows">${candRows}</div>
+          <div class="sc-footer">
+            <span class="sc-gap" style="color:${gapCol}">${gap}</span>
+            <span class="sc-source">${sourceText}</span>
+          </div>
+          <a class="sc-detail-link" href="${detailLink}">📊 상세 여론조사 보기 →</a>
+        </div>`;
     }).join('');
+
+    container.innerHTML = gwangyeokCards;
   }
 
   // 판세 현황판 카드 (광역단체장) - match-card 구조
