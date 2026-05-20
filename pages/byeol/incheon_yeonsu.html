@@ -55,6 +55,26 @@
     <a href="../../index.html#section-voting" style="background:#1f6feb;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;">📍 내 투표소 찾기 →</a>
   </div>
 </main>
+<!-- ===== 후보자 프로필 모달 ===== -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-avatar" id="modal-avatar">?</div>
+      <div>
+        <div class="modal-name" id="modal-name">후보자</div>
+        <div class="modal-party" id="modal-party-label"></div>
+        <div style="font-size:11px;color:#8b949e;margin-top:2px;" id="modal-region"></div>
+      </div>
+    </div>
+    <div class="modal-section"><h4>나이</h4><p id="modal-age">확인 중</p></div>
+    <div class="modal-section"><h4>주요 경력</h4><p id="modal-career">공천 확정 후 업데이트 예정</p></div>
+    <div class="modal-section"><h4>재산 신고액</h4><p id="modal-assets">선관위 등록 후 공개</p></div>
+    <div class="modal-section"><h4>전과 기록</h4><p id="modal-criminal">없음 (선관위 등록 후 확인)</p></div>
+    <div class="modal-section"><h4>핵심 공약</h4><p id="modal-pledges">공천 확정 후 업데이트 예정</p></div>
+    <a class="modal-link" id="modal-nec-link" href="https://info.nec.go.kr" target="_blank">🔗 중앙선관위 상세 정보 보기</a>
+  </div>
+</div>
 <footer>
   <div style="max-width:900px;margin:0 auto;">
     <p>후보 정보 출처: <a href="https://info.nec.go.kr" target="_blank">중앙선관위 후보자정보공개시스템</a> | 여론조사: <a href="https://www.nesdc.go.kr" target="_blank">선거여론조사심의위원회</a></p>
@@ -114,15 +134,20 @@
       const avatarStyle = c.party === 'musosok' ? `background:#888;color:#fff;width:52px;height:52px;font-size:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;` : `width:52px;height:52px;font-size:18px;`;
       const avatarCls = c.party === 'musosok' ? '' : `candidate-avatar ${p.avatarCls}`;
 
+      const candName = c.name || '후보';
+      const candBg = c.party === 'musosok' ? '#888' : p.border;
+      const candOnclick = `openByeolModal('${candName}','${c.party}','${c.partyName}','${c.status}','${c.background || ''}','${item.region}')`;
       candCards += `<div class="cand-detail-card" style="border-left:4px solid ${p.border};">
-        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;">
-          <div class="${avatarCls}" style="${avatarStyle}">${initial}</div>
-          <div style="font-size:16px;font-weight:900;">${c.name}</div>
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;cursor:pointer;" onclick="${candOnclick.replace(/'/g, '&apos;')}">
+          <div class="${avatarCls}" style="${avatarStyle};cursor:pointer;">${initial}</div>
+          <div style="font-size:16px;font-weight:900;cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px;">${c.name}</div>
           <div style="font-size:11px;color:${p.text};font-weight:700;">${c.partyName} · ${c.status}</div>
           ${pctHtml}
         </div>
         ${barHtml}
-        <a href="https://info.nec.go.kr" target="_blank" class="modal-link" style="margin-top:10px;display:block;font-size:11px;text-align:center;">🔗 선관위 정보</a>
+        <div style="margin-top:10px;text-align:center;">
+          <button onclick="${candOnclick.replace(/'/g, '&apos;')}" style="background:#21262d;border:1px solid #30363d;color:#c9d1d9;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;">👤 프로필 보기</button>
+        </div>
       </div>`;
 
       if (pct != null) {
@@ -210,6 +235,37 @@
     window.Kakao.init('6f395c68ef01442dd59afb6ed01c9b86');
   }
 })();
+
+// ===== 전역: 보궐선거 후보 프로필 모달 =====
+function openByeolModal(name, party, partyName, status, background, region) {
+  var COLORS = {
+    minjoo:   { bg: '#004ea2', text: '#6ea8fe', label: '더불어민주당' },
+    gukmin:   { bg: '#c9151e', text: '#ff8080', label: '국민의힘' },
+    joguk:    { bg: '#003087', text: '#7eb3ff', label: '조국혁신당' },
+    gaehyeok: { bg: '#e85d00', text: '#fb923c', label: '개혁신당' },
+    gaehyuk:  { bg: '#e85d00', text: '#fb923c', label: '개혁신당' },
+    jinbo:    { bg: '#9333ea', text: '#c4b5fd', label: '진보당' },
+    musosok:  { bg: '#64748b', text: '#cbd5e1', label: '무소속' }
+  };
+  var color = COLORS[party] || COLORS['musosok'];
+  var modal = document.getElementById('modal');
+  if (!modal) return;
+  document.getElementById('modal-avatar').style.background = color.bg;
+  document.getElementById('modal-avatar').textContent = name ? name[0] : '?';
+  document.getElementById('modal-name').textContent = name || '후보 정보';
+  document.getElementById('modal-party-label').textContent = partyName || color.label;
+  document.getElementById('modal-party-label').style.color = color.text;
+  document.getElementById('modal-region').textContent = region || '';
+  document.getElementById('modal-age').textContent = '선관위 등록 후 공개';
+  document.getElementById('modal-career').textContent = background || status || '공천 확정 후 업데이트 예정';
+  document.getElementById('modal-assets').textContent = '선관위 등록 후 공개';
+  document.getElementById('modal-criminal').textContent = '선관위 등록 후 확인';
+  document.getElementById('modal-pledges').textContent = '공천 확정 후 업데이트 예정';
+  var nec = document.getElementById('modal-nec-link');
+  if (nec) nec.href = 'https://info.nec.go.kr/candidate/candidateList.xhtml';
+  modal.classList.add('show');
+}
+
 </script>
 </body>
 </html>
