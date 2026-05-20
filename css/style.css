@@ -561,98 +561,200 @@ h1 span { color: var(--yellow-light); }
 /* ===== 여론조사 카드 리스트 ===== */
 .survey-card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
 }
 @media (max-width: 480px) {
   .survey-card-list {
     grid-template-columns: 1fr;
   }
 }
+
+/* 카드 기본 */
 .sc-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 14px;
+  border-radius: 14px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.15s;
+  cursor: default;
 }
+.sc-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+/* 판세별 좌측 컬러 보더 */
+.sc-card.verdict-minjoo    { border-left: 4px solid var(--minjoo-light); }
+.sc-card.verdict-minjoo-strong { border-left: 4px solid var(--minjoo-light); }
+.sc-card.verdict-gukmin    { border-left: 4px solid var(--gukmin-light); }
+.sc-card.verdict-close     { border-left: 4px solid var(--purple); }
+.sc-card.verdict-joguk     { border-left: 4px solid var(--joguk-light); }
+.sc-card.verdict-pending   { border-left: 4px solid var(--border); }
+
+/* 카드 헤더 */
 .sc-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card2);
 }
 .sc-region {
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--text);
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+.sc-type-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  color: var(--text2);
+  white-space: nowrap;
+}
+
+/* 후보 행 */
 .sc-rows {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0;
+  padding: 12px 16px 8px;
 }
 .sc-row {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 10px;
 }
-.sc-rank {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 1px 6px;
-  border-radius: 6px;
+.sc-row:last-child { margin-bottom: 0; }
+
+/* 후보명 영역 */
+.sc-cand-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
   flex-shrink: 0;
-  min-width: 28px;
-  text-align: center;
-}
-.sc-rank1 {
-  background: rgba(56,139,253,0.2);
-  color: var(--minjoo-text);
-}
-.sc-rank2 {
-  background: rgba(201,21,30,0.18);
-  color: var(--gukmin-text);
 }
 .sc-name {
-  flex: 1;
   font-size: 14px;
-  font-weight: 700;
-}
-.sc-name small {
-  font-size: 10px;
-  font-weight: 500;
-  opacity: 0.75;
-  margin-left: 3px;
-}
-.sc-pct {
-  font-size: 15px;
   font-weight: 800;
-  min-width: 48px;
-  text-align: right;
+  line-height: 1.2;
 }
+.sc-party-tag {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.75;
+  margin-top: 1px;
+}
+
+/* 바 그래프 영역 */
+.sc-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sc-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sc-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+.sc-bar-minjoo  { background: var(--minjoo-light); }
+.sc-bar-gukmin  { background: var(--gukmin-light); }
+.sc-bar-joguk   { background: var(--joguk-light); }
+.sc-bar-gaehyeok{ background: var(--gaehyeok); }
+.sc-bar-indep   { background: var(--indep); }
+
+/* 수치 */
+.sc-pct {
+  font-size: 16px;
+  font-weight: 900;
+  min-width: 52px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* 카드 푸터 */
 .sc-footer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding-top: 6px;
+  padding: 8px 16px 12px;
   border-top: 1px solid var(--border);
   gap: 8px;
 }
 .sc-gap {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
 }
 .sc-source {
   font-size: 10px;
   color: var(--text2);
   text-align: right;
-  line-height: 1.4;
+  line-height: 1.5;
 }
+
+/* 판세 요약 칩 바 */
+.survey-verdict-summary {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.svc-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid;
+}
+.svc-minjoo  { background: rgba(0,78,162,0.18); border-color: var(--minjoo-light); color: var(--minjoo-text); }
+.svc-gukmin  { background: rgba(201,21,30,0.15); border-color: var(--gukmin-light); color: var(--gukmin-text); }
+.svc-close   { background: rgba(124,58,237,0.15); border-color: var(--purple); color: #c4b5fd; }
+.svc-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 상세 보기 링크 */
+.sc-detail-link {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: var(--blue-light);
+  padding: 6px 16px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border-top: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.sc-detail-link:hover { background: rgba(56,139,253,0.08); }
 
 /* ===== 보궐선거 카드 ===== */
 .byeol-grid {
