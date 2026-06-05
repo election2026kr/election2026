@@ -2306,33 +2306,32 @@
       "region": "인천 계양을",
       "reason": "박찬대 의원 인천시장 출마 사직",
       "verdict": "minjoo",
-      "verdictLabel": "민주 우세",
+      "verdictLabel": "민주 압승 (김남준 60.7%)",
       "candidates": [
         {
           "name": "김남준",
           "party": "minjoo",
           "partyName": "더불어민주당",
           "status": "전략공천 확정",
-          "pct": 58.7
+          "pct": 60.7
         },
         {
           "name": "심왕섭",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "단수공천 확정 (5.1)",
-          "background": "환경조경발전재단 이사장, 계양초교 총동창회장 출신",
-          "pct": 19.4
+          "status": "단수공천 확정",
+          "pct": 17.2
         },
         {
-          "name": null,
-          "party": "joguk",
-          "partyName": "조국혁신당",
-          "status": "무공천",
-          "pct": null
+          "name": "김현태",
+          "party": "musosok",
+          "partyName": "무소속",
+          "status": "출마",
+          "pct": 10.9
         }
       ],
-      "surveyDate": "리서치앤리서치(채널A 의뢰) 2026.05.17~19 (500명)",
-      "lastUpdated": "2026.05.22",
+      "surveyDate": "2026.05.31",
+      "lastUpdated": "2026.06.02",
       "history": [
         {
           "date": "2026.05.17~19",
@@ -2422,35 +2421,32 @@
       "region": "경기 하남갑",
       "reason": "이용선 의원 당선무효형 확정",
       "verdict": "minjoo",
-      "verdictLabel": "민주 우세",
+      "verdictLabel": "민주 우세 (이광재 50.5%)",
       "candidates": [
         {
           "name": "이광재",
           "party": "minjoo",
           "partyName": "더불어민주당",
           "status": "전략공천 확정",
-          "background": "전 강원지사, 전 국회의원",
-          "pct": 43.0
+          "pct": 50.5
         },
         {
           "name": "이용",
           "party": "gukmin",
           "partyName": "국민의힘",
-          "status": "단수공천 확정 (5.1)",
-          "background": "전 비례대표 의원, 하남시 당협위원장",
-          "pct": 31.0
+          "status": "단수공천 확정",
+          "pct": 36.3
         },
         {
           "name": "김성열",
           "party": "gaehyeok",
           "partyName": "개혁신당",
-          "status": "출마 확정",
-          "background": "개혁신당 최고위원",
-          "pct": 5.0
+          "status": "출마",
+          "pct": 4.0
         }
       ],
-      "surveyDate": "코리아리서치(MBC 의뢰) 2026.05.16~18 (500명)",
-      "lastUpdated": "2026.05.22",
+      "surveyDate": "2026.05.31",
+      "lastUpdated": "2026.06.02",
       "history": [
         {
           "date": "2026.05.16~18",
@@ -2470,51 +2466,46 @@
       "region": "경기 평택을",
       "reason": "이병진 의원 당선무효형 확정",
       "verdict": "close",
-      "verdictLabel": "민주 우세 (한국갤럽 김용남 30% vs 조국 25% vs 유의동 23%, 5.21~22)",
+      "verdictLabel": "초접전 (조국 29% vs 김용남 26%)",
       "candidates": [
         {
           "name": "조국",
           "party": "joguk",
           "partyName": "조국혁신당",
           "status": "공천확정",
-          "background": "조국혁신당 대표",
-          "pct": 25.0
+          "pct": 29.0
         },
         {
           "name": "김용남",
           "party": "minjoo",
           "partyName": "더불어민주당",
           "status": "전략공천 확정",
-          "background": "전 검사, 전 새누리당 의원(쓰선), 법무법인 일호 대표변호사",
-          "pct": 30.0
+          "pct": 26.0
         },
         {
           "name": "유의동",
           "party": "gukmin",
           "partyName": "국민의힘",
           "status": "단수공천 확정",
-          "background": "전 의원 3선",
-          "pct": 23.0
+          "pct": 20.0
         },
         {
           "name": "황교안",
           "party": "musosok",
           "partyName": "자유와혁신",
           "status": "공천확정",
-          "background": "전 국무총리, 전 자유한국당 대표",
-          "pct": 7.0
+          "pct": 10.0
         },
         {
           "name": "김재연",
           "party": "jinbo",
           "partyName": "진보당",
           "status": "공천확정",
-          "background": "진보당 상임대표",
           "pct": 2.0
         }
       ],
-      "surveyDate": "2026.05.21~22",
-      "lastUpdated": "2026.05.25",
+      "surveyDate": "2026.05.31",
+      "lastUpdated": "2026.06.02",
       "survey": {
         "date": "2026.05.16~17",
         "org": "메트릭스(조선일보 의뢰)",
